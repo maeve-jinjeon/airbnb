@@ -1,9 +1,9 @@
 import { createGlobalStyle, css } from "styled-components";
 
 const Normalize = createGlobalStyle`
-	${({ theme: { colors, font } }) => css`
+	${({ theme: { colors, fontMain } }) => css`
 		.App {
-			${font.main};
+			${fontMain};
 			color: ${colors.black};
 		}
 	`}

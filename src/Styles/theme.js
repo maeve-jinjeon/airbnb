@@ -19,13 +19,32 @@ const height = {
 	searchbar: "76px",
 };
 
-const font = {
-	main: {
-		"font-family": '"IBM Plex Sans KR", sans-serif',
-		"font-weight": 500,
-	},
+const fontMain = {
+	"font-family": '"IBM Plex Sans KR", sans-serif',
+	"font-weight": 500,
 };
 
-const theme = { colors, width, height, font };
+const fontSize = {
+	xSmall: "12px",
+	small: "14px",
+	medium: "16px",
+	large: "18px",
+	xLarge: "20px",
+};
+
+const fontWeight = {
+	small: 400,
+	medium: 600,
+	large: 700,
+};
+
+const setFont = (size, weight) => {
+	return {
+		"font-size": fontSize[size],
+		"font-weight": fontWeight[weight],
+	};
+};
+
+const theme = { colors, width, height, fontMain, fontSize, setFont };
 
 export default theme;
