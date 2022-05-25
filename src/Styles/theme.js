@@ -18,6 +18,7 @@ const width = {
 };
 
 const height = {
+	GNB: "100px",
 	header1: "640px",
 	searchbar: "76px",
 };
@@ -48,6 +49,6 @@ const setFont = (size, weight) => {
 	};
 };
 
-const theme = { colors, width, height, fontMain, fontSize, setFont };
+const theme = { colors, width, height, fontMain, fontSize, fontWeight, setFont };
 
 export default theme;
