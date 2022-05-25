@@ -15,6 +15,12 @@ const width = {
 	header: "1200px",
 	searchbar: "916px",
 	GNBImg: "80px",
+	schedule: "360px",
+	scheduleChild: "112px",
+	price: "256px",
+	priceChild: "140px",
+	guest: "192px",
+	guestChild: "114px",
 };
 
 const height = {

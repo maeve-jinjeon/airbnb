@@ -49,7 +49,7 @@ const GNBAccountMenu = styled.div`
 		line-height: 35px;
 		text-align: center;
 		> :first-child {
-			margin-right: 18px;
+			margin-right: 15px;
 		}
 	`}
 `;
