@@ -5,6 +5,7 @@ const Normalize = createGlobalStyle`
 		.App {
 			${fontMain};
 			color: ${colors.black};
+			width: 100wh;
 		}
 	`}
 `;

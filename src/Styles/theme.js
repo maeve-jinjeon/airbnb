@@ -12,10 +12,13 @@ const colors = {
 };
 
 const width = {
+	header: "1200px",
 	searchbar: "916px",
+	GNBImg: "80px",
 };
 
 const height = {
+	header1: "640px",
 	searchbar: "76px",
 };
 
