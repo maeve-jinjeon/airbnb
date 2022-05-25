@@ -1,3 +1,4 @@
+import { SvgIconComponent } from "@mui/icons-material";
 import CancelIcon from "@mui/icons-material/Cancel";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -13,11 +14,16 @@ import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import PauseCircleOutlineIcon from "@mui/icons-material/PauseCircleOutline";
 import styled, { css } from "styled-components";
 
-const getButton = (buttonType) => {
-	const resultButton = styled(buttonType)`
+interface IResultButton {
+	colorSet: string;
+	size: number;
+}
+
+const getButton = (buttonType: SvgIconComponent) => {
+	const resultButton = styled(buttonType)<IResultButton>`
 		&& {
-			${({ theme: { colors }, color, size }) => css`
-				color: ${colors[color]};
+			${({ theme: { colors }, colorSet, size }) => css`
+				color: ${colors[colorSet]};
 				width: ${size}px;
 				height: ${size}px;
 			`}

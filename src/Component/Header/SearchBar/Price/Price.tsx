@@ -11,7 +11,7 @@ const Price = () => {
 				<div>요금</div>
 				<div>금액대 설정</div>
 			</StyledSearchBarChild>
-			<CancelButton color="grey3" size={20} />
+			<CancelButton colorSet="grey3" size={20} />
 		</StyledPrice>
 	);
 };
