@@ -60,9 +60,13 @@ const StyledGuestDesc = styled.div`
 const StyledGuestBtns = styled.div`
 	display: flex;
 	align-items: center;
+	cursor: pointer;
+
 	> :nth-child(2) {
-		margin: 0 10px;
+		width: 60px;
+		text-align: center;
 	}
+
 	${({ theme: { fontSize, fontWeight } }) => css`
 		font-size: ${fontSize.xLarge};
 		font-weight: ${fontWeight.large};
