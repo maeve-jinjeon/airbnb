@@ -10,7 +10,7 @@ const Guest = () => {
 				<div>인원</div>
 				<div>게스트 추가</div>
 			</StyledSearchBarChild>
-			<CancelButton colorSet="grey3" size={20} />
+			<CancelButton colorset="grey3" size={20} />
 		</StyledGuest>
 	);
 };

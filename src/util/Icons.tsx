@@ -15,15 +15,15 @@ import PauseCircleOutlineIcon from "@mui/icons-material/PauseCircleOutline";
 import styled, { css } from "styled-components";
 
 interface IResultButton {
-	colorSet: string;
+	colorset: string;
 	size: number;
 }
 
 const getButton = (buttonType: SvgIconComponent) => {
 	const resultButton = styled(buttonType)<IResultButton>`
 		&& {
-			${({ theme: { colors }, colorSet, size }) => css`
-				color: ${colors[colorSet]};
+			${({ theme: { colors }, colorset, size }) => css`
+				color: ${colors[colorset]};
 				width: ${size}px;
 				height: ${size}px;
 			`}

@@ -15,7 +15,7 @@ const Schedule = () => {
 				<div>체크아웃</div>
 				<div>날짜 입력</div>
 			</StyledSearchBarChild>
-			<CancelButton colorSet="grey3" size={20} />
+			<CancelButton colorset="grey3" size={20} />
 		</StyledSchedule>
 	);
 };

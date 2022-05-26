@@ -23,8 +23,8 @@ const GNB = () => {
 			<GNBImg />
 			<GNBNav />
 			<GNBAccountMenu>
-				<MenuButton colorSet="grey2" size={16} />
-				<AccountButton colorSet="grey2" size={16} />
+				<MenuButton colorset="grey2" size={16} />
+				<AccountButton colorset="grey2" size={16} />
 			</GNBAccountMenu>
 		</StyledGNB>
 	);
