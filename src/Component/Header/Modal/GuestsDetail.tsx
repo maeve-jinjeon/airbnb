@@ -39,7 +39,9 @@ const GuestsDatail = () => {
 				<StyledGuestBtns>
 					<RemoveCircleButton
 						onClick={decrease}
-						colorset={state === 0 ? "grey5" : "grey3"}
+						colorset={
+							state === 0 || (guest === "adult" && state === 1 && child + baby) ? "grey5" : "grey3"
+						}
 						size={30}
 					/>
 					<div>{state}</div>
