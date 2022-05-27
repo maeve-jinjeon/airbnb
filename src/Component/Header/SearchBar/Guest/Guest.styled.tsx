@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 
 const StyledGuest = styled.div`
 	${({ theme: { width } }) => css`
+		cursor: pointer;
 		display: flex;
 		align-items: center;
 		width: ${width.guest};

@@ -27,8 +27,8 @@ const GuestsDatail = () => {
 	];
 
 	const guestsLists = guestsOptions.map(({ id, name, guest, desc, state }) => {
-		const decrease = () => guestsDispatch({ guest, type: 0 });
-		const increase = () => guestsDispatch({ guest, type: 1 });
+		const decrease = () => guestsDispatch({ guest, type: "decrease" });
+		const increase = () => guestsDispatch({ guest, type: "increase" });
 
 		return (
 			<StyledGuestList key={id}>

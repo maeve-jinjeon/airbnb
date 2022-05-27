@@ -17,15 +17,22 @@ import styled, { css } from "styled-components";
 interface IResultButton {
 	colorset: string;
 	size: number;
+	hover?: boolean;
 }
 
 const getButton = (buttonType: SvgIconComponent) => {
 	const resultButton = styled(buttonType)<IResultButton>`
 		&& {
-			${({ theme: { colors }, colorset, size }) => css`
+			${({ theme: { colors }, colorset, size, hover }) => css`
 				color: ${colors[colorset]};
 				width: ${size}px;
 				height: ${size}px;
+				${hover &&
+				css`
+					:hover {
+						color: ${colors[`${colorset}dark`]};
+					}
+				`}
 			`}
 		}
 	`;
