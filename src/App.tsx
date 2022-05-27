@@ -5,6 +5,7 @@ import Reset from "Styles/Reset";
 import Normalize from "Styles/Normalize";
 import Header from "Component/Header/Header";
 import { GuestsProvider } from "Context/GuestsContext";
+import { ModalProvider } from "Context/modalContext";
 
 const App = () => {
 	return (
@@ -12,7 +13,7 @@ const App = () => {
 			<ThemeProvider theme={theme}>
 				<Reset />
 				<Normalize />
-				<GuestsProvider inner={<Header />} />
+				<ModalProvider inner={<GuestsProvider inner={<Header />} />} />
 			</ThemeProvider>
 		</div>
 	);

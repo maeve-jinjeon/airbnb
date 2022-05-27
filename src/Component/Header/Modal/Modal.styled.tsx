@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 interface IStyleModal {
-	modalState: string;
+	modal: string;
 }
 
 const StyledModalWrapper = styled.div`
@@ -13,10 +13,18 @@ const StyledModalWrapper = styled.div`
 `;
 
 const StyledModal = styled.div<IStyleModal>`
-	${({ theme: { width, height, colors }, modalState }) => css`
+	${({ theme: { width, height, colors, transition }, modal }) => css`
+		${transition.appear};
+
+		${modal === "empty" &&
+		css`
+			${transition.disappear};
+			visibility: hidden;
+		`};
+
 		box-sizing: border-box;
-		width: ${width[`${modalState}Modal`]};
-		height: ${height[`${modalState}Modal`]};
+		width: ${width[`${modal}Modal`]};
+		height: ${height[`${modal}Modal`]};
 		float: right;
 		border-radius: 40px;
 		background-color: ${colors.white};
