@@ -54,7 +54,8 @@
             "warn",
             {
                 "extensions": [
-                    ".tsx"
+                    ".tsx",
+                    ".jsx"
                 ]
             }
         ]      

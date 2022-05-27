@@ -19,7 +19,10 @@ const guestsDefault = { adult: 0, child: 0, baby: 0 };
 const GuestsContext = createContext<guestsType>(guestsDefault);
 const GuestsDispatchContext = createContext<guestsDispatchType>(() => null);
 
-const guestsReducer = (guests: guestsType, action: guestsDispatchAction) => {
+const guestsReducer = (
+	guests: guestsType,
+	action: guestsDispatchAction = { guest: "adult", type: "reset" }
+) => {
 	const { guest, type } = action;
 	const newGuests = { ...guests };
 

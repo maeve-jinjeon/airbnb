@@ -22,7 +22,6 @@ const StyledModal = styled.div<IStyleModal>`
 			visibility: hidden;
 		`};
 
-		box-sizing: border-box;
 		width: ${width[`${modal}Modal`]};
 		height: ${height[`${modal}Modal`]};
 		float: right;

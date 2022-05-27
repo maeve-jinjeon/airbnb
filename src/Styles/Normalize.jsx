@@ -6,6 +6,9 @@ const Normalize = createGlobalStyle`
 			${fontMain};
 			color: ${colors.black};
 			width: 100wh;
+			div {
+				box-sizing: border-box;
+			}
 		}
 	`}
 
