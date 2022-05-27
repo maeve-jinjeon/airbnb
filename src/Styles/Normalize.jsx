@@ -6,8 +6,29 @@ const Normalize = createGlobalStyle`
 			${fontMain};
 			color: ${colors.black};
 			width: 100wh;
+			div {
+				box-sizing: border-box;
+			}
 		}
 	`}
+
+	@keyframes fade-in {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+
+	@keyframes fade-out {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+		}
+	}
 `;
 
 export default Normalize;

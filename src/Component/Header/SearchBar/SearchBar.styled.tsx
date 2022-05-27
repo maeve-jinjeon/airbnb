@@ -49,7 +49,6 @@ const SearchIcon = styled.div`
 		border-radius: 30px;
 		padding: 4px;
 		padding-right: 15px;
-		box-sizing: border-box;
 		background-color: ${colors.primary};
 		width: 90px;
 		height: 40px;

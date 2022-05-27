@@ -4,6 +4,7 @@ const colors = {
 	grey5: "#E0E0E0",
 	grey4: "#BDBDBD",
 	grey3: "#828282",
+	grey3dark: "#4A4A4A",
 	grey2: "#4F4F4F",
 	grey1: "#333333",
 	black: "#010101",
@@ -50,6 +51,21 @@ const fontWeight = {
 	large: 700,
 };
 
+const transition = {
+	main: {
+		"transition-property": "all",
+		"transition-duration": "1s",
+	},
+	appear: {
+		animation: "fade-in 0.4s",
+		"animation-fill-mode": "forwards",
+	},
+	disappear: {
+		animation: "fade-out 0.4s",
+		"animation-fill-mode": "forwards",
+	},
+};
+
 const setFont = (size, weight) => {
 	return {
 		"font-size": fontSize[size],
@@ -57,6 +73,6 @@ const setFont = (size, weight) => {
 	};
 };
 
-const theme = { colors, width, height, fontMain, fontSize, fontWeight, setFont };
+const theme = { colors, width, height, fontMain, transition, fontSize, fontWeight, setFont };
 
 export default theme;

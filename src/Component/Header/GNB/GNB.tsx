@@ -6,14 +6,18 @@ type listItem = {
 	name: string;
 };
 
+type GNBNavPropsType = {
+	listItems: listItem[];
+};
+
 const navListItems: listItem[] = [
 	{ id: 1, name: "숙소" },
 	{ id: 2, name: "체험" },
 	{ id: 3, name: "온라인 체험" },
 ];
 
-const GNBNav = () => {
-	const navList = navListItems.map((item: listItem) => <li key={item.id}>{item.name}</li>);
+const GNBNav = ({ listItems }: GNBNavPropsType) => {
+	const navList = listItems.map((item: listItem) => <li key={item.id}>{item.name}</li>);
 	return <StyledNavList>{navList}</StyledNavList>;
 };
 
@@ -21,7 +25,7 @@ const GNB = () => {
 	return (
 		<StyledGNB>
 			<GNBImg />
-			<GNBNav />
+			<GNBNav listItems={navListItems} />
 			<GNBAccountMenu>
 				<MenuButton colorset="grey2" size={16} />
 				<AccountButton colorset="grey2" size={16} />

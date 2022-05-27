@@ -1,14 +1,21 @@
+import { useContext } from "react";
+import { ModalContext } from "Context/modalContext";
 import { StyledModal, StyledModalWrapper } from "./Modal.styled";
 import GuestsDetail from "./GuestsDetail";
 
-const modalState = "guest"; // 추후 state로 다시 설정
-
 const Modal = () => {
+	const modal = useContext(ModalContext);
+	const details = {
+		guest: <GuestsDetail />,
+		price: null,
+		schedule: null,
+		empty: null,
+	};
+	const ModalDetail = details[modal];
+
 	return (
 		<StyledModalWrapper>
-			<StyledModal modalState={modalState}>
-				<GuestsDetail />
-			</StyledModal>
+			<StyledModal modal={modal}>{ModalDetail}</StyledModal>
 		</StyledModalWrapper>
 	);
 };

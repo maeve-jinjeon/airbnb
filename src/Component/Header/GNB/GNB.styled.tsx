@@ -7,7 +7,6 @@ const StyledGNB = styled.div`
 		width: ${width.header};
 		height: ${height.GNB};
 	`}
-	box-sizing: border-box;
 	align-items: center;
 	justify-content: space-between;
 	display: flex;
@@ -42,7 +41,6 @@ const GNBAccountMenu = styled.div`
 		border: solid 1px ${colors.grey4};
 		border-radius: 30px;
 		padding: 4px;
-		box-sizing: border-box;
 		background-color: ${colors.white};
 		width: 76px;
 		height: 40px;
