@@ -21,12 +21,14 @@ const width = {
 	priceChild: "140px",
 	guest: "192px",
 	guestChild: "114px",
+	guestModal: "400px",
 };
 
 const height = {
 	GNB: "100px",
 	header1: "640px",
 	searchbar: "76px",
+	guestModal: "355px",
 };
 
 const fontMain = {

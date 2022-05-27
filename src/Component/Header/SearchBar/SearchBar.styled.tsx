@@ -34,6 +34,11 @@ const StyledSearchBarChild = styled.div<IStyledSearchBarChild>`
 			font-weight: ${fontWeight.small};
 			line-height: 23px;
 			color: ${colors.grey2};
+
+			display: block;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 		}
 	`}
 `;
