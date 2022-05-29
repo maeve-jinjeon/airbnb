@@ -11,7 +11,7 @@ const SearchBar = () => {
 			<Price />
 			<Guest />
 			<SearchIcon>
-				<SearchButton color="white" size={30} />
+				<SearchButton colorset="white" size={30} />
 				<div>검색</div>
 			</SearchIcon>
 		</StyledSearchBar>

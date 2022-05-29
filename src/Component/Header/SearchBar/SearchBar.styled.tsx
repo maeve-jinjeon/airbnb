@@ -34,6 +34,11 @@ const StyledSearchBarChild = styled.div<IStyledSearchBarChild>`
 			font-weight: ${fontWeight.small};
 			line-height: 23px;
 			color: ${colors.grey2};
+
+			display: block;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 		}
 	`}
 `;
@@ -44,7 +49,6 @@ const SearchIcon = styled.div`
 		border-radius: 30px;
 		padding: 4px;
 		padding-right: 15px;
-		box-sizing: border-box;
 		background-color: ${colors.primary};
 		width: 90px;
 		height: 40px;
