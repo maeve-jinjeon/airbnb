@@ -13,7 +13,7 @@ type priceDispatchAction = {
 
 type priceDispatchType = Dispatch<priceDispatchAction>;
 
-const priceDefault = { min: 0, max: 1000000 };
+const priceDefault = { min: 10000, max: 1000000 };
 const PriceContext = createContext<priceType>(priceDefault);
 const PriceDispatchContext = createContext<priceDispatchType>(() => null);
 
@@ -25,11 +25,11 @@ const priceReducer = (price: priceType, action: priceDispatchAction) => {
 		case "EDIT":
 			newPrice[target] = value;
 			return newPrice;
-		case "EDIT":
+		case "RESET":
 			return priceDefault;
+		default:
+			return newPrice;
 	}
-
-	return newPrice;
 };
 
 const PriceProvider = ({ inner }: { inner: ReactNode }) => {

@@ -67,15 +67,15 @@ const fontWeight = {
 
 const transition = {
 	main: {
-		"transition-property": "all",
-		"transition-duration": "0.4s",
+		"transition-property": "width height",
+		"transition-duration": "0.3s",
 	},
 	appear: {
-		animation: "fade-in 0.4s",
+		animation: "fade-in 0.3s",
 		"animation-fill-mode": "forwards",
 	},
 	disappear: {
-		animation: "fade-out 0.4s",
+		animation: "fade-out 0.3s",
 		"animation-fill-mode": "forwards",
 	},
 };

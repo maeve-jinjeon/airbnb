@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ModalContext } from "Context/modalContext";
 import { StyledModal, StyledModalWrapper } from "./Modal.styled";
 import GuestsDetail from "./GuestsDetail";
-import PriceDetail from "./PriceDetail";
+import PriceDetail from "./PriceDetail/PriceDetail";
 import CalendarDetail from "./CalendarDetail/CalendarDetail";
 
 const Modal = () => {
