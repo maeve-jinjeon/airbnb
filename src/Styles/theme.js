@@ -26,6 +26,7 @@ const width = {
 	calendarTitle: "150px",
 	price: "256px",
 	priceChild: "140px",
+	priceModal: "490px",
 	guest: "192px",
 	guestChild: "114px",
 	guestModal: "400px",
@@ -42,6 +43,7 @@ const height = {
 	calendarLabel: "24px",
 	calendarTitle: "23px",
 	guestModal: "355px",
+	priceModal: "360px",
 };
 
 const fontMain = {
@@ -66,7 +68,7 @@ const fontWeight = {
 const transition = {
 	main: {
 		"transition-property": "all",
-		"transition-duration": "1s",
+		"transition-duration": "0.4s",
 	},
 	appear: {
 		animation: "fade-in 0.4s",
