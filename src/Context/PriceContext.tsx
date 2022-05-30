@@ -1,10 +1,15 @@
 import { createContext, ReactNode, useReducer, useEffect, Dispatch } from "react";
 import hotelsPricesApi from "Api/hotelsPricesApi";
 
+type pricesType = {
+	[key in number]: number;
+};
+
 type priceType = {
 	min?: number;
 	max?: number;
 	avg?: number;
+	prices?: pricesType;
 };
 
 type priceDispatchAction = {

@@ -26,4 +26,33 @@ const StyledPriceDetail = styled.div`
 	`}
 `;
 
-export default StyledPriceDetail;
+const CanvasWrapper = styled.div`
+	margin-top: 30px;
+`;
+
+const StyledCanvas = styled.canvas`
+	width: 100%;
+`;
+
+const StyledRange = styled.input`
+	${({ theme: { colors } }) => css`
+		-webkit-appearance: none;
+		appearance: none;
+		outline: none;
+		background-color: ${colors.grey2};
+		cursor: pointer;
+		width: 100%;
+		height: 3px;
+
+		::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			width: 10px;
+			height: 10px;
+			cursor: pointer;
+			background-color: ${colors.grey2};
+		}
+	`}
+	border-radius: 3px;
+`;
+
+export { StyledPriceDetail, CanvasWrapper, StyledCanvas, StyledRange };
