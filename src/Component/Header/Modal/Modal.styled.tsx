@@ -20,7 +20,7 @@ const StyledModal = styled.div<IStyleModal>`
 		${modal === "empty" &&
 		css`
 			${transition.disappear};
-			visibility: hidden;
+			display: none;
 		`};
 
 		width: ${width[`${modal}Modal`]};
