@@ -1,39 +1,47 @@
-import { createContext, ReactNode, useReducer, Dispatch } from "react";
+import { createContext, ReactNode, useReducer, useEffect, Dispatch } from "react";
+import hotelsPricesApi from "Api/hotelsPricesApi";
 
 type priceType = {
-	min: number;
-	max: number;
+	min?: number;
+	max?: number;
+	avg?: number;
 };
 
 type priceDispatchAction = {
-	target: "min" | "max";
-	value: number;
+	value: priceType;
 	type: "EDIT" | "RESET";
 };
 
 type priceDispatchType = Dispatch<priceDispatchAction>;
 
-const priceDefault = { min: 10000, max: 1000000 };
+const priceDefault = { min: 10000, max: 1000000, avg: 505000 };
 const PriceContext = createContext<priceType>(priceDefault);
 const PriceDispatchContext = createContext<priceDispatchType>(() => null);
 
 const priceReducer = (price: priceType, action: priceDispatchAction) => {
-	const newPrice = { ...price };
-	const { target, value, type } = action;
+	const { value, type } = action;
 
 	switch (type) {
 		case "EDIT":
-			newPrice[target] = value;
-			return newPrice;
+			return { ...price, ...value };
 		case "RESET":
 			return priceDefault;
 		default:
-			return newPrice;
+			return { ...price };
 	}
 };
 
 const PriceProvider = ({ inner }: { inner: ReactNode }) => {
 	const [price, priceDispatch] = useReducer(priceReducer, priceDefault);
+
+	const fetchhotelsPrices = async () => {
+		const hotelsPrices = await hotelsPricesApi.getHotelsPrices();
+		priceDispatch({ value: { ...hotelsPrices }, type: "EDIT" });
+	};
+
+	useEffect(() => {
+		fetchhotelsPrices();
+	}, []);
 
 	return (
 		<PriceContext.Provider value={price}>

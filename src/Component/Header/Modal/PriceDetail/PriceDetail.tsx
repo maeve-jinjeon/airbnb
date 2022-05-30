@@ -6,16 +6,17 @@ import StyledPriceDetail from "./PriceDetail.styled";
 const UNIT = "￦";
 const PRICE_RANGE = "가격 범위";
 
-const getPriceType = (price: number, isUnit = false) => {
+const getPriceType = (price: number | undefined, isUnit = false) => {
 	const unit = isUnit ? UNIT : "";
-	return unit + price.toLocaleString("ko-KR");
+	const stringifiedPrice = price ? price.toLocaleString("ko-KR") : "";
+	return unit + stringifiedPrice;
 };
 
 const PriceDetail = () => {
-	const { min, max } = useContext(PriceContext);
+	const { min, max, avg } = useContext(PriceContext);
 	const minMoney = getPriceType(min, true);
 	const maxMoney = getPriceType(max, true);
-	const averageMoney = getPriceType(200000, true);
+	const averageMoney = getPriceType(avg, true);
 	const moneyRangeText = `${minMoney} - ${maxMoney}+`;
 	const moneyAverageText = `평균 1박 요금은 ${averageMoney} 입니다`;
 
