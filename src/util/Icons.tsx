@@ -17,7 +17,7 @@ import styled, { css } from "styled-components";
 interface IResultButton {
 	colorset: string;
 	size: number;
-	hover?: boolean;
+	hover?: string;
 }
 
 const getButton = (buttonType: SvgIconComponent) => {
