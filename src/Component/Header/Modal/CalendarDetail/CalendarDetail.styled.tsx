@@ -10,6 +10,7 @@ const VisibleDay = styled.div`
 		color: ${colors.grey1};
 	`}
 	text-align: center;
+	cursor: pointer;
 `;
 
 const InvisibleDay = styled.div`
@@ -57,7 +58,7 @@ const CalendarTitle = styled.div`
 	margin-bottom: 34px;
 `;
 
-const Calendar = styled.div`
+const StyledCalendar = styled.div`
 	${({ theme: { width, height } }) => css`
 		width: ${width.calendar};
 		height: ${height.calendar};
@@ -67,7 +68,7 @@ const Calendar = styled.div`
 	align-content: space-around;
 `;
 
-const Calendars = styled.div`
+const StyledCalendars = styled.div`
 	display: flex;
 	justify-content: space-around;
 	width: 800px;
@@ -79,6 +80,6 @@ export {
 	CalendarDayBox,
 	CalendarLabel,
 	CalendarTitle,
-	Calendar,
-	Calendars,
+	StyledCalendar,
+	StyledCalendars,
 };

@@ -5,12 +5,12 @@ import {
 	CalendarDayBox,
 	CalendarLabel,
 	CalendarTitle,
-	Calendar,
-	Calendars,
+	StyledCalendar,
+	StyledCalendars,
 } from "./CalendarDetail.styled";
 
 const currentYear = new Date().getFullYear();
-const currentMonth = new Date().getMonth() + 1;
+const currentMonth = new Date().getMonth();
 const currentDay = new Date(currentYear, currentMonth, 1).getDay();
 const endDay = new Date(currentYear, currentMonth + 1, 0);
 const nextDate = endDay.getDate();
@@ -60,27 +60,33 @@ const getCalData = calData.map((day) =>
 	)
 );
 
+const Calendar = ({ title }: { title: string }) => {
+	return (
+		<>
+			{title === "prev" && <PrevButton colorset="black" size={16} />}
+			{getCalTitle}
+			{title === "next" && <NextButton colorset="black" size={16} />}
+			<CalendarDayBox>
+				{getLabel}
+				{getCalData}
+			</CalendarDayBox>
+		</>
+	);
+};
+
 const CalendarDetail = () => {
 	return (
-		<Calendars>
-			<Calendar>
-				<PrevButton colorset="black" size={16} />
-				{getCalTitle}
-				<CalendarDayBox>
-					{getLabel}
-					{getCalData}
-				</CalendarDayBox>
-			</Calendar>
-			<Calendar>
-				{getCalTitle}
-				<NextButton colorset="black" size={16} />
-				<CalendarDayBox>
-					{getLabel}
-					{getCalData}
-				</CalendarDayBox>
-			</Calendar>
-		</Calendars>
+		<StyledCalendars>
+			<StyledCalendar>
+				<Calendar title="prev" />
+			</StyledCalendar>
+			<StyledCalendar>
+				<Calendar title="next" />
+			</StyledCalendar>
+		</StyledCalendars>
 	);
 };
 
 export default CalendarDetail;
+
+// 달력 컴포넌트에 월 넣으면
