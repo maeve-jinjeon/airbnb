@@ -6,10 +6,10 @@ type pricesType = {
 };
 
 type priceType = {
-	min?: number;
-	max?: number;
-	avg?: number;
-	prices?: pricesType;
+	min: number;
+	max: number;
+	avg: number;
+	prices: pricesType;
 };
 
 type priceDispatchAction = {
@@ -19,7 +19,7 @@ type priceDispatchAction = {
 
 type priceDispatchType = Dispatch<priceDispatchAction>;
 
-const priceDefault = { min: 10000, max: 1000000, avg: 505000 };
+const priceDefault = { min: 10000, max: 1000000, avg: 505000, prices: {} };
 const PriceContext = createContext<priceType>(priceDefault);
 const PriceDispatchContext = createContext<priceDispatchType>(() => null);
 
