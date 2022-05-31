@@ -20,7 +20,7 @@ const PriceDetail = () => {
 			<div>{PRICE_RANGE}</div>
 			<div>{moneyRangeText}</div>
 			<div>{moneyAverageText}</div>
-			<PriceGraph prices={prices} />
+			<PriceGraph prices={prices} min={min} max={max} />
 		</StyledPriceDetail>
 	);
 };

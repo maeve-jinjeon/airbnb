@@ -11,8 +11,10 @@ type pricesType = {
 	[key in number]: number;
 };
 
-const PriceGraph = ({ prices }: { prices: pricesType }) => {
+const PriceGraph = ({ prices, min, max }: { prices: pricesType; min: number; max: number }) => {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
+	const minIndex = min / PRICE_UNIT;
+	const maxIndex = max / PRICE_UNIT;
 
 	const draw = () => {
 		const canvas = canvasRef.current;
@@ -35,19 +37,29 @@ const PriceGraph = ({ prices }: { prices: pricesType }) => {
 			return YPoint;
 		};
 
-		ctx.fillStyle = "#333333";
-		ctx.beginPath();
-		ctx.moveTo(0, ctx.canvas.height);
-
 		let prevX = 0;
 		let prevY = getYPoint(0);
 
+		ctx.beginPath();
+		ctx.moveTo(0, ctx.canvas.height);
 		ctx.lineTo(prevX, prevY);
+
 		for (let i = 1; i <= DEVIDED_UNIT; i += 1) {
+			const isBetween = i > minIndex && i <= maxIndex;
 			const nextX = devidedWidthUnit * i;
 			const nextY = getYPoint(i);
 			const gapBetweenX = devidedWidthUnit / 2;
+
+			ctx.fillStyle = isBetween ? "#333333" : "#E5E5E5";
+			ctx.strokeStyle = isBetween ? "#333333" : "#E5E5E5";
 			ctx.bezierCurveTo(prevX + gapBetweenX, prevY, nextX - gapBetweenX, nextY, nextX, nextY);
+			ctx.lineTo(nextX, ctx.canvas.height);
+			ctx.stroke();
+			ctx.fill();
+
+			ctx.beginPath();
+			ctx.moveTo(nextX, ctx.canvas.height);
+			ctx.lineTo(nextX, nextY);
 
 			prevX = nextX;
 			prevY = nextY;
@@ -60,7 +72,7 @@ const PriceGraph = ({ prices }: { prices: pricesType }) => {
 
 	useEffect(() => {
 		draw();
-	}, []);
+	}, [min, max]);
 
 	return (
 		<CanvasWrapper>
