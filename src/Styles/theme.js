@@ -25,7 +25,7 @@ const width = {
 	calendarLabel: "48px",
 	calendarTitle: "150px",
 	price: "256px",
-	priceChild: "140px",
+	priceChild: "160px",
 	priceModal: "490px",
 	guest: "192px",
 	guestChild: "114px",

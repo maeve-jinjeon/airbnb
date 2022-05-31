@@ -1,17 +1,11 @@
 import { useContext } from "react";
 import { PriceContext } from "Context/PriceContext";
 
+import getPriceType from "util/util";
 import StyledPriceDetail from "./PriceDetail.styled";
 import PriceGraph from "./PriceGraph/PriceGraph";
 
-const UNIT = "￦";
 const PRICE_RANGE = "가격 범위";
-
-const getPriceType = (price: number | undefined, isUnit = false) => {
-	const unit = isUnit ? UNIT : "";
-	const stringifiedPrice = price ? price.toLocaleString("ko-KR") : 0;
-	return unit + stringifiedPrice;
-};
 
 const PriceDetail = () => {
 	const { min, max, avg, prices } = useContext(PriceContext);
