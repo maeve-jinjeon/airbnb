@@ -1,7 +1,5 @@
-// import { StyledRange } from "./PriceDetail.styled";
 import { useState } from "react";
 import styled, { css } from "styled-components";
-import { PauseCircleButton } from "util/Icons";
 
 const StyledPriceRangeSlider = styled.div`
 	position: relative;
@@ -18,8 +16,8 @@ const HiddenInput = styled.input`
 
 	::-webkit-slider-thumb {
 		cursor: pointer;
-		width: 30px;
-		height: 30px;
+		width: 40px;
+		height: 40px;
 		-webkit-appearance: none;
 		pointer-events: all;
 	}
@@ -31,26 +29,18 @@ const Slider = styled.div`
 	height: 10px;
 `;
 
-const Track = styled.div`
-	position: absolute;
-	z-index: 1;
-	width: 100%;
-`;
-
-const Range = styled.div<{ [key in string]: number }>`
-	${({ left, right }) => css`
-		left: ${left}%;
-		right: ${100 - right}%;
-	`}
-	position: absolute;
-	z-index: 2;
-	top: 0;
-	bottom: 0;
-`;
-
 const LeftThumb = styled.div<{ left: number }>`
-	${({ left }) => css`
+	${({ left, theme: { colors } }) => css`
 		left: ${left}%;
+		color: ${colors.black};
+		border: solid 2px ${colors.black};
+		border-radius: 50%;
+		background-color: ${colors.white};
+		width: 20px;
+		height: 20px;
+		text-align: center;
+		font-size: 10px;
+		line-height: 18px;
 	`}
 	position: absolute;
 	z-index: 3;
@@ -58,8 +48,17 @@ const LeftThumb = styled.div<{ left: number }>`
 `;
 
 const RightThumb = styled.div<{ right: number }>`
-	${({ right }) => css`
+	${({ right, theme: { colors } }) => css`
 		right: ${100 - right}%;
+		color: ${colors.black};
+		border: solid 2px ${colors.black};
+		border-radius: 50%;
+		background-color: ${colors.white};
+		width: 20px;
+		height: 20px;
+		text-align: center;
+		font-size: 10px;
+		line-height: 18px;
 	`}
 	position: absolute;
 	z-index: 3;
@@ -106,14 +105,8 @@ const PriceRangeSlider = () => {
 				value={rightValue}
 			/>
 			<Slider>
-				<Track />
-				<Range left={leftPercent} right={rightPercent} />
-				<LeftThumb left={leftPercent}>
-					<PauseCircleButton colorset="grey2" size={20} />
-				</LeftThumb>
-				<RightThumb right={rightPercent}>
-					<PauseCircleButton colorset="grey2" size={20} />
-				</RightThumb>
+				<LeftThumb left={leftPercent}>𑫨</LeftThumb>
+				<RightThumb right={rightPercent}>𑫨</RightThumb>
 			</Slider>
 		</StyledPriceRangeSlider>
 	);

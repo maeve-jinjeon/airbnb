@@ -63,7 +63,6 @@ const PriceGraph = ({ prices }: { prices: pricesType }) => {
 	return (
 		<CanvasWrapper>
 			<StyledCanvas ref={canvasRef} />
-
 			<PriceRangeSlider />
 		</CanvasWrapper>
 	);

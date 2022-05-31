@@ -1,5 +1,4 @@
 const hotels = [
-	{ id: 121, name: "A", price: 1421000, unavailableDate: [] },
 	{ id: 22, name: "B", price: 132000, unavailableDate: [] },
 	{ id: 5153, name: "B", price: 132000, unavailableDate: [] },
 	{ id: 423, name: "B", price: 132000, unavailableDate: [] },
