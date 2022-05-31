@@ -1,4 +1,6 @@
-import { useState, ChangeEvent } from "react";
+import { useContext, ChangeEvent } from "react";
+
+import { PriceDispatchContext, PriceContext } from "Context/PriceContext";
 import {
 	StyledPriceRangeSlider,
 	HiddenInput,
@@ -13,22 +15,24 @@ const MIN_PRICE = 0;
 const MAX_PRICE = 1000000;
 
 const PriceRangeSlider = () => {
-	const [leftValue, setLeftValue] = useState(MIN_PRICE);
-	const [rightValue, setRightValue] = useState(MAX_PRICE);
+	const { min, max } = useContext(PriceContext);
+	const priceDispatch = useContext(PriceDispatchContext);
 
 	const handleChangeLeft = (event: ChangeEvent<HTMLInputElement>) => {
 		const { value } = event.target;
-		const newLeftValue = Math.min(Number(value), rightValue - DISTANCE_MIN_MAX);
-		setLeftValue(newLeftValue);
-	};
-	const handleChangeRight = (event: ChangeEvent<HTMLInputElement>) => {
-		const { value } = event.target;
-		const newRightalue = Math.max(Number(value), leftValue + DISTANCE_MIN_MAX);
-		setRightValue(newRightalue);
+		const newLeftValue = Math.min(Number(value), max - DISTANCE_MIN_MAX);
+		console.log(newLeftValue);
+		priceDispatch({ value: { min: newLeftValue }, type: "EDIT" });
 	};
 
-	const leftPercent = ((leftValue - MIN_PRICE) / (MAX_PRICE - MIN_PRICE)) * 100;
-	const rightPercent = ((rightValue - MIN_PRICE) / (MAX_PRICE - MIN_PRICE)) * 100;
+	const handleChangeRight = (event: ChangeEvent<HTMLInputElement>) => {
+		const { value } = event.target;
+		const newRightValue = Math.max(Number(value), min + DISTANCE_MIN_MAX);
+		priceDispatch({ value: { max: newRightValue }, type: "EDIT" });
+	};
+
+	const leftPercent = ((min - MIN_PRICE) / (MAX_PRICE - MIN_PRICE)) * 100;
+	const rightPercent = ((max - MIN_PRICE) / (MAX_PRICE - MIN_PRICE)) * 100;
 
 	return (
 		<StyledPriceRangeSlider>
@@ -38,7 +42,7 @@ const PriceRangeSlider = () => {
 				max={MAX_PRICE}
 				step={PRICE_UNIT}
 				onChange={handleChangeLeft}
-				value={leftValue}
+				value={min}
 			/>
 			<HiddenInput
 				type="range"
@@ -46,7 +50,7 @@ const PriceRangeSlider = () => {
 				max={MAX_PRICE}
 				step={PRICE_UNIT}
 				onChange={handleChangeRight}
-				value={rightValue}
+				value={max}
 			/>
 			<Slider>
 				<LeftThumb left={leftPercent}>𑫨</LeftThumb>

@@ -1,4 +1,4 @@
-const priceUnit = 50000;
+const PRICE_UNIT = 50000;
 
 const changePricePerUnit = (price, unitForDevide) => {
 	const devidedPrice = price - (price % unitForDevide) + unitForDevide;
@@ -13,7 +13,7 @@ const getHotelsPrices = (hotels) => {
 	const prices = {};
 
 	hotels.forEach(({ price }) => {
-		const changedPrice = changePricePerUnit(price, priceUnit);
+		const changedPrice = changePricePerUnit(price, PRICE_UNIT);
 		if (price >= 1000000) {
 			prices[1000000] = prices[1000000] ? prices[1000000] + 1 : 1;
 			return;

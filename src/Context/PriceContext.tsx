@@ -12,8 +12,15 @@ type priceType = {
 	prices: pricesType;
 };
 
+type priceDispatchValueType = {
+	min?: number;
+	max?: number;
+	avg?: number;
+	prices?: pricesType;
+};
+
 type priceDispatchAction = {
-	value: priceType;
+	value: priceDispatchValueType;
 	type: "EDIT" | "RESET";
 };
 
