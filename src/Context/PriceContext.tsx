@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useReducer, useEffect, Dispatch } from "react";
 import hotelsPricesApi from "Api/hotelsPricesApi";
+import { MAX_PRICE, MIN_PRICE } from "util/util";
 
 type pricesType = {
 	[key in number]: number;
@@ -26,9 +27,7 @@ type priceDispatchAction = {
 
 type priceDispatchType = Dispatch<priceDispatchAction>;
 
-const defaultMin = 0;
-const defaultMax = 1000000;
-const priceDefault = { min: defaultMin, max: defaultMax, avg: 0, prices: {} };
+const priceDefault = { min: MIN_PRICE, max: MAX_PRICE, avg: 0, prices: {} };
 const PriceContext = createContext<priceType>(priceDefault);
 const PriceDispatchContext = createContext<priceDispatchType>(() => null);
 

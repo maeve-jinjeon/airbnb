@@ -1,10 +1,9 @@
 import { useEffect, useRef } from "react";
 
+import { PRICE_UNIT, MAX_PRICE } from "util/util";
 import { CanvasWrapper, StyledCanvas } from "./PriceGraph.styled";
 import PriceRangeSlider from "./PriceRangeSlider/PriceRangeSlider";
 
-const PRICE_UNIT = 50000;
-const MAX_PRICE = 1000000;
 const DEVIDED_UNIT = MAX_PRICE / PRICE_UNIT;
 const CANVAS_HEIGHT = 100;
 
@@ -36,7 +35,7 @@ const PriceGraph = ({ prices }: { prices: pricesType }) => {
 			return YPoint;
 		};
 
-		ctx.fillStyle = "#4F4F4F";
+		ctx.fillStyle = "#333333";
 		ctx.beginPath();
 		ctx.moveTo(0, ctx.canvas.height);
 

@@ -1,5 +1,6 @@
 import { useContext, ChangeEvent } from "react";
 
+import { MIN_PRICE, MAX_PRICE, PRICE_UNIT, DISTANCE_MIN_MAX } from "util/util";
 import { PriceDispatchContext, PriceContext } from "Context/PriceContext";
 import {
 	StyledPriceRangeSlider,
@@ -8,11 +9,6 @@ import {
 	LeftThumb,
 	RightThumb,
 } from "./PriceRangeSlider.styled";
-
-const PRICE_UNIT = 50000;
-const DISTANCE_MIN_MAX = PRICE_UNIT * 2;
-const MIN_PRICE = 0;
-const MAX_PRICE = 1000000;
 
 const PriceRangeSlider = () => {
 	const { min, max } = useContext(PriceContext);

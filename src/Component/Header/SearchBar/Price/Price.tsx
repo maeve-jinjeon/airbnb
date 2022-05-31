@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import getPriceType from "util/util";
+import { getPriceType } from "util/util";
 import { CheckModalContext } from "Context/modalContext";
 import { PriceContext, PriceDispatchContext } from "Context/PriceContext";
 import { CancelButton } from "util/Icons";

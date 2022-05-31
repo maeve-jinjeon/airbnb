@@ -31,8 +31,8 @@ const Slider = styled.div`
 const LeftThumb = styled.div<{ left: number }>`
 	${({ left, theme: { colors } }) => css`
 		left: ${left}%;
-		color: ${colors.grey2};
-		border: solid 1px ${colors.grey2};
+		color: ${colors.grey1};
+		border: solid 1px ${colors.grey1};
 		border-radius: 50%;
 		background-color: ${colors.white};
 		width: 20px;
@@ -50,8 +50,8 @@ const LeftThumb = styled.div<{ left: number }>`
 const RightThumb = styled.div<{ right: number }>`
 	${({ right, theme: { colors } }) => css`
 		right: ${100 - right}%;
-		color: ${colors.grey2};
-		border: solid 1px ${colors.grey2};
+		color: ${colors.grey1};
+		border: solid 1px ${colors.grey1};
 		border-radius: 50%;
 		background-color: ${colors.white};
 		width: 20px;

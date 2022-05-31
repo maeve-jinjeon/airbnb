@@ -1,4 +1,4 @@
-const PRICE_UNIT = 50000;
+import { PRICE_UNIT } from "util/util";
 
 const changePricePerUnit = (price, unitForDevide) => {
 	const devidedPrice = price - (price % unitForDevide) + unitForDevide;
