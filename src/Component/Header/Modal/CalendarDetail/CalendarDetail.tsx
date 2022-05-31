@@ -46,6 +46,23 @@ const CalendarDetail = () => {
 	const [thisYear, setThisYear] = useState(currentYear);
 	const [thisMonth, setThisMonth] = useState(currentMonth);
 
+	const makeCalCell = (day: { id: number; value: number }) => {
+		const [cellIsClicked, setCellIsClicked] = useState(false);
+
+		const handleSchedule = () => {
+			console.log("i'm handling schedule");
+			setCellIsClicked(!cellIsClicked);
+		};
+
+		return day.value ? (
+			<VisibleDay onClick={handleSchedule} key={day.id} cellIsClicked={cellIsClicked}>
+				{day.value}
+			</VisibleDay>
+		) : (
+			<InvisibleDay key={day.id}>{}</InvisibleDay>
+		);
+	};
+
 	const getCalData = ({ year, month }: { year: number; month: number }) => {
 		const currentDay = new Date(year, month, 1).getDay();
 		const endDay = new Date(year, month + 1, 0);
@@ -70,13 +87,7 @@ const CalendarDetail = () => {
 			calDataLength += 1;
 		}
 
-		return calData.map((day) =>
-			day.value ? (
-				<VisibleDay key={day.id}>{day.value}</VisibleDay>
-			) : (
-				<InvisibleDay key={day.id}>{}</InvisibleDay>
-			)
-		);
+		return calData.map((day) => makeCalCell(day));
 	};
 
 	const showPrevMonths = () => {

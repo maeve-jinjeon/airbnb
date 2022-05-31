@@ -1,6 +1,10 @@
 import styled, { css } from "styled-components";
 
-const VisibleDay = styled.div`
+interface IVisibleDay {
+	cellIsClicked: boolean;
+}
+
+const VisibleDay = styled.div<IVisibleDay>`
 	${({ theme: { width, height, fontSize, fontWeight, colors } }) => css`
 		width: ${width.calendarDay};
 		height: ${height.calendarDay};
@@ -9,6 +13,17 @@ const VisibleDay = styled.div`
 		font-weight: ${fontWeight.large};
 		color: ${colors.grey1};
 	`}
+
+	${({ cellIsClicked }) => {
+		return cellIsClicked
+			? css`
+					background: #333333;
+					border-radius: 30px;
+					color: white;
+			  `
+			: "";
+	}}
+
 	text-align: center;
 	cursor: pointer;
 `;
