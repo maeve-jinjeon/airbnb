@@ -1,9 +1,10 @@
 import { rest } from "msw";
-import testData from "./data";
+import hotelsData from "./data";
+import getHotelsPrices from "./controllers";
 
 const handlers = [
-	rest.get(`/api/test`, (req, res, ctx) => {
-		return res(ctx.status(200), ctx.delay(100), ctx.json(testData));
+	rest.get(`/api/prices`, (req, res, ctx) => {
+		return res(ctx.status(200), ctx.delay(100), ctx.json(getHotelsPrices(hotelsData)));
 	}),
 ];
 

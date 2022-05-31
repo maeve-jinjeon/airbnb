@@ -1,3 +1,5 @@
+import styled, { css } from "styled-components";
+
 import { SvgIconComponent } from "@mui/icons-material";
 import CancelIcon from "@mui/icons-material/Cancel";
 import SearchIcon from "@mui/icons-material/Search";
@@ -12,7 +14,6 @@ import CheckIcon from "@mui/icons-material/Check";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import PauseCircleOutlineIcon from "@mui/icons-material/PauseCircleOutline";
-import styled, { css } from "styled-components";
 
 interface IResultButton {
 	colorset: string;
