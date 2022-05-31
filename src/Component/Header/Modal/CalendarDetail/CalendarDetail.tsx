@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { ScheduleContext, SetScheduleContext } from "Context/ScheduleContext";
 import { PrevButton, NextButton } from "util/Icons";
 import {
 	VisibleDay,
@@ -80,6 +82,9 @@ const Calendar = ({ title, year, month }: { title: string; year: number; month: 
 };
 
 const CalendarDetail = () => {
+	const schedule = useContext(ScheduleContext);
+	const setSchedule = useContext(SetScheduleContext);
+
 	return (
 		<StyledCalendars>
 			<StyledCalendar>
