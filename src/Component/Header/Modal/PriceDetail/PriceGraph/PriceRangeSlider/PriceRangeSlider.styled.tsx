@@ -15,8 +15,8 @@ const HiddenInput = styled.input`
 
 	::-webkit-slider-thumb {
 		cursor: pointer;
-		width: 40px;
-		height: 40px;
+		width: 20px;
+		height: 20px;
 		-webkit-appearance: none;
 		pointer-events: all;
 	}
@@ -44,7 +44,7 @@ const LeftThumb = styled.div<{ left: number }>`
 	`}
 	position: absolute;
 	z-index: 3;
-	transform: translate(-10px, -10px);
+	transform: translate(-12px, -12px);
 `;
 
 const RightThumb = styled.div<{ right: number }>`
@@ -63,7 +63,7 @@ const RightThumb = styled.div<{ right: number }>`
 	`}
 	position: absolute;
 	z-index: 3;
-	transform: translate(10px, -10px);
+	transform: translate(12px, -12px);
 `;
 
 export { StyledPriceRangeSlider, HiddenInput, Slider, LeftThumb, RightThumb };
