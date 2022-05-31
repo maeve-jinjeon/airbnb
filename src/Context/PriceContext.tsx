@@ -26,20 +26,49 @@ type priceDispatchAction = {
 
 type priceDispatchType = Dispatch<priceDispatchAction>;
 
-const priceDefault = { min: 10000, max: 1000000, avg: 505000, prices: {} };
+const defaultMin = 0;
+const defaultMax = 1000000;
+const priceDefault = { min: defaultMin, max: defaultMax, avg: 0, prices: {} };
 const PriceContext = createContext<priceType>(priceDefault);
 const PriceDispatchContext = createContext<priceDispatchType>(() => null);
+
+const getPricesAvg = (pricesObj: pricesType, min: number, max: number) => {
+	let priceSum = 0;
+	let count = 0;
+	const prices = Object.keys(pricesObj);
+
+	prices.forEach((price) => {
+		const targetPrice = Number(price);
+		const targetCount = pricesObj[targetPrice];
+
+		if (targetPrice > min && targetPrice <= max) {
+			priceSum += targetPrice * targetCount;
+			count += targetCount;
+		}
+	});
+
+	const avg = Math.round(priceSum / count / 100) * 100;
+	return avg;
+};
 
 const priceReducer = (price: priceType, action: priceDispatchAction) => {
 	const { value, type } = action;
 
 	switch (type) {
-		case "EDIT":
-			return { ...price, ...value };
-		case "RESET":
+		case "EDIT": {
+			const newPrice = { ...price, ...value };
+			const { min, max, prices } = newPrice;
+			const avg = getPricesAvg(prices, min, max);
+			newPrice.avg = avg;
+
+			return newPrice;
+		}
+		case "RESET": {
 			return priceDefault;
-		default:
+		}
+		default: {
 			return { ...price };
+		}
 	}
 };
 
@@ -48,7 +77,10 @@ const PriceProvider = ({ inner }: { inner: ReactNode }) => {
 
 	const fetchhotelsPrices = async () => {
 		const hotelsPrices = await hotelsPricesApi.getHotelsPrices();
-		priceDispatch({ value: { ...hotelsPrices }, type: "EDIT" });
+		const { avg, prices } = hotelsPrices;
+		priceDefault.avg = avg;
+		priceDefault.prices = prices;
+		priceDispatch({ value: { ...hotelsPrices }, type: "RESET" });
 	};
 
 	useEffect(() => {

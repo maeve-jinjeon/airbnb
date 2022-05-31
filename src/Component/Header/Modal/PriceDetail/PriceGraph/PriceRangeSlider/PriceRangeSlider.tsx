@@ -21,7 +21,6 @@ const PriceRangeSlider = () => {
 	const handleChangeLeft = (event: ChangeEvent<HTMLInputElement>) => {
 		const { value } = event.target;
 		const newLeftValue = Math.min(Number(value), max - DISTANCE_MIN_MAX);
-		console.log(newLeftValue);
 		priceDispatch({ value: { min: newLeftValue }, type: "EDIT" });
 	};
 

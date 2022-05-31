@@ -7,8 +7,6 @@ const changePricePerUnit = (price, unitForDevide) => {
 
 const getHotelsPrices = (hotels) => {
 	const sum = hotels.reduce((prev, { price }) => prev + price, 0);
-	const min = hotels.reduce((prev, { price }) => (prev <= price ? prev : price));
-	const max = hotels.reduce((prev, { price }) => (prev >= price ? prev : price));
 	const avg = Math.round(sum / (hotels.length - 1) / 100) * 100;
 	const prices = {};
 
@@ -21,7 +19,7 @@ const getHotelsPrices = (hotels) => {
 		prices[changedPrice] = prices[changedPrice] ? prices[changedPrice] + 1 : 1;
 	});
 
-	return { min, max, avg, prices };
+	return { prices, avg };
 };
 
 export default getHotelsPrices;
