@@ -3,7 +3,7 @@ import { ModalContext } from "Context/modalContext";
 import { StyledModal, StyledModalWrapper } from "./Modal.styled";
 import GuestsDetail from "./GuestsDetail";
 import PriceDetail from "./PriceDetail";
-import CalendarDetail from "./CalendarDetail";
+import CalendarDetail from "./CalendarDetail/CalendarDetail";
 
 const Modal = () => {
 	const modal = useContext(ModalContext);
