@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
-import { CanvasWrapper, StyledCanvas } from "./PriceDetail.styled";
-import PriceRangeSlider from "./PriceRangeSlider";
+import { CanvasWrapper, StyledCanvas } from "./PriceGraph.styled";
+import PriceRangeSlider from "./PriceRangeSlider/PriceRangeSlider";
 
 const PRICE_UNIT = 50000;
 const MAX_PRICE = 1000000;

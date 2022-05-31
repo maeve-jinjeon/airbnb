@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { PriceContext } from "Context/PriceContext";
 
-import { StyledPriceDetail } from "./PriceDetail.styled";
-import PriceGraph from "./PriceGraph";
+import StyledPriceDetail from "./PriceDetail.styled";
+import PriceGraph from "./PriceGraph/PriceGraph";
 
 const UNIT = "￦";
 const PRICE_RANGE = "가격 범위";
