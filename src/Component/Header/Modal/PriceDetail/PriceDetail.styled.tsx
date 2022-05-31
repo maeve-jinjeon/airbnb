@@ -36,29 +36,4 @@ const StyledCanvas = styled.canvas`
 	width: 100%;
 `;
 
-const StyledRange = styled.input`
-	${({ theme: { colors } }) => css`
-		-webkit-appearance: none;
-		appearance: none;
-		outline: none;
-		z-index: 1;
-		background-color: ${colors.grey2};
-		cursor: pointer;
-		width: 100%;
-		height: 0;
-		margin: 0;
-
-		::-webkit-slider-thumb {
-			-webkit-appearance: none;
-			appearance: none;
-			width: 15px;
-			height: 15px;
-			border: solid 2px ${colors.grey2};
-			border-radius: 15px;
-			background-color: ${colors.white};
-		}
-	`}
-	border-radius: 3px;
-`;
-
-export { StyledPriceDetail, CanvasWrapper, StyledCanvas, StyledRange };
+export { StyledPriceDetail, CanvasWrapper, StyledCanvas };

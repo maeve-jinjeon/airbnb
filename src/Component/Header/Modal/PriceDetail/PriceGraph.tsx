@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 
-import { CanvasWrapper, StyledCanvas, StyledRange } from "./PriceDetail.styled";
+import { CanvasWrapper, StyledCanvas } from "./PriceDetail.styled";
+import PriceRangeSlider from "./PriceRangeSlider";
 
 const PRICE_UNIT = 50000;
 const MAX_PRICE = 1000000;
@@ -12,7 +13,7 @@ type pricesType = {
 };
 
 const PriceGraph = ({ prices }: { prices: pricesType }) => {
-	const canvasRef = useRef(null);
+	const canvasRef = useRef({ current: null });
 
 	const draw = () => {
 		const canvas = canvasRef.current;
@@ -62,7 +63,8 @@ const PriceGraph = ({ prices }: { prices: pricesType }) => {
 	return (
 		<CanvasWrapper>
 			<StyledCanvas ref={canvasRef} />
-			<StyledRange type="range" min="0" max={`${MAX_PRICE}`} step={PRICE_UNIT} />
+
+			<PriceRangeSlider />
 		</CanvasWrapper>
 	);
 };
