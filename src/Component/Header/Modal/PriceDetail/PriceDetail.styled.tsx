@@ -28,6 +28,8 @@ const StyledPriceDetail = styled.div`
 
 const CanvasWrapper = styled.div`
 	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
 `;
 
 const StyledCanvas = styled.canvas`
@@ -39,17 +41,21 @@ const StyledRange = styled.input`
 		-webkit-appearance: none;
 		appearance: none;
 		outline: none;
+		z-index: 1;
 		background-color: ${colors.grey2};
 		cursor: pointer;
 		width: 100%;
-		height: 3px;
+		height: 0;
+		margin: 0;
 
 		::-webkit-slider-thumb {
 			-webkit-appearance: none;
-			width: 10px;
-			height: 10px;
-			cursor: pointer;
-			background-color: ${colors.grey2};
+			appearance: none;
+			width: 15px;
+			height: 15px;
+			border: solid 2px ${colors.grey2};
+			border-radius: 15px;
+			background-color: ${colors.white};
 		}
 	`}
 	border-radius: 3px;
