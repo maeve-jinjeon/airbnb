@@ -12,7 +12,7 @@ type setScheduleType = Dispatch<SetStateAction<scheduleType>>;
 const defaultSchedule = { checkInMonth: 0, checkInDate: 0, checkOutMonth: 0, checkOutDate: 0 };
 
 const ScheduleContext = createContext<scheduleType>(defaultSchedule);
-const SetScheduleContext = createContext<setScheduleType | null>(null);
+const SetScheduleContext = createContext<setScheduleType>(() => null);
 
 const ScheduleProvider = ({ inner }: { inner: ReactNode }) => {
 	const [schedule, setSchedule] = useState<scheduleType>(defaultSchedule);
@@ -25,3 +25,4 @@ const ScheduleProvider = ({ inner }: { inner: ReactNode }) => {
 };
 
 export { ScheduleProvider, ScheduleContext, SetScheduleContext };
+export type { scheduleType, setScheduleType };
