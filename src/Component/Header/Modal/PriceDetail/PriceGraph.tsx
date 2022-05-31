@@ -23,14 +23,16 @@ const PriceGraph = ({ prices }: { prices: pricesType }) => {
 
 		const getYPoint = (i: number) => {
 			const heightPerCount = CANVAS_HEIGHT / 10;
-			const heightDefualt = CANVAS_HEIGHT / 50;
+			const heightDefualt = CANVAS_HEIGHT / 100;
 			const reversedY = prices[PRICE_UNIT * i]
 				? prices[PRICE_UNIT * i] * heightPerCount
 				: heightDefualt;
-			return CANVAS_HEIGHT - reversedY;
+			const YPoint = CANVAS_HEIGHT - reversedY;
+
+			return YPoint;
 		};
 
-		ctx.fillStyle = "#333333";
+		ctx.fillStyle = "#4F4F4F";
 		ctx.beginPath();
 		ctx.moveTo(0, ctx.canvas.height);
 

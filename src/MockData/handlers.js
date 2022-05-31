@@ -4,7 +4,7 @@ import hotelsData from "./data";
 const priceUnit = 50000;
 
 const changePricePerUnit = (price, unitForDevide) => {
-	const devidedPrice = price - (price % unitForDevide);
+	const devidedPrice = price - (price % unitForDevide) + unitForDevide;
 	return devidedPrice;
 };
 
