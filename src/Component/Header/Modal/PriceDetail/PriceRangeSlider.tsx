@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, ChangeEvent } from "react";
 import styled, { css } from "styled-components";
 
 const StyledPriceRangeSlider = styled.div`
@@ -32,15 +32,16 @@ const Slider = styled.div`
 const LeftThumb = styled.div<{ left: number }>`
 	${({ left, theme: { colors } }) => css`
 		left: ${left}%;
-		color: ${colors.black};
-		border: solid 2px ${colors.black};
+		color: ${colors.grey2};
+		border: solid 1px ${colors.grey2};
 		border-radius: 50%;
 		background-color: ${colors.white};
 		width: 20px;
 		height: 20px;
 		text-align: center;
 		font-size: 10px;
-		line-height: 18px;
+		font-weight: 500;
+		line-height: 19px;
 	`}
 	position: absolute;
 	z-index: 3;
@@ -50,15 +51,16 @@ const LeftThumb = styled.div<{ left: number }>`
 const RightThumb = styled.div<{ right: number }>`
 	${({ right, theme: { colors } }) => css`
 		right: ${100 - right}%;
-		color: ${colors.black};
-		border: solid 2px ${colors.black};
+		color: ${colors.grey2};
+		border: solid 1px ${colors.grey2};
 		border-radius: 50%;
 		background-color: ${colors.white};
 		width: 20px;
 		height: 20px;
 		text-align: center;
 		font-size: 10px;
-		line-height: 18px;
+		font-weight: 500;
+		line-height: 19px;
 	`}
 	position: absolute;
 	z-index: 3;
@@ -74,12 +76,14 @@ const PriceRangeSlider = () => {
 	const [leftValue, setLeftValue] = useState(MIN_PRICE);
 	const [rightValue, setRightValue] = useState(MAX_PRICE);
 
-	const handleChangeLeft = ({ target: { value } }) => {
-		const newLeftValue = Math.min(value, rightValue - DISTANCE_MIN_MAX);
+	const handleChangeLeft = (event: ChangeEvent<HTMLInputElement>) => {
+		const { value } = event.target;
+		const newLeftValue = Math.min(Number(value), rightValue - DISTANCE_MIN_MAX);
 		setLeftValue(newLeftValue);
 	};
-	const handleChangeRight = ({ target: { value } }) => {
-		const newRightalue = Math.max(value, leftValue + DISTANCE_MIN_MAX);
+	const handleChangeRight = (event: ChangeEvent<HTMLInputElement>) => {
+		const { value } = event.target;
+		const newRightalue = Math.max(Number(value), leftValue + DISTANCE_MIN_MAX);
 		setRightValue(newRightalue);
 	};
 

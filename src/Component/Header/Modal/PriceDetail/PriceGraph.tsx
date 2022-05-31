@@ -13,13 +13,16 @@ type pricesType = {
 };
 
 const PriceGraph = ({ prices }: { prices: pricesType }) => {
-	const canvasRef = useRef({ current: null });
+	const canvasRef = useRef<HTMLCanvasElement>(null);
 
 	const draw = () => {
 		const canvas = canvasRef.current;
-		const ctx = canvas.getContext("2d");
-		const devidedWidthUnit = ctx.canvas.width / DEVIDED_UNIT;
+		if (canvas == null) throw new Error("Could not get canvas");
 
+		const ctx = canvas.getContext("2d");
+		if (ctx == null) throw new Error("Could not get ctx");
+
+		const devidedWidthUnit = ctx.canvas.width / DEVIDED_UNIT;
 		canvas.height = CANVAS_HEIGHT;
 
 		const getYPoint = (i: number) => {
