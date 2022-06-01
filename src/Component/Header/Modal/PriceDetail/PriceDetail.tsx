@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { PriceContext } from "Context/PriceContext";
+import { PriceContext } from "Context";
 
 import { getPriceType } from "util/util";
 import StyledPriceDetail from "./PriceDetail.styled";

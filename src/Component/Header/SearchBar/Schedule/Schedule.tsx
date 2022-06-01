@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { CancelButton } from "util/Icons";
-import { CheckModalContext } from "Context/modalContext";
+import { CheckModalContext } from "Context";
 import StyledSchedule from "./Schedule.styled";
 import { StyledSearchBarChild } from "../SearchBar.styled";
 

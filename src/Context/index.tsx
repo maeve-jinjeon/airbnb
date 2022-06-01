@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 import { ModalProvider, ModalContext, CheckModalContext } from "./modalContext";
 import { GuestsProvider, GuestsContext, GuestsDispatchContext } from "./GuestsContext";

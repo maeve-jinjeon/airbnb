@@ -1,6 +1,6 @@
 // import { useContext, useState, useEffect } from "react";
 import { useState } from "react";
-// import { ScheduleContext, SetScheduleContext } from "Context/ScheduleContext";
+// import { ScheduleContext, SetScheduleContext } from "Context";
 import { PrevButton, NextButton } from "util/Icons";
 import {
 	VisibleDay,
