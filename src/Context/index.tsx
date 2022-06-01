@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 import { ModalProvider, ModalContext, CheckModalContext } from "./modalContext";
 import { GuestsProvider, GuestsContext, GuestsDispatchContext } from "./GuestsContext";
@@ -9,8 +9,10 @@ type providerProp = { children: ReactNode };
 
 const providers = [ModalProvider, GuestsProvider, PriceProvider, ScheduleProvider];
 
-const ContextsProvider = ({ children }: providerProp) =>
-	providers.reduce((prev, Provider) => <Provider>{prev}</Provider>, children);
+const ContextsProvider = ({ children }: providerProp) => {
+	const providersSum = providers.reduce((prev, Provider) => <Provider>{prev}</Provider>, children);
+	return <div>{providersSum}</div>;
+};
 
 export {
 	ModalContext,
