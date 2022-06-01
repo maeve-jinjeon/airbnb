@@ -1,12 +1,18 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "Component/Header/Header";
+import NotFound from "Component/NotFound";
+import MainDesc from "Component/MainDesc";
+import SearchDesc from "Component/SearchDesc";
+import Main from "Component/Main";
 
 const Router = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				{/* <Route path="*" element={<NotFound />}/> */}
-				<Route path="/" element={<Header />} />
+				<Route path="*" element={<NotFound />} />
+				<Route path="/" element={<Main />}>
+					<Route index element={<MainDesc />} />
+					<Route path="search" element={<SearchDesc />} />
+				</Route>
 			</Routes>
 		</BrowserRouter>
 	);
