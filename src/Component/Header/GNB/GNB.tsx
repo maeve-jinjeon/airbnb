@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { AccountButton, MenuButton } from "util/Icons";
 import { StyledGNB, StyledNavList, GNBImg, GNBAccountMenu } from "./GNB.styled";
 
@@ -24,7 +26,9 @@ const GNBNav = ({ listItems }: GNBNavPropsType) => {
 const GNB = () => {
 	return (
 		<StyledGNB>
-			<GNBImg />
+			<Link to="/">
+				<GNBImg />
+			</Link>
 			<GNBNav listItems={navListItems} />
 			<GNBAccountMenu>
 				<MenuButton colorset="grey2" size={16} />
