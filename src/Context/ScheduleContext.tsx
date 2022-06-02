@@ -1,4 +1,5 @@
 import { createContext, ReactNode, Dispatch, useReducer } from "react";
+import { getLateDay } from "util/util";
 
 type dayType = { year: number; month: number; date: number };
 
@@ -22,21 +23,11 @@ type scheduleDispatchType = Dispatch<scheduleDispatchAction>;
 
 const defaultDay = { year: 0, month: 0, date: 0 };
 const defaultSchedule = {
-	checkin: { year: 0, month: 0, date: 0 },
-	checkout: { year: 0, month: 0, date: 0 },
+	checkin: defaultDay,
+	checkout: defaultDay,
 };
 const ScheduleContext = createContext<scheduleType>(defaultSchedule);
 const ScheduleDispatchContext = createContext<scheduleDispatchType>(() => null);
-
-const getLateDay = (originDay: dayType, comparedDay: dayType) => {
-	if (originDay.year > comparedDay.year) return originDay;
-	if (originDay.year < comparedDay.year) return comparedDay;
-	if (originDay.month > comparedDay.month) return originDay;
-	if (originDay.month < comparedDay.month) return comparedDay;
-	if (originDay.date > comparedDay.date) return originDay;
-	if (originDay.date < comparedDay.date) return comparedDay;
-	return originDay;
-};
 
 const getNewSchedule = (dayInfo: scheduleDispatchValueType, schedule: scheduleType) => {
 	const { checkin, checkout } = schedule;
