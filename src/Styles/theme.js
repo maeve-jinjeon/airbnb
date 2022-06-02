@@ -82,6 +82,10 @@ const transition = {
 	},
 };
 
+const shadow = {
+	main: `5px 5px 25px ${colors.grey2}`,
+};
+
 const setFont = (size, weight) => {
 	return {
 		"font-size": fontSize[size],
@@ -89,6 +93,16 @@ const setFont = (size, weight) => {
 	};
 };
 
-const theme = { colors, width, height, fontMain, transition, fontSize, fontWeight, setFont };
+const theme = {
+	colors,
+	width,
+	height,
+	fontMain,
+	transition,
+	fontSize,
+	fontWeight,
+	shadow,
+	setFont,
+};
 
 export default theme;

@@ -63,6 +63,7 @@ const CalendarDetail = () => {
 
 		return date ? (
 			<VisibleDayBg
+				key={id}
 				isBetween={isBetween}
 				isLast={isLast}
 				isFirst={isFirst}
