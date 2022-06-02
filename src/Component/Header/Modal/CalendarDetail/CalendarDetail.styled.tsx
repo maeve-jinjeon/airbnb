@@ -1,8 +1,10 @@
 import styled, { css } from "styled-components";
 
 interface IVisibleDay {
-	isCheckIn: boolean;
-	isCheckOut: boolean;
+	isChecked: boolean;
+	isBetween: boolean;
+	isLast: boolean;
+	isFirst: boolean;
 }
 
 const VisibleDay = styled.div<IVisibleDay>`
@@ -18,15 +20,29 @@ const VisibleDay = styled.div<IVisibleDay>`
 	text-align: center;
 	cursor: pointer;
 
-	${({ isCheckIn, isCheckOut }) => {
-		return isCheckIn || isCheckOut
-			? css`
-					background: #333333;
-					border-radius: 30px;
-					color: white;
-			  `
-			: "";
-	}}
+	${({ isChecked, isBetween, isLast, isFirst, theme: { colors } }) => css`
+		${isChecked &&
+		css`
+			background: ${colors.grey1};
+			border-radius: 30px;
+			color: ${colors.white};
+		`}
+		${isBetween &&
+		css`
+			background: ${colors.grey6};
+		`}
+		${isLast &&
+		isBetween &&
+		css`
+			background: linear-gradient(90deg, ${colors.grey6}, ${colors.white});
+		`}
+		${isFirst &&
+		isBetween &&
+		css`
+			background: linear-gradient(90deg, ${colors.white}, ${colors.grey6});
+		`}
+	`}
+	margin-bottom: 10px;
 `;
 
 const InvisibleDay = styled.div`
@@ -34,6 +50,7 @@ const InvisibleDay = styled.div`
 		width: ${width.calendarDay};
 		height: ${height.calendarDay};
 	`}
+	margin-bottom : 10px;
 `;
 
 const CalendarDayBox = styled.div`
@@ -43,7 +60,7 @@ const CalendarDayBox = styled.div`
 	`}
 	display: flex;
 	flex-wrap: wrap;
-	align-content: space-around;
+	align-content: flex-start;
 	justify-content: center;
 `;
 
@@ -57,7 +74,7 @@ const CalendarLabel = styled.div`
 		color: ${colors.grey3};
 	`}
 	display: flex;
-	align-content: space-around;
+	align-content: flex-start;
 	justify-content: center;
 `;
 
@@ -71,7 +88,6 @@ const CalendarTitle = styled.div`
 	`}
 	text-align: center;
 	margin: 0 auto;
-	margin-bottom: 34px;
 `;
 
 const StyledCalendar = styled.div`

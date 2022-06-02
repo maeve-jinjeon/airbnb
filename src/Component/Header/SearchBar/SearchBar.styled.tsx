@@ -22,6 +22,7 @@ interface IStyledSearchBarChild {
 const StyledSearchBarChild = styled.div<IStyledSearchBarChild>`
 	${({ theme: { fontSize, fontWeight, colors, width }, name }) => css`
 		width: ${width[`${name}Child`]};
+		cursor: pointer;
 
 		> :first-child {
 			font-size: ${fontSize.xSmall};

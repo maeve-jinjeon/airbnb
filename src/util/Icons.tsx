@@ -28,6 +28,7 @@ const getButton = (buttonType: SvgIconComponent) => {
 				color: ${colors[colorset]};
 				width: ${size}px;
 				height: ${size}px;
+				cursor: pointer;
 				${hover &&
 				css`
 					:hover {

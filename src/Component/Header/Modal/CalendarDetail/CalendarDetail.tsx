@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
-// import { useContext, useState, useEffect } from "react";
 import { ScheduleContext, ScheduleDispatchContext } from "Context/ScheduleContext";
+import { getLateDay } from "util/util";
 import { PrevButton, NextButton } from "util/Icons";
 import {
 	VisibleDay,
@@ -42,18 +42,33 @@ const CalendarDetail = () => {
 	const [thisYear, setThisYear] = useState(currentYear);
 	const [thisMonth, setThisMonth] = useState(currentMonth);
 
-	const makeCalCell = (dayInfo: { id: number; date: number; year: number; month: number }) => {
+	const makeCalCell = (
+		dayInfo: { id: number; date: number; year: number; month: number },
+		isLast: boolean = false,
+		isFirst: boolean = false
+	) => {
 		const { id, date, year, month } = dayInfo;
 		const selectedDayInfo = { year, month, date };
-		const isCheckIn = JSON.stringify(checkin) === JSON.stringify(selectedDayInfo);
-		const isCheckOut = JSON.stringify(checkout) === JSON.stringify(selectedDayInfo);
+		const isChecked =
+			JSON.stringify(checkin) === JSON.stringify(selectedDayInfo) ||
+			JSON.stringify(checkout) === JSON.stringify(selectedDayInfo);
+		const isBetween =
+			getLateDay(checkin, selectedDayInfo) === selectedDayInfo &&
+			getLateDay(checkout, selectedDayInfo) === checkout;
 
 		const handleSchedule = () => {
 			scheduleDispatch({ type: "ENROLL", dayInfo: selectedDayInfo });
 		};
 
 		return date ? (
-			<VisibleDay onClick={handleSchedule} key={id} isCheckIn={isCheckIn} isCheckOut={isCheckOut}>
+			<VisibleDay
+				onClick={handleSchedule}
+				key={id}
+				isChecked={isChecked}
+				isBetween={isBetween}
+				isLast={isLast}
+				isFirst={isFirst}
+			>
 				{date}
 			</VisibleDay>
 		) : (
@@ -85,7 +100,12 @@ const CalendarDetail = () => {
 			calDataLength += 1;
 		}
 
-		return calData.map((dayInfo) => makeCalCell(dayInfo));
+		return calData.map((dayInfo, idx, arr) => {
+			if (!arr[idx + 1]) return makeCalCell(dayInfo);
+			const isFirst = dayInfo.date === 1;
+			const isLast = arr[idx + 1].date === 0 && dayInfo.date !== 0;
+			return makeCalCell(dayInfo, isLast, isFirst);
+		});
 	};
 
 	const showPrevMonths = () => {
