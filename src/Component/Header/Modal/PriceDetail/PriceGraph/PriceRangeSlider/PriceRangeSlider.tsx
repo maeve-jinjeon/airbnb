@@ -1,7 +1,7 @@
 import { useContext, ChangeEvent } from "react";
 
 import { MIN_PRICE, MAX_PRICE, PRICE_UNIT, DISTANCE_MIN_MAX } from "util/util";
-import { PriceDispatchContext, PriceContext } from "Context/PriceContext";
+import { PriceDispatchContext, PriceContext } from "Context";
 import {
 	StyledPriceRangeSlider,
 	HiddenInput,

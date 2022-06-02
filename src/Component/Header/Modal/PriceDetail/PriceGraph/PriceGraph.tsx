@@ -6,6 +6,7 @@ import PriceRangeSlider from "./PriceRangeSlider/PriceRangeSlider";
 
 const DEVIDED_UNIT = MAX_PRICE / PRICE_UNIT;
 const CANVAS_HEIGHT = 100;
+const HOTEL_COUNT_MAX = 10;
 
 type pricesType = {
 	[key in number]: number;
@@ -27,8 +28,8 @@ const PriceGraph = ({ prices, min, max }: { prices: pricesType; min: number; max
 		canvas.height = CANVAS_HEIGHT;
 
 		const getYPoint = (i: number) => {
-			const heightPerCount = CANVAS_HEIGHT / 10;
-			const heightDefualt = CANVAS_HEIGHT / 100;
+			const heightPerCount = CANVAS_HEIGHT / HOTEL_COUNT_MAX;
+			const heightDefualt = CANVAS_HEIGHT / 100; // 해당 가격 숙소의 개수가 0개일 때의 그래프의 높이
 			const reversedY = prices[PRICE_UNIT * i]
 				? prices[PRICE_UNIT * i] * heightPerCount
 				: heightDefualt;

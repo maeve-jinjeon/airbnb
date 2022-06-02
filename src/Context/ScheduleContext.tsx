@@ -14,12 +14,12 @@ const defaultSchedule = { checkInMonth: 0, checkInDate: 0, checkOutMonth: 0, che
 const ScheduleContext = createContext<scheduleType>(defaultSchedule);
 const SetScheduleContext = createContext<setScheduleType>(() => null);
 
-const ScheduleProvider = ({ inner }: { inner: ReactNode }) => {
+const ScheduleProvider = ({ children }: { children: ReactNode }) => {
 	const [schedule, setSchedule] = useState<scheduleType>(defaultSchedule);
 
 	return (
 		<ScheduleContext.Provider value={schedule}>
-			<SetScheduleContext.Provider value={setSchedule}>{inner}</SetScheduleContext.Provider>
+			<SetScheduleContext.Provider value={setSchedule}>{children}</SetScheduleContext.Provider>
 		</ScheduleContext.Provider>
 	);
 };

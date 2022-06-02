@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ModalContext } from "Context/modalContext";
+import { ModalContext } from "Context";
 import { StyledModal, StyledModalWrapper } from "./Modal.styled";
 import GuestsDetail from "./GuestsDetail";
 import PriceDetail from "./PriceDetail/PriceDetail";

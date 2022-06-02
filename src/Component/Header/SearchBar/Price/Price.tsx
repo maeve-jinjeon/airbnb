@@ -1,8 +1,7 @@
 import { useContext } from "react";
 
 import { getPriceType } from "util/util";
-import { CheckModalContext } from "Context/modalContext";
-import { PriceContext, PriceDispatchContext } from "Context/PriceContext";
+import { CheckModalContext, PriceContext, PriceDispatchContext } from "Context";
 import { CancelButton } from "util/Icons";
 import StyledPrice from "./Price.styled";
 import { StyledSearchBarChild } from "../SearchBar.styled";
