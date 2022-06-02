@@ -9,6 +9,7 @@ const StyledModalWrapper = styled.div`
 		margin: 0 auto;
 		margin-top: 16px;
 		width: ${width.searchbar};
+		overflow: hidden;
 	`}
 `;
 

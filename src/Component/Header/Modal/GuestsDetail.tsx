@@ -1,7 +1,7 @@
 import { useContext } from "react";
 
 import { RemoveCircleButton, AddCircleButton } from "util/Icons";
-import { GuestsContext, GuestsDispatchContext } from "Context/GuestsContext";
+import { GuestsContext, GuestsDispatchContext } from "Context";
 import { StyledGuestList, StyledGuestDesc, StyledGuestBtns } from "./Modal.styled";
 
 type guestType = "adult" | "child" | "baby";

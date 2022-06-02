@@ -19,6 +19,7 @@ const getHotelsPrices = (hotels) => {
 		prices[changedPrice] = prices[changedPrice] ? prices[changedPrice] + 1 : 1;
 	});
 
+	// price : {150000:1, 200000:2} avg : 150000
 	return { prices, avg };
 };
 

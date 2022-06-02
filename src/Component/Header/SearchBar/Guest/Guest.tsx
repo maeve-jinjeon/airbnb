@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { CancelButton } from "util/Icons";
-import { GuestsContext, GuestsDispatchContext } from "Context/GuestsContext";
-import { CheckModalContext } from "Context/modalContext";
+import { GuestsContext, GuestsDispatchContext, CheckModalContext } from "Context";
 import StyledGuest from "./Guest.styled";
 import { StyledSearchBarChild } from "../SearchBar.styled";
 
