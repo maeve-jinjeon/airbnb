@@ -10,7 +10,7 @@ type priceType = {
 	min: number;
 	max: number;
 	avg: number;
-	prices: pricesType;
+	prices: pricesType; // {50000:3, 150000:5, 350000:10}
 };
 
 type priceDispatchValueType = {
