@@ -22,12 +22,14 @@ const Price = () => {
 				<div>{PRICE}</div>
 				<div>{isDefault ? PRICE_SETTING : `${getPriceType(min)}~${getPriceType(max)}`}</div>
 			</StyledSearchBarChild>
-			<CancelButton
-				onClick={() => priceDispatch({ value: {}, type: "RESET" })}
-				colorset="grey3"
-				size={20}
-				hover="true"
-			/>
+			{!isDefault && (
+				<CancelButton
+					onClick={() => priceDispatch({ value: {}, type: "RESET" })}
+					colorset="grey3"
+					size={20}
+					hover="true"
+				/>
+			)}
 		</StyledPrice>
 	);
 };
