@@ -58,6 +58,7 @@ const CalendarDetail = () => {
 			getLateDay(checkout, selectedDayInfo) === checkout;
 
 		const handleSchedule = () => {
+			if (isCheckin) return;
 			scheduleDispatch({ type: "ENROLL", dayInfo: selectedDayInfo });
 		};
 
