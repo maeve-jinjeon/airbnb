@@ -18,8 +18,15 @@ const width = {
 	GNBImg: "80px",
 	schedule: "360px",
 	scheduleChild: "112px",
+	scheduleModal: "916px",
+	calendar: "340px",
+	calendarDayBox: "340px",
+	calendarDay: "48px",
+	calendarLabel: "48px",
+	calendarTitle: "150px",
 	price: "256px",
-	priceChild: "140px",
+	priceChild: "160px",
+	priceModal: "490px",
 	guest: "192px",
 	guestChild: "114px",
 	guestModal: "400px",
@@ -29,7 +36,14 @@ const height = {
 	GNB: "100px",
 	header1: "640px",
 	searchbar: "76px",
+	scheduleModal: "512px",
+	calendar: "390px",
+	calendarDayBox: "340px",
+	calendarDay: "48px",
+	calendarLabel: "24px",
+	calendarTitle: "23px",
 	guestModal: "355px",
+	priceModal: "360px",
 };
 
 const fontMain = {
@@ -53,15 +67,15 @@ const fontWeight = {
 
 const transition = {
 	main: {
-		"transition-property": "all",
-		"transition-duration": "1s",
+		"transition-property": "width height",
+		"transition-duration": "0.3s",
 	},
 	appear: {
-		animation: "fade-in 0.4s",
+		animation: "fade-in 0.3s",
 		"animation-fill-mode": "forwards",
 	},
 	disappear: {
-		animation: "fade-out 0.4s",
+		animation: "fade-out 0.3s",
 		"animation-fill-mode": "forwards",
 	},
 };

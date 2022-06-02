@@ -22,7 +22,7 @@ const Guest = () => {
 				<div>인원</div>
 				<div>{sum ? mention : "게스트 추가"}</div>
 			</StyledSearchBarChild>
-			<CancelButton onClick={reset} colorset="grey3" size={20} hover={true} />
+			<CancelButton onClick={reset} colorset="grey3" size={20} hover="true" />
 		</StyledGuest>
 	);
 };

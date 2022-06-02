@@ -15,11 +15,12 @@ const StyledModalWrapper = styled.div`
 const StyledModal = styled.div<IStyleModal>`
 	${({ theme: { width, height, colors, transition }, modal }) => css`
 		${transition.appear};
+		${transition.main};
 
 		${modal === "empty" &&
 		css`
 			${transition.disappear};
-			visibility: hidden;
+			display: none;
 		`};
 
 		width: ${width[`${modal}Modal`]};

@@ -12,7 +12,7 @@ const StyledPrice = styled.div`
 		}
 
 		svg {
-			margin-left: 40px;
+			margin-left: 20px;
 		}
 	`}
 `;

@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const baseURL = "/api/test";
+const baseURL = "/api/prices";
 const client = axios.create({ baseURL });
 
-const testApi = {
-	getTest: async () => {
+const hotelsPricesApi = {
+	getHotelsPrices: async () => {
 		try {
 			const response = await client.get("/");
 			return response.data;
@@ -14,4 +14,4 @@ const testApi = {
 	},
 };
 
-export default testApi;
+export default hotelsPricesApi;
