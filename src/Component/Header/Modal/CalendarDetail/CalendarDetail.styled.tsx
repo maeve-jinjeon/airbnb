@@ -2,30 +2,25 @@ import styled, { css } from "styled-components";
 
 interface IVisibleDay {
 	isChecked: boolean;
+}
+interface IVisibleDayBg {
 	isBetween: boolean;
 	isLast: boolean;
 	isFirst: boolean;
+	isCheckin: boolean;
+	isCheckout: boolean;
 }
 
-const VisibleDay = styled.div<IVisibleDay>`
-	${({ theme: { width, height, fontSize, fontWeight, colors } }) => css`
-		width: ${width.calendarDay};
+const VisibleDayBg = styled.div<IVisibleDayBg>`
+	${({ isCheckin, isCheckout, isBetween, isLast, isFirst, theme: { colors, height } }) => css`
 		height: ${height.calendarDay};
-		line-height: ${height.calendarDay};
-		font-size: ${fontSize.xSmall};
-		font-weight: ${fontWeight.large};
-		color: ${colors.grey1};
-	`}
-
-	text-align: center;
-	cursor: pointer;
-
-	${({ isChecked, isBetween, isLast, isFirst, theme: { colors } }) => css`
-		${isChecked &&
+		${isCheckout &&
 		css`
-			background: ${colors.grey1};
-			border-radius: 30px;
-			color: ${colors.white};
+			background: linear-gradient(90deg, ${colors.grey6} 50%, ${colors.white} 50%);
+		`}
+		${isCheckin &&
+		css`
+			background: linear-gradient(90deg, ${colors.white} 50%, ${colors.grey6} 50%);
 		`}
 		${isBetween &&
 		css`
@@ -40,6 +35,30 @@ const VisibleDay = styled.div<IVisibleDay>`
 		isBetween &&
 		css`
 			background: linear-gradient(90deg, ${colors.white}, ${colors.grey6});
+		`}
+	`}
+	margin-bottom: 10px;
+`;
+
+const VisibleDay = styled.div<IVisibleDay>`
+	${({ theme: { width, height, fontSize, fontWeight, colors } }) => css`
+		width: ${width.calendarDay};
+		height: ${height.calendarDay};
+		line-height: ${height.calendarDay};
+		font-size: ${fontSize.xSmall};
+		font-weight: ${fontWeight.large};
+		color: ${colors.grey1};
+	`}
+
+	text-align: center;
+	cursor: pointer;
+
+	${({ isChecked, theme: { colors } }) => css`
+		${isChecked &&
+		css`
+			background: ${colors.grey1};
+			border-radius: 30px;
+			color: ${colors.white};
 		`}
 	`}
 	margin-bottom: 10px;
@@ -108,6 +127,7 @@ const StyledCalendars = styled.div`
 
 export {
 	VisibleDay,
+	VisibleDayBg,
 	InvisibleDay,
 	CalendarDayBox,
 	CalendarLabel,

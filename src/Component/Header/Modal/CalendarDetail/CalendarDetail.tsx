@@ -4,6 +4,7 @@ import { getLateDay } from "util/util";
 import { PrevButton, NextButton } from "util/Icons";
 import {
 	VisibleDay,
+	VisibleDayBg,
 	InvisibleDay,
 	CalendarDayBox,
 	CalendarLabel,
@@ -49,9 +50,9 @@ const CalendarDetail = () => {
 	) => {
 		const { id, date, year, month } = dayInfo;
 		const selectedDayInfo = { year, month, date };
-		const isChecked =
-			JSON.stringify(checkin) === JSON.stringify(selectedDayInfo) ||
-			JSON.stringify(checkout) === JSON.stringify(selectedDayInfo);
+		const isCheckin = JSON.stringify(checkin) === JSON.stringify(selectedDayInfo);
+		const isCheckout = JSON.stringify(checkout) === JSON.stringify(selectedDayInfo);
+		const isChecked = isCheckin || isCheckout;
 		const isBetween =
 			getLateDay(checkin, selectedDayInfo) === selectedDayInfo &&
 			getLateDay(checkout, selectedDayInfo) === checkout;
@@ -61,16 +62,17 @@ const CalendarDetail = () => {
 		};
 
 		return date ? (
-			<VisibleDay
-				onClick={handleSchedule}
-				key={id}
-				isChecked={isChecked}
+			<VisibleDayBg
 				isBetween={isBetween}
 				isLast={isLast}
 				isFirst={isFirst}
+				isCheckin={isCheckin}
+				isCheckout={isCheckout}
 			>
-				{date}
-			</VisibleDay>
+				<VisibleDay onClick={handleSchedule} key={id} isChecked={isChecked}>
+					{date}
+				</VisibleDay>
+			</VisibleDayBg>
 		) : (
 			<InvisibleDay key={id}>{}</InvisibleDay>
 		);
