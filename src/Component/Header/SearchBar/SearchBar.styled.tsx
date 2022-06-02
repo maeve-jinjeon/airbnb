@@ -1,5 +1,9 @@
 import styled, { css } from "styled-components";
 
+interface IStyledSearchBarChild {
+	name: string;
+}
+
 const StyledSearchBar = styled.div`
 	${({ theme: { width, height, colors } }) => css`
 		display: flex;
@@ -15,10 +19,6 @@ const StyledSearchBar = styled.div`
 	`}
 `;
 
-interface IStyledSearchBarChild {
-	name: string;
-}
-
 const StyledSearchBarChild = styled.div<IStyledSearchBarChild>`
 	${({ theme: { fontSize, fontWeight, colors, width }, name }) => css`
 		width: ${width[`${name}Child`]};
@@ -29,6 +29,7 @@ const StyledSearchBarChild = styled.div<IStyledSearchBarChild>`
 			font-weight: ${fontWeight.large};
 			line-height: 17px;
 		}
+
 		> :last-child {
 			margin-top: 5px;
 			font-size: ${fontSize.medium};

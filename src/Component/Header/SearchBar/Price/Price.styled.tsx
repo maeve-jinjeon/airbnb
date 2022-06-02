@@ -4,13 +4,16 @@ const StyledPriceHover = styled.div`
 	${({ theme: { colors, width, height, shadow } }) => css`
 		width: ${width.price};
 		display: flex;
-		border-right: solid 1px ${colors.grey5};
+		border-left: solid 1px ${colors.grey5};
 
 		:hover {
 			height: ${height.searchbar};
 			border: 1px solid ${colors.white};
 			border-radius: 60px;
 			box-shadow: ${shadow.main};
+			+ :nth-child(4) {
+				border-left: solid 1px transparent;
+			}
 		}
 	`}
 `;

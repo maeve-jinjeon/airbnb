@@ -4,6 +4,8 @@ const StyledGuestHover = styled.div`
 	${({ theme: { colors, width, height, shadow } }) => css`
 		width: ${width.guest};
 		display: flex;
+		z-index: 2;
+		border-left: 1px solid ${colors.grey5};
 
 		:hover {
 			height: ${height.searchbar};

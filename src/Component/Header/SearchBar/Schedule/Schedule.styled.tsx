@@ -1,11 +1,11 @@
 import styled, { css } from "styled-components";
 
-const StyledScheduleHover = styled.div`
+const StyledCheckin = styled.div`
 	${({ theme: { colors, height, shadow } }) => css`
 		width: 180px;
 		display: flex;
-		padding-left: 25px;
 		align-items: center;
+		padding-left: 40px;
 
 		:hover {
 			height: ${height.searchbar};
@@ -16,19 +16,23 @@ const StyledScheduleHover = styled.div`
 	`}
 `;
 
-const StyledSchedule = styled.div`
-	${({ theme: { width, colors } }) => css`
-		width: ${width.schedule};
+const StyledCheckout = styled.div`
+	${({ theme: { colors, height, shadow } }) => css`
+		width: 180px;
 		display: flex;
-		border-right: solid 1px ${colors.grey5};
-		:hover {
-			border-right: none;
-		}
+		align-items: center;
+		padding-left: 30px;
 
-		> :first-child {
-			padding-left: 40px;
+		:hover {
+			height: ${height.searchbar};
+			border: 1px solid ${colors.white};
+			border-radius: 60px;
+			box-shadow: ${shadow.main};
+			+ :nth-child(3) {
+				border-left: solid 1px transparent;
+			}
 		}
 	`}
 `;
 
-export { StyledSchedule, StyledScheduleHover };
+export { StyledCheckout, StyledCheckin };

@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import { CancelButton } from "util/Icons";
 import { CheckModalContext, ScheduleContext, ScheduleDispatchContext } from "Context";
-import { StyledSchedule, StyledScheduleHover } from "./Schedule.styled";
+import { StyledCheckin, StyledCheckout } from "./Schedule.styled";
 import { StyledSearchBarChild } from "../SearchBar.styled";
 
 const modalStateCheckin = "checkin";
@@ -16,14 +16,14 @@ const Schedule = () => {
 	const isActive = !!checkin.year;
 
 	return (
-		<StyledSchedule>
-			<StyledScheduleHover>
+		<>
+			<StyledCheckin>
 				<StyledSearchBarChild onClick={() => checkModal(modalStateCheckin)} name={name}>
 					<div>체크인</div>
 					<div>{checkin.year ? `${checkin.month}월${checkin.date}일` : "날짜 입력"}</div>
 				</StyledSearchBarChild>
-			</StyledScheduleHover>
-			<StyledScheduleHover>
+			</StyledCheckin>
+			<StyledCheckout>
 				<StyledSearchBarChild onClick={() => checkModal(modalStateCheckout)} name={name}>
 					<div>체크아웃</div>
 					<div>{checkout.year ? `${checkout.month}월${checkout.date}일` : "날짜 입력"}</div>
@@ -38,8 +38,8 @@ const Schedule = () => {
 						hover="true"
 					/>
 				)}
-			</StyledScheduleHover>
-		</StyledSchedule>
+			</StyledCheckout>
+		</>
 	);
 };
 
