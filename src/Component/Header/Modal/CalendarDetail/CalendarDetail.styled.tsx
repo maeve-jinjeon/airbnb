@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components";
 
 interface IVisibleDay {
-	cellIsClicked: boolean;
+	isCheckIn: boolean;
+	isCheckOut: boolean;
 }
 
 const VisibleDay = styled.div<IVisibleDay>`
@@ -14,8 +15,11 @@ const VisibleDay = styled.div<IVisibleDay>`
 		color: ${colors.grey1};
 	`}
 
-	${({ cellIsClicked }) => {
-		return cellIsClicked
+	text-align: center;
+	cursor: pointer;
+
+	${({ isCheckIn, isCheckOut }) => {
+		return isCheckIn || isCheckOut
 			? css`
 					background: #333333;
 					border-radius: 30px;
@@ -23,9 +27,6 @@ const VisibleDay = styled.div<IVisibleDay>`
 			  `
 			: "";
 	}}
-
-	text-align: center;
-	cursor: pointer;
 `;
 
 const InvisibleDay = styled.div`

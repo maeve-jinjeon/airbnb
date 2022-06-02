@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { ModalProvider, ModalContext, CheckModalContext } from "./modalContext";
 import { GuestsProvider, GuestsContext, GuestsDispatchContext } from "./GuestsContext";
 import { PriceContext, PriceDispatchContext, PriceProvider } from "./PriceContext";
-import { ScheduleProvider, ScheduleContext, SetScheduleContext } from "./ScheduleContext";
+import { ScheduleProvider, ScheduleContext, ScheduleDispatchContext } from "./ScheduleContext";
 
 type providerProp = { children: ReactNode };
 
@@ -22,6 +22,6 @@ export {
 	PriceContext,
 	PriceDispatchContext,
 	ScheduleContext,
-	SetScheduleContext,
+	ScheduleDispatchContext,
 	ContextsProvider,
 };

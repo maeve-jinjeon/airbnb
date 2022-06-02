@@ -1,6 +1,6 @@
+import { useState, useContext } from "react";
 // import { useContext, useState, useEffect } from "react";
-import { useState } from "react";
-// import { ScheduleContext, SetScheduleContext } from "Context";
+import { ScheduleContext, ScheduleDispatchContext } from "Context/ScheduleContext";
 import { PrevButton, NextButton } from "util/Icons";
 import {
 	VisibleDay,
@@ -13,8 +13,8 @@ import {
 } from "./CalendarDetail.styled";
 
 const CalendarDetail = () => {
-	// const schedule = useContext(ScheduleContext);
-	// const setSchedule = useContext(SetScheduleContext);
+	const { checkin, checkout } = useContext(ScheduleContext);
+	const scheduleDispatch = useContext(ScheduleDispatchContext);
 
 	const currentYear = new Date().getFullYear();
 	const currentMonth = new Date().getMonth();
@@ -39,27 +39,25 @@ const CalendarDetail = () => {
 
 	const getLabel = days.map((day) => <CalendarLabel key={day.id}>{day.value}</CalendarLabel>);
 
-	// const newSchedule = { ...schedule };
-	// newSchedule.checkInDate = 3;
-	// useEffect(() => setSchedule(newSchedule), []);
-
 	const [thisYear, setThisYear] = useState(currentYear);
 	const [thisMonth, setThisMonth] = useState(currentMonth);
 
-	const makeCalCell = (day: { id: number; value: number }) => {
-		const [cellIsClicked, setCellIsClicked] = useState(false);
+	const makeCalCell = (dayInfo: { id: number; date: number; year: number; month: number }) => {
+		const { id, date, year, month } = dayInfo;
+		const selectedDayInfo = { year, month, date };
+		const isCheckIn = JSON.stringify(checkin) === JSON.stringify(selectedDayInfo);
+		const isCheckOut = JSON.stringify(checkout) === JSON.stringify(selectedDayInfo);
 
 		const handleSchedule = () => {
-			console.log("i'm handling schedule");
-			setCellIsClicked(!cellIsClicked);
+			scheduleDispatch({ type: "ENROLL", dayInfo: selectedDayInfo });
 		};
 
-		return day.value ? (
-			<VisibleDay onClick={handleSchedule} key={day.id} cellIsClicked={cellIsClicked}>
-				{day.value}
+		return date ? (
+			<VisibleDay onClick={handleSchedule} key={id} isCheckIn={isCheckIn} isCheckOut={isCheckOut}>
+				{date}
 			</VisibleDay>
 		) : (
-			<InvisibleDay key={day.id}>{}</InvisibleDay>
+			<InvisibleDay key={id}>{}</InvisibleDay>
 		);
 	};
 
@@ -73,21 +71,21 @@ const CalendarDetail = () => {
 		let calDataLength = 0;
 
 		for (let i = 0; i < currentDay; i += 1) {
-			calData.push({ id: calDataLength, value: 0 });
+			calData.push({ id: calDataLength, date: 0, year, month });
 			calDataLength += 1;
 		}
 
 		for (let i = 1; i <= nextDate; i += 1) {
-			calData.push({ id: calDataLength, value: i });
+			calData.push({ id: calDataLength, date: i, year, month });
 			calDataLength += 1;
 		}
 
 		for (let i = 1; i <= 6 - nextDay; i += 1) {
-			calData.push({ id: calDataLength, value: 0 });
+			calData.push({ id: calDataLength, date: 0, year, month });
 			calDataLength += 1;
 		}
 
-		return calData.map((day) => makeCalCell(day));
+		return calData.map((dayInfo) => makeCalCell(dayInfo));
 	};
 
 	const showPrevMonths = () => {
