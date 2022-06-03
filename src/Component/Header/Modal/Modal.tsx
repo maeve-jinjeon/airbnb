@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ModalContext } from "Context/modalContext";
+import { ModalContext } from "Context";
 import { StyledModal, StyledModalWrapper } from "./Modal.styled";
 import GuestsDetail from "./GuestsDetail";
 import PriceDetail from "./PriceDetail/PriceDetail";
@@ -10,7 +10,8 @@ const Modal = () => {
 	const details = {
 		guest: <GuestsDetail />,
 		price: <PriceDetail />,
-		schedule: <CalendarDetail />,
+		checkin: <CalendarDetail />,
+		checkout: <CalendarDetail />,
 		empty: null,
 	};
 	const ModalDetail = details[modal];

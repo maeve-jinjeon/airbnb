@@ -17,10 +17,18 @@ const StyledNavList = styled.ul`
 	${({ theme: { fontSize, fontWeight } }) => css`
 		display: flex;
 		> li {
+			cursor: pointer;
 			font-size: ${fontSize.medium};
 			font-weight: ${fontWeight.small};
+			padding-bottom: 2px;
+			border-bottom: 1px solid transparent;
+
 			:not(:last-child) {
 				margin-right: 24px;
+			}
+			:hover {
+				padding-bottom: 2px;
+				border-bottom: 1px solid;
 			}
 		}
 	`}

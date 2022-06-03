@@ -1,22 +1,41 @@
 import styled, { css } from "styled-components";
 
-const StyledSchedule = styled.div`
-	${({ theme: { width, colors } }) => css`
-		width: ${width.schedule};
+const StyledCheckin = styled.div`
+	${({ theme: { colors, height, shadow } }) => css`
+		width: 180px;
 		display: flex;
-		border-right: solid 1px ${colors.grey5};
 		align-items: center;
-
-		> :first-child {
-			margin-left: 40px;
-		}
-		> :nth-child(2) {
-			margin-left: 24px;
-		}
+		padding-left: 35px;
 		svg {
-			margin-left: 15px;
+			margin-right: 10px;
+		}
+
+		:hover {
+			height: ${height.searchbar};
+			border: 1px solid ${colors.white};
+			border-radius: 60px;
+			box-shadow: ${shadow.main};
 		}
 	`}
 `;
 
-export default StyledSchedule;
+const StyledCheckout = styled.div`
+	${({ theme: { colors, height, shadow } }) => css`
+		width: 180px;
+		display: flex;
+		align-items: center;
+		padding-left: 30px;
+
+		:hover {
+			height: ${height.searchbar};
+			border: 1px solid ${colors.white};
+			border-radius: 60px;
+			box-shadow: ${shadow.main};
+			+ :nth-child(3) {
+				border-left: solid 1px transparent;
+			}
+		}
+	`}
+`;
+
+export { StyledCheckout, StyledCheckin };

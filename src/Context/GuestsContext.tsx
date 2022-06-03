@@ -44,13 +44,13 @@ const guestsReducer = (
 	return newGuests;
 };
 
-const GuestsProvider = ({ inner }: { inner: ReactNode }) => {
+const GuestsProvider = ({ children }: { children: ReactNode }) => {
 	const [guests, guestsDispatch] = useReducer(guestsReducer, guestsDefault);
 
 	return (
 		<GuestsContext.Provider value={guests}>
 			<GuestsDispatchContext.Provider value={guestsDispatch}>
-				{inner}
+				{children}
 			</GuestsDispatchContext.Provider>
 		</GuestsContext.Provider>
 	);

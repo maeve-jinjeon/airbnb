@@ -1,8 +1,44 @@
 import styled, { css } from "styled-components";
 
 interface IVisibleDay {
-	cellIsClicked: boolean;
+	isChecked: boolean;
 }
+interface IVisibleDayBg {
+	isBetween: boolean;
+	isLast: boolean;
+	isFirst: boolean;
+	isCheckin: boolean;
+	isCheckout: boolean;
+}
+
+const VisibleDayBg = styled.div<IVisibleDayBg>`
+	${({ isCheckin, isCheckout, isBetween, isLast, isFirst, theme: { colors, height } }) => css`
+		height: ${height.calendarDay};
+		${isCheckout &&
+		css`
+			background: linear-gradient(90deg, ${colors.grey6} 50%, ${colors.white} 50%);
+		`}
+		${isCheckin &&
+		css`
+			background: linear-gradient(90deg, ${colors.white} 50%, ${colors.grey6} 50%);
+		`}
+		${isBetween &&
+		css`
+			background: ${colors.grey6};
+		`}
+		${isLast &&
+		isBetween &&
+		css`
+			background: linear-gradient(90deg, ${colors.grey6}, ${colors.white});
+		`}
+		${isFirst &&
+		isBetween &&
+		css`
+			background: linear-gradient(90deg, ${colors.white}, ${colors.grey6});
+		`}
+	`}
+	margin-bottom: 10px;
+`;
 
 const VisibleDay = styled.div<IVisibleDay>`
 	${({ theme: { width, height, fontSize, fontWeight, colors } }) => css`
@@ -14,18 +50,18 @@ const VisibleDay = styled.div<IVisibleDay>`
 		color: ${colors.grey1};
 	`}
 
-	${({ cellIsClicked }) => {
-		return cellIsClicked
-			? css`
-					background: #333333;
-					border-radius: 30px;
-					color: white;
-			  `
-			: "";
-	}}
-
 	text-align: center;
 	cursor: pointer;
+
+	${({ isChecked, theme: { colors } }) => css`
+		${isChecked &&
+		css`
+			background: ${colors.grey1};
+			border-radius: 30px;
+			color: ${colors.white};
+		`}
+	`}
+	margin-bottom: 10px;
 `;
 
 const InvisibleDay = styled.div`
@@ -33,6 +69,7 @@ const InvisibleDay = styled.div`
 		width: ${width.calendarDay};
 		height: ${height.calendarDay};
 	`}
+	margin-bottom : 10px;
 `;
 
 const CalendarDayBox = styled.div`
@@ -42,7 +79,7 @@ const CalendarDayBox = styled.div`
 	`}
 	display: flex;
 	flex-wrap: wrap;
-	align-content: space-around;
+	align-content: flex-start;
 	justify-content: center;
 `;
 
@@ -56,7 +93,7 @@ const CalendarLabel = styled.div`
 		color: ${colors.grey3};
 	`}
 	display: flex;
-	align-content: space-around;
+	align-content: flex-start;
 	justify-content: center;
 `;
 
@@ -70,7 +107,6 @@ const CalendarTitle = styled.div`
 	`}
 	text-align: center;
 	margin: 0 auto;
-	margin-bottom: 34px;
 `;
 
 const StyledCalendar = styled.div`
@@ -91,6 +127,7 @@ const StyledCalendars = styled.div`
 
 export {
 	VisibleDay,
+	VisibleDayBg,
 	InvisibleDay,
 	CalendarDayBox,
 	CalendarLabel,

@@ -10,7 +10,7 @@ type priceType = {
 	min: number;
 	max: number;
 	avg: number;
-	prices: pricesType;
+	prices: pricesType; // {50000:3, 150000:5, 350000:10}
 };
 
 type priceDispatchValueType = {
@@ -71,7 +71,7 @@ const priceReducer = (price: priceType, action: priceDispatchAction) => {
 	}
 };
 
-const PriceProvider = ({ inner }: { inner: ReactNode }) => {
+const PriceProvider = ({ children }: { children: ReactNode }) => {
 	const [price, priceDispatch] = useReducer(priceReducer, priceDefault);
 
 	const fetchhotelsPrices = async () => {
@@ -88,7 +88,9 @@ const PriceProvider = ({ inner }: { inner: ReactNode }) => {
 
 	return (
 		<PriceContext.Provider value={price}>
-			<PriceDispatchContext.Provider value={priceDispatch}>{inner}</PriceDispatchContext.Provider>
+			<PriceDispatchContext.Provider value={priceDispatch}>
+				{children}
+			</PriceDispatchContext.Provider>
 		</PriceContext.Provider>
 	);
 };
