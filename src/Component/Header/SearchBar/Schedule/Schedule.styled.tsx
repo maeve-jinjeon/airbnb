@@ -5,7 +5,10 @@ const StyledCheckin = styled.div`
 		width: 180px;
 		display: flex;
 		align-items: center;
-		padding-left: 40px;
+		padding-left: 35px;
+		svg {
+			margin-right: 10px;
+		}
 
 		:hover {
 			height: ${height.searchbar};
