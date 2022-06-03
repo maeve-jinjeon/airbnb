@@ -18,7 +18,8 @@ const width = {
 	GNBImg: "80px",
 	schedule: "360px",
 	scheduleChild: "112px",
-	scheduleModal: "916px",
+	checkinModal: "916px",
+	checkoutModal: "916px",
 	calendar: "340px",
 	calendarDayBox: "340px",
 	calendarDay: "48px",
@@ -36,7 +37,8 @@ const height = {
 	GNB: "100px",
 	header1: "640px",
 	searchbar: "76px",
-	scheduleModal: "512px",
+	checkinModal: "512px",
+	checkoutModal: "512px",
 	calendar: "390px",
 	calendarDayBox: "340px",
 	calendarDay: "48px",
@@ -80,6 +82,10 @@ const transition = {
 	},
 };
 
+const shadow = {
+	main: `5px 5px 25px ${colors.grey2}`,
+};
+
 const setFont = (size, weight) => {
 	return {
 		"font-size": fontSize[size],
@@ -87,6 +93,16 @@ const setFont = (size, weight) => {
 	};
 };
 
-const theme = { colors, width, height, fontMain, transition, fontSize, fontWeight, setFont };
+const theme = {
+	colors,
+	width,
+	height,
+	fontMain,
+	transition,
+	fontSize,
+	fontWeight,
+	shadow,
+	setFont,
+};
 
 export default theme;

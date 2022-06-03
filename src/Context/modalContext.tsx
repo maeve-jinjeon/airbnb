@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useCallback, useState } from "react";
 
-type modalType = "guest" | "price" | "schedule" | "empty";
+type modalType = "guest" | "price" | "checkout" | "checkin" | "empty";
 type checkModalType = (modalState: modalType) => void;
 
 const defaultModal: modalType = "empty";
