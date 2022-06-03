@@ -23,7 +23,7 @@ const Schedule = () => {
 					<div>체크인</div>
 					<div>{checkin.year ? `${checkin.month}월${checkin.date}일` : "날짜 입력"}</div>
 				</StyledSearchBarChild>
-				{isCheckout && (
+				{isCheckin && (
 					<CancelButton
 						colorset="grey3"
 						size={20}
@@ -39,12 +39,12 @@ const Schedule = () => {
 					<div>체크아웃</div>
 					<div>{checkout.year ? `${checkout.month}월${checkout.date}일` : "날짜 입력"}</div>
 				</StyledSearchBarChild>
-				{isCheckin && (
+				{isCheckout && (
 					<CancelButton
 						colorset="grey3"
 						size={20}
 						onClick={() =>
-							scheduleDispatch({ dayInfo: { year: 0, month: 0, date: 0 }, type: "RESET" })
+							scheduleDispatch({ dayInfo: { year: 0, month: 0, date: 0 }, type: "RESET_CHECKOUT" })
 						}
 						hover="true"
 					/>
