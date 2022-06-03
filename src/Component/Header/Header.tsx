@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 import HeaderBackgroundImg from "./Header.styled";
 import GNB from "./GNB/GNB";
-// import SearchBar from "./SearchBar/SearchBar";
-import SmallSearchBar from "./SearchBar/SmallSearchBar";
+import SearchBar from "./SearchBar/SearchBar";
+// import SmallSearchBar from "./SearchBar/SmallSearchBar";
 import Modal from "./Modal/Modal";
 import coverSrc from "../../util/airbnb.png";
 
@@ -17,8 +17,8 @@ const Header = () => {
 	return (
 		<HeaderBackgroundImg image={bgImage}>
 			<GNB />
-			<SmallSearchBar />
-			{/* <SearchBar /> */}
+			{/* <SmallSearchBar /> */}
+			<SearchBar />
 			<Modal />
 		</HeaderBackgroundImg>
 	);

@@ -16,7 +16,7 @@ type scheduleDispatchValueType = {
 
 type scheduleDispatchAction = {
 	dayInfo: scheduleDispatchValueType;
-	type: "ENROLL" | "RESET";
+	type: "ENROLL" | "RESET" | "RESET_CHECKOUT";
 };
 
 type scheduleDispatchType = Dispatch<scheduleDispatchAction>;
@@ -59,10 +59,12 @@ const scheduleReducer = (schedule: scheduleType, action: scheduleDispatchAction)
 	switch (type) {
 		case "ENROLL": {
 			const newSchedule = getNewSchedule(dayInfo, schedule);
-			return { ...schedule, ...newSchedule };
+			return { ...schedule, ...newSchedule }; // newSchedule = {checkout:{0,0,0}}
 		}
 		case "RESET":
 			return defaultSchedule;
+		case "RESET_CHECKOUT":
+			return { ...schedule, ...{ checkout: defaultDay } };
 		default:
 			return { ...schedule };
 	}
