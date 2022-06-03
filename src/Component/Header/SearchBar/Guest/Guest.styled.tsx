@@ -1,5 +1,21 @@
 import styled, { css } from "styled-components";
 
+const StyledGuestHover = styled.div`
+	${({ theme: { colors, width, height, shadow } }) => css`
+		width: ${width.guest};
+		display: flex;
+		z-index: 2;
+		border-left: 1px solid ${colors.grey5};
+
+		:hover {
+			height: ${height.searchbar};
+			border: 1px solid ${colors.white};
+			border-radius: 60px;
+			box-shadow: ${shadow.main};
+		}
+	`}
+`;
+
 const StyledGuest = styled.div`
 	${({ theme: { width } }) => css`
 		cursor: pointer;
@@ -16,4 +32,4 @@ const StyledGuest = styled.div`
 		}
 	`}
 `;
-export default StyledGuest;
+export { StyledGuest, StyledGuestHover };

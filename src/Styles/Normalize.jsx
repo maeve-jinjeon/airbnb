@@ -5,7 +5,8 @@ const Normalize = createGlobalStyle`
 		.App {
 			${fontMain};
 			color: ${colors.black};
-			width: 100wh;
+			width: 100vw;
+			height: 100vh;
 			div {
 				box-sizing: border-box;
 			}

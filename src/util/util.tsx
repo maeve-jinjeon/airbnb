@@ -1,3 +1,5 @@
+type dayType = { year: number; month: number; date: number };
+
 const UNIT = "￦";
 const PRICE_UNIT = 50000;
 const DISTANCE_MIN_MAX = PRICE_UNIT * 2;
@@ -10,4 +12,14 @@ const getPriceType = (price: number | undefined, isUnit = false) => {
 	return unit + stringifiedPrice;
 };
 
-export { PRICE_UNIT, DISTANCE_MIN_MAX, MAX_PRICE, MIN_PRICE, getPriceType };
+const getLateDay = (originDay: dayType, comparedDay: dayType) => {
+	if (originDay.year > comparedDay.year) return originDay;
+	if (originDay.year < comparedDay.year) return comparedDay;
+	if (originDay.month > comparedDay.month) return originDay;
+	if (originDay.month < comparedDay.month) return comparedDay;
+	if (originDay.date > comparedDay.date) return originDay;
+	if (originDay.date < comparedDay.date) return comparedDay;
+	return {};
+};
+
+export { PRICE_UNIT, DISTANCE_MIN_MAX, MAX_PRICE, MIN_PRICE, getPriceType, getLateDay };

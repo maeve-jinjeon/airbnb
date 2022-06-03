@@ -10,7 +10,8 @@ const Modal = () => {
 	const details = {
 		guest: <GuestsDetail />,
 		price: <PriceDetail />,
-		schedule: <CalendarDetail />,
+		checkin: <CalendarDetail />,
+		checkout: <CalendarDetail />,
 		empty: null,
 	};
 	const ModalDetail = details[modal];
