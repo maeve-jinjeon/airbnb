@@ -119,10 +119,19 @@ const StyledCalendar = styled.div`
 	align-content: space-around;
 `;
 
+const CalendarsWrapper = styled.div`
+	display: flex;
+	width: 800px;
+	overflow: hidden;
+`;
+
 const StyledCalendars = styled.div`
 	display: flex;
+	flex-shrink: 0;
 	justify-content: space-around;
-	width: 800px;
+	width: 1600px;
+	transition: 1s;
+	transform: translateX(-800px);
 `;
 
 export {
@@ -134,4 +143,5 @@ export {
 	CalendarTitle,
 	StyledCalendar,
 	StyledCalendars,
+	CalendarsWrapper,
 };

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyledCalendar, StyledCalendars } from "./CalendarDetail.styled";
+import { StyledCalendars, CalendarsWrapper } from "./CalendarDetail.styled";
 import Calendar from "./Calendar/Calendar";
 
 const CalendarDetail = () => {
@@ -32,14 +32,14 @@ const CalendarDetail = () => {
 	};
 
 	return (
-		<StyledCalendars>
-			<StyledCalendar>
+		<CalendarsWrapper>
+			<StyledCalendars>
 				<Calendar title="prev" year={thisYear} month={thisMonth} changeDates={changeDates} />
-			</StyledCalendar>
-			<StyledCalendar>
 				<Calendar title="next" year={thisYear} month={thisMonth + 1} changeDates={changeDates} />
-			</StyledCalendar>
-		</StyledCalendars>
+				<Calendar title="prev" year={thisYear} month={thisMonth} changeDates={changeDates} />
+				<Calendar title="next" year={thisYear} month={thisMonth + 1} changeDates={changeDates} />
+			</StyledCalendars>
+		</CalendarsWrapper>
 	);
 };
 
