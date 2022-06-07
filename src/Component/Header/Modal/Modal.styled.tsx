@@ -9,7 +9,6 @@ const StyledModalWrapper = styled.div`
 		margin: 0 auto;
 		margin-top: 16px;
 		width: ${width.searchbar};
-		overflow: hidden;
 	`}
 `;
 
@@ -31,6 +30,7 @@ const StyledModal = styled.div<IStyleModal>`
 		background-color: ${colors.white};
 		box-shadow: 0px 4px 8px -4px ${colors.black};
 		padding: 64px;
+		overflow: hidden;
 	`}
 `;
 
