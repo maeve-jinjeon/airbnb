@@ -125,13 +125,30 @@ const CalendarsWrapper = styled.div`
 	overflow: hidden;
 `;
 
-const StyledCalendars = styled.div`
-	display: flex;
-	flex-shrink: 0;
-	justify-content: space-around;
+const StyledCalendars = styled.div<{ sliderState: string }>`
 	width: 1600px;
-	transition: 1s;
-	transform: translateX(-800px);
+	${({ sliderState }) => css`
+		${sliderState === "prev" &&
+		css`
+			animation: slide-prev 0.5s;
+			animation-fill-mode: forwards;
+		`}
+
+		${sliderState === "next" &&
+		css`
+			animation: slide-next 0.5s;
+			animation-fill-mode: forwards;
+		`}
+
+		${sliderState === "middle" &&
+		css`
+			width: 1600px;
+		`}
+
+		display: flex;
+		flex-shrink: 0;
+		justify-content: space-around;
+	`}
 `;
 
 export {
