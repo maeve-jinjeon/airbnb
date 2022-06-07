@@ -5,9 +5,11 @@ import MiniSchedule from "./MiniSchedule/MiniSchedule";
 import MiniPrice from "./MiniPrice/MiniPrice";
 import MiniGuest from "./MiniGuest/MiniGuest";
 
-const MiniSearchBar = () => {
+// TODO: props 받는 부분 수정
+const MiniSearchBar = (props: any) => {
+	const { miniSearchBarIsHidden } = props;
 	return (
-		<StyledMiniSearchBar>
+		<StyledMiniSearchBar miniSearchBarIsHidden={miniSearchBarIsHidden}>
 			<MiniSchedule />
 			<MiniPrice />
 			<MiniGuest />

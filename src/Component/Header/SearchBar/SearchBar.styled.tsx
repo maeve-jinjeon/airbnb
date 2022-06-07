@@ -4,7 +4,19 @@ interface IStyledSearchBarChild {
 	name: string;
 }
 
-const StyledSearchBar = styled.div`
+interface IStyledSearchBar {
+	searchBarIsHidden: boolean;
+}
+
+const StyledSearchBar = styled.div<IStyledSearchBar>`
+	${({ searchBarIsHidden }) =>
+		searchBarIsHidden
+			? css`
+					visibility: hidden;
+			  `
+			: css`
+					display: block;
+			  `}
 	${({ theme: { width, height, colors } }) => css`
 		display: flex;
 		align-items: center;

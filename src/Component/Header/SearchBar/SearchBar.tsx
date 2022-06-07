@@ -6,9 +6,11 @@ import { StyledSearchBar, SearchIcon } from "./SearchBar.styled";
 import Price from "./Price/Price";
 import Guest from "./Guest/Guest";
 
-const SearchBar = () => {
+// TODO: props 받는 부분 수정
+const SearchBar = (props: any) => {
+	const { searchBarIsHidden } = props;
 	return (
-		<StyledSearchBar>
+		<StyledSearchBar searchBarIsHidden={searchBarIsHidden}>
 			<Schedule />
 			<Price />
 			<Guest />

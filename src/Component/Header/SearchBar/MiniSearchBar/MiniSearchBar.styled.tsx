@@ -4,7 +4,20 @@ interface IStyledMiniSearchBarChild {
 	name: string;
 }
 
-const StyledMiniSearchBar = styled.div`
+interface IStyledMiniSearchBar {
+	miniSearchBarIsHidden: boolean;
+}
+
+const StyledMiniSearchBar = styled.div<IStyledMiniSearchBar>`
+	${({ miniSearchBarIsHidden }) =>
+		miniSearchBarIsHidden
+			? css`
+					display: block;
+			  `
+			: css`
+					visibility: hidden;
+			  `}
+
 	width: 410px;
 	height: 48px;
 	margin: 0 auto;
@@ -14,6 +27,19 @@ const StyledMiniSearchBar = styled.div`
 	border-radius: 30px;
 
 	display: flex;
+
+	animation-duration: 3s;
+	animation-name: slide;
+
+	@keyframes slide {
+		from {
+			margin-top: 23px;
+		}
+
+		to {
+			margin-top: 90px;
+		}
+	}
 `;
 
 const SearchIcon = styled.div`
