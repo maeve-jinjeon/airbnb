@@ -34,6 +34,7 @@ const width = {
 	miniScheduleChild: "133px",
 	miniPriceChild: "149px",
 	miniGuestChild: "86px",
+	searchLists: "600px",
 };
 
 const height = {
