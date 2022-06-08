@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ModalContext } from "Context";
-import { StyledModal, StyledModalWrapper } from "./Modal.styled";
+import { StyledModal, StyledModalWrapper, Background } from "./Modal.styled";
 import GuestsDetail from "./GuestsDetail";
 import PriceDetail from "./PriceDetail/PriceDetail";
 import CalendarDetail from "./CalendarDetail/CalendarDetail";
@@ -17,9 +17,11 @@ const Modal = () => {
 	const ModalDetail = details[modal];
 
 	return (
-		<StyledModalWrapper>
-			<StyledModal modal={modal}>{ModalDetail}</StyledModal>
-		</StyledModalWrapper>
+		<Background>
+			<StyledModalWrapper>
+				<StyledModal modal={modal}>{ModalDetail}</StyledModal>
+			</StyledModalWrapper>
+		</Background>
 	);
 };
 

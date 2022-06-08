@@ -4,12 +4,21 @@ interface IStyleModal {
 	modal: string;
 }
 
+const Background = styled.div`
+	width: 100%;
+	height: 100%;
+	border: 1px solid red;
+	position: absolute;
+	left: 0;
+	top: 0;
+`;
+
 const StyledModalWrapper = styled.div`
 	${({ theme: { width } }) => css`
 		margin: 0 auto;
-		margin-top: 16px;
 		width: ${width.searchbar};
 	`}
+	margin-top: 220px;
 `;
 
 const StyledModal = styled.div<IStyleModal>`
@@ -82,4 +91,11 @@ const StyledGuestBtns = styled.div`
 	`}
 `;
 
-export { StyledModal, StyledModalWrapper, StyledGuestList, StyledGuestDesc, StyledGuestBtns };
+export {
+	Background,
+	StyledModal,
+	StyledModalWrapper,
+	StyledGuestList,
+	StyledGuestDesc,
+	StyledGuestBtns,
+};
