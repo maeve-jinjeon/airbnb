@@ -14,23 +14,28 @@ interface IVisibleDayBg {
 const VisibleDayBg = styled.div<IVisibleDayBg>`
 	${({ isCheckin, isCheckout, isBetween, isLast, isFirst, theme: { colors, height } }) => css`
 		height: ${height.calendarDay};
+
 		${isCheckout &&
 		css`
 			background: linear-gradient(90deg, ${colors.grey6} 50%, ${colors.white} 50%);
 		`}
+
 		${isCheckin &&
 		css`
 			background: linear-gradient(90deg, ${colors.white} 50%, ${colors.grey6} 50%);
 		`}
+
 		${isBetween &&
 		css`
 			background: ${colors.grey6};
 		`}
+
 		${isLast &&
 		isBetween &&
 		css`
 			background: linear-gradient(90deg, ${colors.grey6}, ${colors.white});
 		`}
+		
 		${isFirst &&
 		isBetween &&
 		css`

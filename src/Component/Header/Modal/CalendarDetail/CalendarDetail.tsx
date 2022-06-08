@@ -34,7 +34,7 @@ const calendarsInfo: TCalendarInfo = {
 
 const NUM_DECEMBER = 12;
 
-const getNextMonthAndYear = (month: number, year: number, gap: number) => {
+const getMonthAndYearByGap = (month: number, year: number, gap: number) => {
 	let nextMonth = month;
 	let nextYear = year;
 
@@ -60,7 +60,7 @@ const CalendarDetail = () => {
 
 	const changeDates = (direction: "prev" | "next") => {
 		const monthGap = direction === "prev" ? -2 : 2;
-		const { nextMonth, nextYear } = getNextMonthAndYear(thisMonth, thisYear, monthGap);
+		const { nextMonth, nextYear } = getMonthAndYearByGap(thisMonth, thisYear, monthGap);
 		setThisMonth(nextMonth);
 		setThisYear(nextYear);
 		setSliderState(direction);
@@ -69,7 +69,7 @@ const CalendarDetail = () => {
 	const handleAnimationEnd = () => setSliderState("middle");
 
 	const calendars = calendarsInfo[sliderState].map(({ title, gap }) => {
-		const { nextMonth, nextYear } = getNextMonthAndYear(thisMonth, thisYear, gap);
+		const { nextMonth, nextYear } = getMonthAndYearByGap(thisMonth, thisYear, gap);
 
 		return <Calendar title={title} year={nextYear} month={nextMonth} changeDates={changeDates} />;
 	});

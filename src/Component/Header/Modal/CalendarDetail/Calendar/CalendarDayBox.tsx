@@ -37,12 +37,16 @@ const CalendarDayBox = ({ year, month }: { year: number; month: number }) => {
 
 	const resultData = calData.map((dayInfo, idx, arr) => {
 		if (!arr[idx + 1]) return <CalendarCell dayInfo={dayInfo} isLast={false} isFirst={false} />;
+
 		const isFirst = dayInfo.date === 1;
-		const isLast = arr[idx + 1].date === 0 && dayInfo.date !== 0;
+		const isLast = !arr[idx + 1].date && dayInfo.date !== 0;
+		// if (dayInfo.date === 31) console.log(arr[idx + 1].date, dayInfo.date, isLast);
+
 		return <CalendarCell dayInfo={dayInfo} isLast={isLast} isFirst={isFirst} />;
 	});
-	const calendarlabels = days.map((day) => (
-		<StyledCalendarLabel key={day.id}>{day.value}</StyledCalendarLabel>
+
+	const calendarlabels = days.map(({ id, value }) => (
+		<StyledCalendarLabel key={id}>{value}</StyledCalendarLabel>
 	));
 
 	return (

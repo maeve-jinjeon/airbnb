@@ -22,4 +22,14 @@ const getLateDay = (originDay: dayType, comparedDay: dayType) => {
 	return {};
 };
 
-export { PRICE_UNIT, DISTANCE_MIN_MAX, MAX_PRICE, MIN_PRICE, getPriceType, getLateDay };
+const getShowedMonth = (month: number) => (month >= 12 ? 1 : month + 1);
+
+export {
+	PRICE_UNIT,
+	DISTANCE_MIN_MAX,
+	MAX_PRICE,
+	MIN_PRICE,
+	getPriceType,
+	getLateDay,
+	getShowedMonth,
+};
