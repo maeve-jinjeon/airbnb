@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import HeaderBackgroundImg from "./Header.styled";
+import { HeaderBackgroundImg, StyledSearchBarWrapper } from "./Header.styled";
 import GNB from "./GNB/GNB";
 import SearchBar from "./SearchBar/SearchBar";
 import MiniSearchBar from "./SearchBar/MiniSearchBar/MiniSearchBar";
@@ -39,13 +39,18 @@ const Header = () => {
 
 	return (
 		<HeaderBackgroundImg image={bgImage} isLocationSearch={isLocationSearch}>
-			<GNB isLocationSearch={isLocationSearch} />
-			<MiniSearchBar
-				miniSearchBarIsHidden={miniSearchBarIsHidden}
+			<GNB isLocationSearch={isLocationSearch} miniBarIsClicked={miniBarIsClicked} />
+			<StyledSearchBarWrapper
+				isLocationSearch={isLocationSearch}
 				miniBarIsClicked={miniBarIsClicked}
-				setMiniBarIsClicked={setMiniBarIsClicked}
-			/>
-			<SearchBar searchBarIsHidden={searchBarIsHidden} miniBarIsClicked={miniBarIsClicked} />
+			>
+				<MiniSearchBar
+					miniSearchBarIsHidden={miniSearchBarIsHidden}
+					miniBarIsClicked={miniBarIsClicked}
+					setMiniBarIsClicked={setMiniBarIsClicked}
+				/>
+				<SearchBar searchBarIsHidden={searchBarIsHidden} miniBarIsClicked={miniBarIsClicked} />
+			</StyledSearchBarWrapper>
 			<Modal />
 		</HeaderBackgroundImg>
 	);

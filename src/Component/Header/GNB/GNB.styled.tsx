@@ -3,6 +3,7 @@ import logoSrc from "util/logo.png";
 
 interface IStyledGNBNav {
 	isLocationSearch: boolean;
+	miniBarIsClicked: boolean;
 }
 
 const StyledGNB = styled.div`
@@ -40,13 +41,13 @@ const StyledNavList = styled.ul`
 `;
 
 const StyledGNBNav = styled.div<IStyledGNBNav>`
-	${({ isLocationSearch }) =>
-		!isLocationSearch
+	${({ isLocationSearch, miniBarIsClicked }) =>
+		isLocationSearch && !miniBarIsClicked
 			? css`
-					visivility: visible;
+					display: none;
 			  `
 			: css`
-					display: none;
+					visivility: visible;
 			  `}
 `;
 

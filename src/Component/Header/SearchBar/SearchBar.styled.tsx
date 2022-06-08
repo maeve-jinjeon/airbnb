@@ -36,7 +36,7 @@ const StyledSearchBar = styled.div<IStyledSearchBar>`
 		css`
 			position: absolute;
 			top: 30px;
-			left: 20%;
+			left: 26%;
 			animation-duration: 1s;
 			animation-name: slide;
 			animation-fill-mode: forwards;
