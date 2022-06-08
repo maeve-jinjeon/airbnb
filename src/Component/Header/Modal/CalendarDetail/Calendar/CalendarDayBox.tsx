@@ -17,42 +17,38 @@ const CalendarDayBox = ({ year, month }: { year: number; month: number }) => {
 	const nextDate = endDay.getDate();
 	const nextDay = endDay.getDay();
 
-	const calData = [];
-	let calDataLength = 0;
+	const calendarData = [];
+	let calendarDataLength = 0;
 
 	for (let i = 0; i < currentDay; i += 1) {
-		calData.push({ id: calDataLength, date: 0, year, month });
-		calDataLength += 1;
+		calendarData.push({ id: calendarDataLength, date: 0, year, month });
+		calendarDataLength += 1;
 	}
 
 	for (let i = 1; i <= nextDate; i += 1) {
-		calData.push({ id: calDataLength, date: i, year, month });
-		calDataLength += 1;
+		calendarData.push({ id: calendarDataLength, date: i, year, month });
+		calendarDataLength += 1;
 	}
 
 	for (let i = 1; i <= 6 - nextDay; i += 1) {
-		calData.push({ id: calDataLength, date: 0, year, month });
-		calDataLength += 1;
+		calendarData.push({ id: calendarDataLength, date: 0, year, month });
+		calendarDataLength += 1;
 	}
 
-	const resultData = calData.map((dayInfo, idx, arr) => {
-		if (!arr[idx + 1]) return <CalendarCell dayInfo={dayInfo} isLast={false} isFirst={false} />;
-
+	const calendarCells = calendarData.map((dayInfo, idx, arr) => {
 		const isFirst = dayInfo.date === 1;
-		const isLast = !arr[idx + 1].date && dayInfo.date !== 0;
-		// if (dayInfo.date === 31) console.log(arr[idx + 1].date, dayInfo.date, isLast);
-
+		const isLast = arr[idx + 1] ? !arr[idx + 1].date && dayInfo.date !== 0 : true;
 		return <CalendarCell dayInfo={dayInfo} isLast={isLast} isFirst={isFirst} />;
 	});
 
-	const calendarlabels = days.map(({ id, value }) => (
+	const calendarLabels = days.map(({ id, value }) => (
 		<StyledCalendarLabel key={id}>{value}</StyledCalendarLabel>
 	));
 
 	return (
 		<StyledCalendarDayBox>
-			{calendarlabels}
-			{resultData}
+			{calendarLabels}
+			{calendarCells}
 		</StyledCalendarDayBox>
 	);
 };
