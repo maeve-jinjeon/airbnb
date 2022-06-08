@@ -58,21 +58,11 @@ const CalendarDetail = () => {
 	const [thisMonth, setThisMonth] = useState(currentMonth);
 	const [sliderState, setSliderState] = useState("middle");
 
-	const showPrevMonths = () => {
-		const { nextMonth, nextYear } = getNextMonthAndYear(thisMonth, thisYear, -2);
-		setThisMonth(nextMonth);
-		setThisYear(nextYear);
-	};
-
-	const showNextMonths = () => {
-		const { nextMonth, nextYear } = getNextMonthAndYear(thisMonth, thisYear, 2);
-		setThisMonth(nextMonth);
-		setThisYear(nextYear);
-	};
-
 	const changeDates = (direction: "prev" | "next") => {
-		if (direction === "prev") showPrevMonths();
-		if (direction === "next") showNextMonths();
+		const monthGap = direction === "prev" ? -2 : 2;
+		const { nextMonth, nextYear } = getNextMonthAndYear(thisMonth, thisYear, monthGap);
+		setThisMonth(nextMonth);
+		setThisYear(nextYear);
 		setSliderState(direction);
 	};
 
