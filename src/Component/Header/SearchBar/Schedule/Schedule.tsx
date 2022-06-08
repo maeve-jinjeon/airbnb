@@ -1,6 +1,7 @@
 import { useContext } from "react";
 
 import { CancelButton } from "util/Icons";
+import { getShowedMonth } from "util/util";
 import { CheckModalContext, ScheduleContext, ScheduleDispatchContext } from "Context";
 import { StyledCheckin, StyledCheckout } from "./Schedule.styled";
 import { StyledSearchBarChild } from "../SearchBar.styled";
@@ -21,7 +22,9 @@ const Schedule = () => {
 			<StyledCheckin>
 				<StyledSearchBarChild onClick={() => checkModal(modalStateCheckin)} name={name}>
 					<div>체크인</div>
-					<div>{checkin.year ? `${checkin.month}월${checkin.date}일` : "날짜 입력"}</div>
+					<div>
+						{checkin.year ? `${getShowedMonth(checkin.month)}월${checkin.date}일` : "날짜 입력"}
+					</div>
 				</StyledSearchBarChild>
 				{isCheckin && (
 					<CancelButton
@@ -37,7 +40,9 @@ const Schedule = () => {
 			<StyledCheckout>
 				<StyledSearchBarChild onClick={() => checkModal(modalStateCheckout)} name={name}>
 					<div>체크아웃</div>
-					<div>{checkout.year ? `${checkout.month}월${checkout.date}일` : "날짜 입력"}</div>
+					<div>
+						{checkout.year ? `${getShowedMonth(checkout.month)}월${checkout.date}일` : "날짜 입력"}
+					</div>
 				</StyledSearchBarChild>
 				{isCheckout && (
 					<CancelButton
