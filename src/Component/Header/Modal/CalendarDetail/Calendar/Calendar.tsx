@@ -1,6 +1,7 @@
 import { PrevButton, NextButton } from "util/Icons";
-import CalTitle from "./CalTitle";
-import CalDayBox from "./CalDayBox";
+import { StyledCalendar } from "./Calendar.styled";
+import CalendarTitle from "./CalendarTitle";
+import CalendarDayBox from "./CalendarDayBox";
 
 const Calendar = ({
 	title,
@@ -14,16 +15,16 @@ const Calendar = ({
 	changeDates: any;
 }) => {
 	return (
-		<>
+		<StyledCalendar>
 			{title === "prev" && (
 				<PrevButton onClick={() => changeDates(title)} colorset="black" size={16} />
 			)}
-			<CalTitle year={year} month={month} />
+			<CalendarTitle year={year} month={month} />
 			{title === "next" && (
 				<NextButton onClick={() => changeDates(title)} colorset="black" size={16} />
 			)}
-			<CalDayBox year={year} month={month} />
-		</>
+			<CalendarDayBox year={year} month={month} />
+		</StyledCalendar>
 	);
 };
 

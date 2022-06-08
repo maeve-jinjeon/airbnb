@@ -30,6 +30,24 @@ const Normalize = createGlobalStyle`
 			opacity: 0;
 		}
 	}
+
+	@keyframes slide-prev {
+		from {
+			transform: translateX(-800px);
+		}
+		to {
+			transform: translateX(0px);
+		}
+	}
+
+	@keyframes slide-next {
+		from {
+			transform: translateX(0px);
+		}
+		to {
+			transform: translateX(-800px);
+		}
+	}
 `;
 
 export default Normalize;

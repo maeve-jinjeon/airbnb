@@ -29,7 +29,7 @@ const StyledModal = styled.div<IStyleModal>`
 		border-radius: 40px;
 		background-color: ${colors.white};
 		box-shadow: 0px 4px 8px -4px ${colors.black};
-		padding: 64px;
+		padding: 58px;
 		overflow: hidden;
 	`}
 `;
