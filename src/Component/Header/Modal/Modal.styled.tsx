@@ -7,7 +7,6 @@ interface IStyleModal {
 const Background = styled.div`
 	width: 100%;
 	height: 100%;
-	border: 1px solid red;
 	position: absolute;
 	left: 0;
 	top: 0;
