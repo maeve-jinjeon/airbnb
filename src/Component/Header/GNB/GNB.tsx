@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { AccountButton, MenuButton } from "util/Icons";
-import { StyledGNB, StyledNavList, GNBImg, GNBAccountMenu } from "./GNB.styled";
+import { StyledGNB, StyledNavList, GNBImg, GNBAccountMenu, StyledGNBNav } from "./GNB.styled";
 
 type listItem = {
 	id: number;
@@ -23,13 +23,17 @@ const GNBNav = ({ listItems }: GNBNavPropsType) => {
 	return <StyledNavList>{navList}</StyledNavList>;
 };
 
-const GNB = () => {
+const GNB = (props: any) => {
+	const { isLocationSearch } = props;
 	return (
 		<StyledGNB>
 			<Link to="/">
 				<GNBImg />
 			</Link>
-			<GNBNav listItems={navListItems} />
+			<StyledGNBNav isLocationSearch={isLocationSearch}>
+				<GNBNav listItems={navListItems} />
+			</StyledGNBNav>
+
 			<GNBAccountMenu>
 				<MenuButton colorset="grey2" size={16} />
 				<AccountButton colorset="grey2" size={16} />

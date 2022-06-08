@@ -6,17 +6,26 @@ interface IStyledMiniSearchBarChild {
 
 interface IStyledMiniSearchBar {
 	miniSearchBarIsHidden: boolean;
+	miniBarIsClicked: boolean;
 }
 
 const StyledMiniSearchBar = styled.div<IStyledMiniSearchBar>`
 	${({ miniSearchBarIsHidden }) =>
 		miniSearchBarIsHidden
 			? css`
-					display: block;
+					visibility: hidden;
 			  `
 			: css`
-					visibility: hidden;
+					visivility: visible;
 			  `}
+
+	${({ miniBarIsClicked }) =>
+		miniBarIsClicked
+			? css`
+					animation-duration: 1s;
+					animation-name: slide;
+			  `
+			: css``}
 
 	width: 410px;
 	height: 48px;
@@ -25,17 +34,12 @@ const StyledMiniSearchBar = styled.div<IStyledMiniSearchBar>`
 	background: #ffffff;
 	border: 1px solid #bdbdbd;
 	border-radius: 30px;
-
 	display: flex;
-
-	animation-duration: 3s;
-	animation-name: slide;
 
 	@keyframes slide {
 		from {
 			margin-top: 23px;
 		}
-
 		to {
 			margin-top: 90px;
 		}

@@ -15,7 +15,7 @@ const StyledSearchBar = styled.div<IStyledSearchBar>`
 					visibility: hidden;
 			  `
 			: css`
-					display: block;
+					visibility: visible;
 			  `}
 	${({ theme: { width, height, colors } }) => css`
 		display: flex;
