@@ -1,7 +1,7 @@
 import { CalendarTitle } from "../CalendarDetail.styled";
 
 const CalTitle = ({ year, month }: { year: number; month: number }) => {
-	const showedMonth = month > 12 ? 1 : month;
+	const showedMonth = month > 12 ? 1 : month + 1;
 	return (
 		<CalendarTitle>
 			{year}년 {showedMonth}월
