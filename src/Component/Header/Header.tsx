@@ -11,6 +11,7 @@ const Header = () => {
 	const [bgImage, setBgImage] = useState(null);
 	const [miniSearchBarIsHidden, setMiniSearchBarIsHidden] = useState(false);
 	const [searchBarIsHidden, setSearchBarIsHidden] = useState(false);
+	const [miniBarIsClicked, setMiniBarIsClicked] = useState(false);
 
 	const { pathname } = useLocation();
 	const isLocationSearch = pathname === "/search";
@@ -29,36 +30,25 @@ const Header = () => {
 		}
 	}, [pathname]);
 
-	const handleAnimationState = () => {
-		setMiniSearchBarIsHidden(true);
-		setSearchBarIsHidden(false);
-	};
+	useEffect(() => {
+		if (miniBarIsClicked) {
+			setMiniSearchBarIsHidden(true);
+			setSearchBarIsHidden(false);
+		}
+	}, [miniBarIsClicked]);
 
 	return (
 		<HeaderBackgroundImg image={bgImage} isLocationSearch={isLocationSearch}>
 			<GNB isLocationSearch={isLocationSearch} />
 			<MiniSearchBar
 				miniSearchBarIsHidden={miniSearchBarIsHidden}
-				handleAnimationState={handleAnimationState}
+				miniBarIsClicked={miniBarIsClicked}
+				setMiniBarIsClicked={setMiniBarIsClicked}
 			/>
-			<SearchBar searchBarIsHidden={searchBarIsHidden} />
+			<SearchBar searchBarIsHidden={searchBarIsHidden} miniBarIsClicked={miniBarIsClicked} />
 			<Modal />
 		</HeaderBackgroundImg>
 	);
 };
 
 export default Header;
-
-/* 
-
-/search 라우팅되면 
-gnb 없애고 
-미니바 띄우고 
-3초 동안 슬라이딩 애니메이션
-3초 끝나면 미니바 없애고 서치바 띄우기 
-
-/search 라우팅되면 -> onClick 으로 바꾸기 
-
-*/
-
-// miniSearchBarIsHidden props 를 넘겨줄 때 힘들었음

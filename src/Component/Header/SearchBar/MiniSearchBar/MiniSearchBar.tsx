@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { SearchButton } from "util/Icons";
 import { StyledMiniSearchBar, SearchIcon } from "./MiniSearchBar.styled";
 
@@ -6,14 +5,8 @@ import MiniSchedule from "./MiniSchedule/MiniSchedule";
 import MiniPrice from "./MiniPrice/MiniPrice";
 import MiniGuest from "./MiniGuest/MiniGuest";
 
-// TODO: props 받는 부분 수정
 const MiniSearchBar = (props: any) => {
-	const { miniSearchBarIsHidden, handleAnimationState } = props;
-	const [miniBarIsClicked, setMiniBarIsClicked] = useState(false);
-
-	const handleAnimation = () => {
-		handleAnimationState();
-	};
+	const { miniSearchBarIsHidden, miniBarIsClicked, setMiniBarIsClicked } = props;
 
 	const handleMiniBarIsClicked = () => {
 		setMiniBarIsClicked(!miniBarIsClicked);
@@ -22,8 +15,6 @@ const MiniSearchBar = (props: any) => {
 	return (
 		<StyledMiniSearchBar
 			miniSearchBarIsHidden={miniSearchBarIsHidden}
-			miniBarIsClicked={miniBarIsClicked}
-			onAnimationEnd={handleAnimation}
 			onClick={handleMiniBarIsClicked}
 		>
 			<MiniSchedule />
