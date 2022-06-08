@@ -4,7 +4,7 @@ import Calendar from "./Calendar/Calendar";
 
 type TCalendar = {
 	title: string;
-	addedMonth: number;
+	gap: number;
 };
 
 type TCalendarInfo = {
@@ -13,22 +13,22 @@ type TCalendarInfo = {
 
 const calendarsInfo: TCalendarInfo = {
 	prev: [
-		{ title: "prev", addedMonth: 0 },
-		{ title: "next", addedMonth: 1 },
-		{ title: "null", addedMonth: 2 },
-		{ title: "null", addedMonth: 3 },
+		{ title: "prev", gap: 0 },
+		{ title: "next", gap: 1 },
+		{ title: "null", gap: 2 },
+		{ title: "null", gap: 3 },
 	],
 	next: [
-		{ title: "null", addedMonth: -2 },
-		{ title: "null", addedMonth: -1 },
-		{ title: "prev", addedMonth: 0 },
-		{ title: "next", addedMonth: 1 },
+		{ title: "null", gap: -2 },
+		{ title: "null", gap: -1 },
+		{ title: "prev", gap: 0 },
+		{ title: "next", gap: 1 },
 	],
 	middle: [
-		{ title: "prev", addedMonth: 0 },
-		{ title: "next", addedMonth: 1 },
-		{ title: "null", addedMonth: 2 },
-		{ title: "null", addedMonth: 3 },
+		{ title: "prev", gap: 0 },
+		{ title: "next", gap: 1 },
+		{ title: "null", gap: 2 },
+		{ title: "null", gap: 3 },
 	],
 };
 
@@ -68,14 +68,11 @@ const CalendarDetail = () => {
 
 	const handleAnimationEnd = () => setSliderState("middle");
 
-	const calendars = calendarsInfo[sliderState].map(({ title, addedMonth }) => (
-		<Calendar
-			title={title}
-			year={thisYear}
-			month={thisMonth + addedMonth}
-			changeDates={changeDates}
-		/>
-	));
+	const calendars = calendarsInfo[sliderState].map(({ title, gap }) => {
+		const { nextMonth, nextYear } = getNextMonthAndYear(thisMonth, thisYear, gap);
+
+		return <Calendar title={title} year={nextYear} month={nextMonth} changeDates={changeDates} />;
+	});
 
 	return (
 		<CalendarsWrapper>
