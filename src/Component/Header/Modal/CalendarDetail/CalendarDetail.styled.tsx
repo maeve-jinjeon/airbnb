@@ -140,11 +140,6 @@ const StyledCalendars = styled.div<{ sliderState: string }>`
 			animation-fill-mode: forwards;
 		`}
 
-		${sliderState === "middle" &&
-		css`
-			width: 1600px;
-		`}
-
 		display: flex;
 		flex-shrink: 0;
 		justify-content: space-around;

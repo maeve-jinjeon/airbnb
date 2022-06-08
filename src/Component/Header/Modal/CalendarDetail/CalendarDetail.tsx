@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { StyledCalendars, CalendarsWrapper } from "./CalendarDetail.styled";
 import Calendar from "./Calendar/Calendar";
 
@@ -38,7 +38,6 @@ const CalendarDetail = () => {
 	const [thisYear, setThisYear] = useState(currentYear);
 	const [thisMonth, setThisMonth] = useState(currentMonth);
 	const [sliderState, setSliderState] = useState("middle");
-	const sliderRef = useRef<HTMLDivElement>(null);
 
 	const showPrevMonths = () => {
 		if (thisMonth - 2 < 0) {
@@ -64,6 +63,8 @@ const CalendarDetail = () => {
 		setSliderState(direction);
 	};
 
+	const handleAnimationEnd = () => setSliderState("middle");
+
 	const calendars = calendarsInfo[sliderState].map(({ title, addedMonth }) => (
 		<Calendar
 			title={title}
@@ -75,7 +76,7 @@ const CalendarDetail = () => {
 
 	return (
 		<CalendarsWrapper>
-			<StyledCalendars ref={sliderRef} sliderState={sliderState}>
+			<StyledCalendars sliderState={sliderState} onAnimationEnd={handleAnimationEnd}>
 				{calendars}
 			</StyledCalendars>
 		</CalendarsWrapper>
