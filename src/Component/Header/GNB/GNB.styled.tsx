@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import logoSrc from "util/logo.png";
+import logoSrc from "img/logo.png";
 
 interface IStyledGNBNav {
 	isLocationSearch: boolean;
