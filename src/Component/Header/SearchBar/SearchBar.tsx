@@ -6,8 +6,12 @@ import { StyledSearchBar, SearchIcon } from "./SearchBar.styled";
 import Price from "./Price/Price";
 import Guest from "./Guest/Guest";
 
-const SearchBar = (props: any) => {
-	const { searchBarIsHidden, miniBarIsClicked } = props;
+interface ISearchBarProps {
+	searchBarIsHidden: boolean;
+	miniBarIsClicked: boolean;
+}
+
+const SearchBar = ({ searchBarIsHidden, miniBarIsClicked }: ISearchBarProps) => {
 	return (
 		<StyledSearchBar searchBarIsHidden={searchBarIsHidden} miniBarIsClicked={miniBarIsClicked}>
 			<Schedule />

@@ -23,14 +23,18 @@ const GNBNav = ({ listItems }: GNBNavPropsType) => {
 	return <StyledNavList>{navList}</StyledNavList>;
 };
 
-const GNB = (props: any) => {
-	const { isLocationSearch } = props;
+interface IGNBProps {
+	isLocationSearch: boolean;
+	miniBarIsClicked: boolean;
+}
+
+const GNB = ({ isLocationSearch, miniBarIsClicked }: IGNBProps) => {
 	return (
 		<StyledGNB>
 			<Link to="/">
 				<GNBImg />
 			</Link>
-			<StyledGNBNav isLocationSearch={isLocationSearch}>
+			<StyledGNBNav isLocationSearch={isLocationSearch} miniBarIsClicked={miniBarIsClicked}>
 				<GNBNav listItems={navListItems} />
 			</StyledGNBNav>
 
