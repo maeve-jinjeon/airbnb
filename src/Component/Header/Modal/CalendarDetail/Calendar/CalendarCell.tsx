@@ -4,7 +4,7 @@ import { getLateDay } from "util/util";
 import { ScheduleContext, ScheduleDispatchContext } from "Context";
 import { VisibleDay, VisibleDayBg, InvisibleDay } from "./Calendar.styled";
 
-const CalCell = ({
+const CalendarCell = ({
 	dayInfo,
 	isLast = false,
 	isFirst = false,
@@ -52,4 +52,4 @@ const CalCell = ({
 	);
 };
 
-export default CalCell;
+export default CalendarCell;

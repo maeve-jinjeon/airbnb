@@ -1,5 +1,5 @@
 import { StyledCalendarDayBox, StyledCalendarLabel } from "./Calendar.styled";
-import CalCell from "./CalCell";
+import CalendarCell from "./CalendarCell";
 
 const days = [
 	{ id: 0, value: "일" },
@@ -36,10 +36,10 @@ const CalendarDayBox = ({ year, month }: { year: number; month: number }) => {
 	}
 
 	const resultData = calData.map((dayInfo, idx, arr) => {
-		if (!arr[idx + 1]) return <CalCell dayInfo={dayInfo} isLast={false} isFirst={false} />;
+		if (!arr[idx + 1]) return <CalendarCell dayInfo={dayInfo} isLast={false} isFirst={false} />;
 		const isFirst = dayInfo.date === 1;
 		const isLast = arr[idx + 1].date === 0 && dayInfo.date !== 0;
-		return <CalCell dayInfo={dayInfo} isLast={isLast} isFirst={isFirst} />;
+		return <CalendarCell dayInfo={dayInfo} isLast={isLast} isFirst={isFirst} />;
 	});
 	const calendarlabels = days.map((day) => (
 		<StyledCalendarLabel key={day.id}>{day.value}</StyledCalendarLabel>
