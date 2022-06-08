@@ -15,20 +15,20 @@ const calendarsInfo: TCalendarInfo = {
 	prev: [
 		{ title: "prev", gap: 0 },
 		{ title: "next", gap: 1 },
-		{ title: "null", gap: 2 },
-		{ title: "null", gap: 3 },
+		{ title: "", gap: 2 },
+		{ title: "", gap: 3 },
 	],
 	next: [
-		{ title: "null", gap: -2 },
-		{ title: "null", gap: -1 },
+		{ title: "", gap: -2 },
+		{ title: "", gap: -1 },
 		{ title: "prev", gap: 0 },
 		{ title: "next", gap: 1 },
 	],
 	middle: [
 		{ title: "prev", gap: 0 },
 		{ title: "next", gap: 1 },
-		{ title: "null", gap: 2 },
-		{ title: "null", gap: 3 },
+		{ title: "", gap: 2 },
+		{ title: "", gap: 3 },
 	],
 };
 

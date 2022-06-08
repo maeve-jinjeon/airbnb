@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import { getLateDay } from "util/util";
 import { ScheduleContext, ScheduleDispatchContext } from "Context";
-import { VisibleDay, VisibleDayBg, InvisibleDay } from "../CalendarDetail.styled";
+import { VisibleDay, VisibleDayBg, InvisibleDay } from "./Calendar.styled";
 
 const CalCell = ({
 	dayInfo,

@@ -1,4 +1,4 @@
-import { CalendarDayBox, CalendarLabel } from "../CalendarDetail.styled";
+import { StyledCalendarDayBox, StyledCalendarLabel } from "./Calendar.styled";
 import CalCell from "./CalCell";
 
 const days = [
@@ -11,7 +11,7 @@ const days = [
 	{ id: 6, value: "토" },
 ];
 
-const CalDayBox = ({ year, month }: { year: number; month: number }) => {
+const CalendarDayBox = ({ year, month }: { year: number; month: number }) => {
 	const currentDay = new Date(year, month, 1).getDay();
 	const endDay = new Date(year, month + 1, 0);
 	const nextDate = endDay.getDate();
@@ -41,14 +41,16 @@ const CalDayBox = ({ year, month }: { year: number; month: number }) => {
 		const isLast = arr[idx + 1].date === 0 && dayInfo.date !== 0;
 		return <CalCell dayInfo={dayInfo} isLast={isLast} isFirst={isFirst} />;
 	});
-	const labels = days.map((day) => <CalendarLabel key={day.id}>{day.value}</CalendarLabel>);
+	const calendarlabels = days.map((day) => (
+		<StyledCalendarLabel key={day.id}>{day.value}</StyledCalendarLabel>
+	));
 
 	return (
-		<CalendarDayBox>
-			{labels}
+		<StyledCalendarDayBox>
+			{calendarlabels}
 			{resultData}
-		</CalendarDayBox>
+		</StyledCalendarDayBox>
 	);
 };
 
-export default CalDayBox;
+export default CalendarDayBox;
