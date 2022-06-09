@@ -46,10 +46,12 @@ const StyledHotelPriceInfo = styled.div`
 	position: absolute;
 	bottom: 0;
 	right: 0;
+	text-align: right;
 `;
 
 const StyledHotelPrice = styled.div`
 	display: flex;
+	margin-bottom: 5px;
 	${({ theme: { fontSize, fontWeight, colors } }) => css`
 		color: ${colors.black};
 		> :nth-child(1) {
@@ -64,6 +66,15 @@ const StyledHotelPrice = styled.div`
 	`}
 `;
 
+const StyledHotelPriceSum = styled.div`
+	${({ theme: { fontSize, fontWeight, colors } }) => css`
+		color: ${colors.grey2};
+		font-size: ${fontSize.xSmall};
+		font-weight: ${fontWeight.small};
+		text-decoration: underline;
+	`}
+`;
+
 export {
 	StyledSearchList,
 	StyledSearchListInfo,
@@ -72,4 +83,5 @@ export {
 	StyledHotelDetails,
 	StyledHotelPriceInfo,
 	StyledHotelPrice,
+	StyledHotelPriceSum,
 };

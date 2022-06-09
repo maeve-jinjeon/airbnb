@@ -8,10 +8,12 @@ import {
 	StyledHotelDetails,
 	StyledHotelPriceInfo,
 	StyledHotelPrice,
+	StyledHotelPriceSum,
 } from "./SearchList.styled";
 
 type TSearchListProps = {
 	hotel: Thotel;
+	dateDiff: number;
 };
 
 type TShowedValueParams = {
@@ -20,6 +22,7 @@ type TShowedValueParams = {
 };
 
 const DAY_UNIT = "\n/\n박";
+const TOTAL_MONEY = "총액";
 
 const getShowedValue = (array: TShowedValueParams[]) => {
 	return array
@@ -35,6 +38,7 @@ const SearchList = ({
 		rooms: { peopleMax, bedroom, bed, bathroom },
 		options: { kitchen, wifi, airConditioner, hairDryer },
 	},
+	dateDiff,
 }: TSearchListProps) => {
 	const roomsArray = [
 		{ value: peopleMax, mention: `최대 인원 ${peopleMax}명` },
@@ -52,6 +56,7 @@ const SearchList = ({
 	const showedRooms = getShowedValue(roomsArray);
 	const showedOptions = getShowedValue(optionsArray);
 	const showedPrice = getPriceType(price, true);
+	const showedPriceSum = getPriceType(price * dateDiff, true);
 
 	return (
 		<StyledSearchList>
@@ -67,6 +72,7 @@ const SearchList = ({
 						<div>{showedPrice}</div>
 						<div>{DAY_UNIT}</div>
 					</StyledHotelPrice>
+					<StyledHotelPriceSum>{TOTAL_MONEY + showedPriceSum}</StyledHotelPriceSum>
 				</StyledHotelPriceInfo>
 			</StyledSearchListInfo>
 		</StyledSearchList>

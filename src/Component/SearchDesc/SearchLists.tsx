@@ -1,6 +1,6 @@
 import { useContext, useEffect, useMemo, useState } from "react";
 import { ScheduleContext, GuestsContext, PriceContext } from "Context";
-import { MIN_PRICE, MAX_PRICE, getPriceType } from "util/util";
+import { MIN_PRICE, MAX_PRICE, getPriceType, getDateDiff } from "util/util";
 import hotelsApi from "Api/hotelsApi";
 import SearchList from "./SearchList";
 import { StyledSearchLists, StyledResultSummary, StyledListMention } from "./SearchDesc.styled";
@@ -46,6 +46,7 @@ const SearchLists = () => {
 	const showedBaby = baby ? ` ∙ 유아 ${baby}명 ` : "";
 	const showedHotelsNum = useMemo(() => `${filteredHotels.length}개의 숙소`, [filteredHotels]);
 	const showedInfo = showedHotelsNum + showedSchedule + showedPrice + showedGuests + showedBaby;
+	const dateDiff = getDateDiff(checkin, checkout);
 
 	const resetFilteredHotels = (hotelsData: Thotel[]) => {
 		if (isPriceDefault) {
@@ -63,7 +64,7 @@ const SearchLists = () => {
 	};
 
 	const filteredLists = filteredHotels.map((hotel) => {
-		return <SearchList hotel={hotel} />;
+		return <SearchList hotel={hotel} dateDiff={dateDiff} />;
 	});
 
 	useEffect(() => {
