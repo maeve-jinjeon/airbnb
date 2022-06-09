@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { HeaderBackgroundImg, StyledSearchBarWrapper } from "./Header.styled";
+import { HeaderBackgroundImg, StyledSearchBarWrapper, HeaderBackground } from "./Header.styled";
 import GNB from "./GNB/GNB";
 import SearchBar from "./SearchBar/SearchBar";
 import MiniSearchBar from "./SearchBar/MiniSearchBar/MiniSearchBar";
@@ -37,22 +37,36 @@ const Header = () => {
 		}
 	}, [miniBarIsClicked]);
 
+	const handleSearchBarAnimation = () => {
+		if (miniBarIsClicked) {
+			setMiniBarIsClicked(false);
+		}
+	};
+
 	return (
-		<HeaderBackgroundImg image={bgImage} isLocationSearch={isLocationSearch}>
-			<GNB isLocationSearch={isLocationSearch} miniBarIsClicked={miniBarIsClicked} />
-			<StyledSearchBarWrapper
-				isLocationSearch={isLocationSearch}
-				miniBarIsClicked={miniBarIsClicked}
-			>
-				<MiniSearchBar
-					miniSearchBarIsHidden={miniSearchBarIsHidden}
+		<HeaderBackground onClick={handleSearchBarAnimation}>
+			<HeaderBackgroundImg image={bgImage} isLocationSearch={isLocationSearch}>
+				<GNB isLocationSearch={isLocationSearch} miniBarIsClicked={miniBarIsClicked} />
+				<StyledSearchBarWrapper
+					isLocationSearch={isLocationSearch}
 					miniBarIsClicked={miniBarIsClicked}
-					setMiniBarIsClicked={setMiniBarIsClicked}
-				/>
-				<SearchBar searchBarIsHidden={searchBarIsHidden} miniBarIsClicked={miniBarIsClicked} />
-			</StyledSearchBarWrapper>
-			<Modal />
-		</HeaderBackgroundImg>
+				>
+					<MiniSearchBar
+						miniSearchBarIsHidden={miniSearchBarIsHidden}
+						miniBarIsClicked={miniBarIsClicked}
+						setMiniBarIsClicked={setMiniBarIsClicked}
+					/>
+					<SearchBar
+						isLocationSearch={isLocationSearch}
+						searchBarIsHidden={searchBarIsHidden}
+						miniBarIsClicked={miniBarIsClicked}
+						setSearchBarIsHidden={setSearchBarIsHidden}
+						setMiniSearchBarIsHidden={setMiniSearchBarIsHidden}
+					/>
+				</StyledSearchBarWrapper>
+				<Modal />
+			</HeaderBackgroundImg>
+		</HeaderBackground>
 	);
 };
 

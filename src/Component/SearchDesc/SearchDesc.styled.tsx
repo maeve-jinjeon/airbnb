@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 
 const SearchDescWrapper = styled.div`
 	margin: 0 auto;
+	margin-top: 120px;
 	display: flex;
 	${({ theme: { width } }) => css`
 		width: ${width.header};

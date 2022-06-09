@@ -7,7 +7,13 @@ interface IStyledSearchBarChild {
 interface IStyledSearchBar {
 	searchBarIsHidden: boolean;
 	miniBarIsClicked: boolean;
+	isLocationSearch: boolean;
 }
+
+const SearchBarWrapper = styled.div`
+	width: 100%;
+	margin: 0 auto;
+`;
 
 const StyledSearchBar = styled.div<IStyledSearchBar>`
 	${({ searchBarIsHidden }) =>
@@ -31,19 +37,37 @@ const StyledSearchBar = styled.div<IStyledSearchBar>`
 		background-color: ${colors.white};
 	`}
 
-	${({ miniBarIsClicked }) =>
+	${({ miniBarIsClicked, isLocationSearch }) =>
 		miniBarIsClicked &&
+		isLocationSearch &&
 		css`
-			position: absolute;
-			top: 30px;
-			left: 21%;
+			// position: absolute;
+			// top: 70px;
+			// left: 21%;
+			margin: 0 auto;
+			margin-top: 130px;
 			animation-duration: 1s;
-			animation-name: slide;
+			animation-name: slide-out;
 			animation-fill-mode: forwards;
 			transition-timing-function: ease-out;
 		`}}
 
-		@keyframes slide {
+		${({ miniBarIsClicked, isLocationSearch }) =>
+			!miniBarIsClicked &&
+			isLocationSearch &&
+			css`
+				// position: absolute;
+				// top: 70px;
+				margin: 0 auto;
+				margin-top: 130px;
+				// left: 21%;
+				animation-duration: 0.6s;
+				animation-name: slide-in;
+				animation-fill-mode: forwards;
+				transition-timing-function: ease-out;
+			`}}
+
+		@keyframes slide-out{
 			from {
 				margin-top: 23px;
 				transform: scale(0.5);
@@ -53,6 +77,21 @@ const StyledSearchBar = styled.div<IStyledSearchBar>`
 				transform: scale(1.0);
 			}
 		}
+
+		@keyframes slide-in{
+			from {
+				margin-top: 90px;
+				transform: scale(1.0);
+			}
+			to {
+				margin-top: -10px; 
+				transform: scale(0.4); 
+			}
+		}
+
+
+		
+
 	z-index: 10;
 `;
 
@@ -101,4 +140,4 @@ const SearchIcon = styled.div`
 	z-index: 10;
 `;
 
-export { StyledSearchBar, StyledSearchBarChild, SearchIcon };
+export { StyledSearchBar, StyledSearchBarChild, SearchIcon, SearchBarWrapper };
