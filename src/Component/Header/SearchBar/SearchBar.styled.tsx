@@ -36,24 +36,24 @@ const StyledSearchBar = styled.div<IStyledSearchBar>`
 		css`
 			position: absolute;
 			top: 30px;
-			left: 26%;
+			left: 21%;
 			animation-duration: 1s;
 			animation-name: slide;
 			animation-fill-mode: forwards;
 			transition-timing-function: ease-out;
-		`}}
+		`}
 
 		@keyframes slide {
-			from {
-				margin-top: 23px;
-				transform: scale(0.5);
-			}
-			to {
-				margin-top: 90px;
-				transform: scale(1.0);
-			}
+		from {
+			margin-top: 23px;
+			transform: scale(0.5);
 		}
-	
+		to {
+			margin-top: 90px;
+			transform: scale(1);
+		}
+	}
+	z-index: 10;
 `;
 
 const StyledSearchBarChild = styled.div<IStyledSearchBarChild>`
@@ -97,6 +97,8 @@ const SearchIcon = styled.div`
 		justify-content: space-evenly;
 		color: ${colors.white};
 	`}
+	position: relative;
+	z-index: 10;
 `;
 
 export { StyledSearchBar, StyledSearchBarChild, SearchIcon };

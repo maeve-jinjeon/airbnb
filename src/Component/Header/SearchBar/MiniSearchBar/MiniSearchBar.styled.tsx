@@ -29,6 +29,7 @@ const StyledMiniSearchBar = styled.div<IStyledMiniSearchBar>`
 	border: 1px solid #bdbdbd;
 	border-radius: 30px;
 	display: flex;
+	z-index: 10;
 `;
 
 const SearchIcon = styled.div`
