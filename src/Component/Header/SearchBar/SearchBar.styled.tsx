@@ -5,7 +5,7 @@ interface IStyledSearchBarChild {
 }
 
 interface IStyledSearchBar {
-	searchBarIsHidden: boolean;
+	selectedSearchBar: string;
 	miniBarIsClicked: boolean;
 	isLocationSearch: boolean;
 }
@@ -16,8 +16,8 @@ const SearchBarWrapper = styled.div`
 `;
 
 const StyledSearchBar = styled.div<IStyledSearchBar>`
-	${({ searchBarIsHidden }) =>
-		searchBarIsHidden
+	${({ selectedSearchBar }) =>
+		selectedSearchBar === "miniSearchBar"
 			? css`
 					visibility: hidden;
 			  `

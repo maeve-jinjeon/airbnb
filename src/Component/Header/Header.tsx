@@ -9,9 +9,8 @@ import coverSrc from "../../img/airbnb.png";
 
 const Header = () => {
 	const [bgImage, setBgImage] = useState(null);
-	const [miniSearchBarIsHidden, setMiniSearchBarIsHidden] = useState(false);
-	const [searchBarIsHidden, setSearchBarIsHidden] = useState(false);
 	const [miniBarIsClicked, setMiniBarIsClicked] = useState(false);
+	const [selectedSearchBar, setSelectedSearchBar] = useState("searchBar");
 
 	const modal = useContext(ModalContext);
 	const checkModal = useContext(CheckModalContext);
@@ -25,18 +24,15 @@ const Header = () => {
 
 	useEffect(() => {
 		if (isLocationSearch) {
-			setMiniSearchBarIsHidden(false);
-			setSearchBarIsHidden(true);
+			setSelectedSearchBar("miniSearchBar");
 		} else {
-			setMiniSearchBarIsHidden(true);
-			setSearchBarIsHidden(false);
+			setSelectedSearchBar("searchBar");
 		}
 	}, [pathname]);
 
 	useEffect(() => {
 		if (miniBarIsClicked) {
-			setMiniSearchBarIsHidden(true);
-			setSearchBarIsHidden(false);
+			setSelectedSearchBar("searchBar");
 		}
 	}, [miniBarIsClicked]);
 
@@ -53,7 +49,7 @@ const Header = () => {
 				<GNB
 					isLocationSearch={isLocationSearch}
 					miniBarIsClicked={miniBarIsClicked}
-					miniSearchBarIsHidden={miniSearchBarIsHidden}
+					selectedSearchBar={selectedSearchBar}
 					setMiniBarIsClicked={setMiniBarIsClicked}
 				/>
 				<StyledSearchBarWrapper
@@ -62,10 +58,9 @@ const Header = () => {
 				>
 					<SearchBar
 						isLocationSearch={isLocationSearch}
-						searchBarIsHidden={searchBarIsHidden}
 						miniBarIsClicked={miniBarIsClicked}
-						setSearchBarIsHidden={setSearchBarIsHidden}
-						setMiniSearchBarIsHidden={setMiniSearchBarIsHidden}
+						selectedSearchBar={selectedSearchBar}
+						setSelectedSearchBar={setSelectedSearchBar}
 					/>
 				</StyledSearchBarWrapper>
 				<Modal />

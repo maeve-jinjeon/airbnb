@@ -27,14 +27,14 @@ const GNBNavLists = ({ listItems }: GNBNavPropsType) => {
 interface IGNBProps {
 	isLocationSearch: boolean;
 	miniBarIsClicked: boolean;
-	miniSearchBarIsHidden: boolean;
+	selectedSearchBar: string;
 	setMiniBarIsClicked: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const GNB = ({
 	isLocationSearch,
 	miniBarIsClicked,
-	miniSearchBarIsHidden,
+	selectedSearchBar,
 	setMiniBarIsClicked,
 }: IGNBProps) => {
 	const GNBNav = (
@@ -44,7 +44,7 @@ const GNB = ({
 	);
 	const MiniBar = (
 		<MiniSearchBar
-			miniSearchBarIsHidden={miniSearchBarIsHidden}
+			selectedSearchBar={selectedSearchBar}
 			miniBarIsClicked={miniBarIsClicked}
 			setMiniBarIsClicked={setMiniBarIsClicked}
 		/>

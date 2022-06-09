@@ -8,19 +8,17 @@ import Price from "./Price/Price";
 import Guest from "./Guest/Guest";
 
 interface ISearchBarProps {
-	searchBarIsHidden: boolean;
 	miniBarIsClicked: boolean;
 	isLocationSearch: boolean;
-	setSearchBarIsHidden: React.Dispatch<React.SetStateAction<boolean>>;
-	setMiniSearchBarIsHidden: React.Dispatch<React.SetStateAction<boolean>>;
+	selectedSearchBar: string;
+	setSelectedSearchBar: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const SearchBar = ({
-	searchBarIsHidden,
 	miniBarIsClicked,
 	isLocationSearch,
-	setSearchBarIsHidden,
-	setMiniSearchBarIsHidden,
+	selectedSearchBar,
+	setSelectedSearchBar,
 }: ISearchBarProps) => {
 	const modal = useContext(ModalContext);
 	const checkModal = useContext(CheckModalContext);
@@ -31,8 +29,7 @@ const SearchBar = ({
 
 	const handleOnAnimationEnd = () => {
 		if (!miniBarIsClicked) {
-			setSearchBarIsHidden(true);
-			setMiniSearchBarIsHidden(false);
+			setSelectedSearchBar("miniSearchBar");
 		}
 	};
 
@@ -40,7 +37,7 @@ const SearchBar = ({
 		<SearchBarWrapper>
 			<StyledSearchBar
 				isLocationSearch={isLocationSearch}
-				searchBarIsHidden={searchBarIsHidden}
+				selectedSearchBar={selectedSearchBar}
 				miniBarIsClicked={miniBarIsClicked}
 				onAnimationEnd={handleOnAnimationEnd}
 			>
