@@ -27,6 +27,7 @@ type Thotel = {
 };
 
 const LIST_MENTION = "지도에서 선택한 지역의 숙소";
+const HOTELS_PER_PAGE = 10;
 
 const SearchLists = () => {
 	const [hotels, setHotels] = useState<Thotel[]>([]);
@@ -51,9 +52,12 @@ const SearchLists = () => {
 
 	const resetFilteredHotels = (hotelsData: Thotel[]) => {
 		if (isPriceDefault) {
-			setFilteredHotels(hotelsData);
+			const filteredHotelData = hotelsData.slice(0, HOTELS_PER_PAGE);
+			setFilteredHotels(filteredHotelData);
 		} else {
-			const filteredHotelsData = hotelsData.filter(({ price }) => price > min && price <= max);
+			const filteredHotelsData = hotelsData
+				.filter(({ price }) => price > min && price <= max)
+				.slice(0, HOTELS_PER_PAGE);
 			setFilteredHotels(filteredHotelsData);
 		}
 	};
@@ -61,7 +65,7 @@ const SearchLists = () => {
 	const fetchHotels = async () => {
 		const hotelsData = await hotelsApi.getHotels();
 		setHotels(hotelsData);
-		resetFilteredHotels(hotelsData);
+		resetFilteredHotels(hotelsData); // 서버에서 이루어져야하는 작업. 현재 임시적으로 적용
 	};
 
 	const filteredLists = filteredHotels.map((hotel) => {
