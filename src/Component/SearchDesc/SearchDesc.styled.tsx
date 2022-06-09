@@ -38,4 +38,10 @@ const StyledListMention = styled.div`
 	`}
 `;
 
-export { SearchDescWrapper, StyledSearchLists, StyledResultSummary, StyledListMention };
+const StyledMap = styled.div`
+	width: 600px;
+	height: 1000px;
+	border: solid 1px red;
+`;
+
+export { SearchDescWrapper, StyledSearchLists, StyledResultSummary, StyledListMention, StyledMap };
