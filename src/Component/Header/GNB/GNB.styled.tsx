@@ -18,7 +18,6 @@ const StyledGNB = styled.div`
 	padding: 10px;
 	position: relative;
 	z-index: 10;
-	border: 1px solid red;
 `;
 
 const StyledNavList = styled.ul`
