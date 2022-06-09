@@ -5,7 +5,7 @@ import GNB from "./GNB/GNB";
 import SearchBar from "./SearchBar/SearchBar";
 import MiniSearchBar from "./SearchBar/MiniSearchBar/MiniSearchBar";
 import Modal from "./Modal/Modal";
-import coverSrc from "../../util/airbnb.png";
+import coverSrc from "../../img/airbnb.png";
 
 const Header = () => {
 	const [bgImage, setBgImage] = useState(null);
