@@ -41,9 +41,6 @@ const StyledSearchBar = styled.div<IStyledSearchBar>`
 		miniBarIsClicked &&
 		isLocationSearch &&
 		css`
-			// position: absolute;
-			// top: 70px;
-			// left: 21%;
 			margin: 0 auto;
 			margin-top: 130px;
 			animation-duration: 1s;
@@ -56,11 +53,8 @@ const StyledSearchBar = styled.div<IStyledSearchBar>`
 			!miniBarIsClicked &&
 			isLocationSearch &&
 			css`
-				// position: absolute;
-				// top: 70px;
 				margin: 0 auto;
 				margin-top: 130px;
-				// left: 21%;
 				animation-duration: 0.6s;
 				animation-name: slide-in;
 				animation-fill-mode: forwards;
@@ -84,8 +78,8 @@ const StyledSearchBar = styled.div<IStyledSearchBar>`
 				transform: scale(1.0);
 			}
 			to {
-				margin-top: -10px; 
-				transform: scale(0.4); 
+				margin-top: 17px; 
+				transform: scale(0.5); 
 			}
 		}
 

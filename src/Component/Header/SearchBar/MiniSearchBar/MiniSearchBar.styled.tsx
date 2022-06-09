@@ -20,10 +20,10 @@ const StyledMiniSearchBar = styled.div<IStyledMiniSearchBar>`
 
 	width: 410px;
 	height: 48px;
-	margin: 0 auto;
-	position: absolute;
-	top: 30px;
-	left: 36%;
+	/* margin: 0 auto; */
+	/* position: absolute; */
+	/* top: 30px; */
+	/* left: 36%; */
 	text-align: center;
 	background: #ffffff;
 	border: 1px solid #bdbdbd;

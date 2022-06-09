@@ -10,6 +10,10 @@ interface IStyledSearchBarWrapper {
 	isLocationSearch: boolean;
 }
 
+interface IHeaderBackground {
+	isLocationSearch: boolean;
+}
+
 const HeaderBackgroundImg = styled.div<IHeaderBackgroundImgn>`
 	${({ theme: { height, width }, image, isLocationSearch }) =>
 		isLocationSearch === false
@@ -72,12 +76,18 @@ const StyledSearchBarWrapper = styled.div<IStyledSearchBarWrapper>`
 	}
 `;
 
-const HeaderBackground = styled.div`
+const HeaderBackground = styled.div<IHeaderBackground>`
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	left: 0;
 	top: 0;
+
+	${({ isLocationSearch }) =>
+		isLocationSearch &&
+		css`
+			z-index: 1;
+		`}
 `;
 
 export { HeaderBackgroundImg, StyledSearchBarWrapper, HeaderBackground };

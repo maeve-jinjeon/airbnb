@@ -41,6 +41,9 @@ const StyledModal = styled.div<IStyleModal>`
 		overflow: hidden;
 	`}
 	box-sizing: border-box;
+
+	position: relative;
+	z-index: 2;
 `;
 
 const StyledGuestList = styled.li`
