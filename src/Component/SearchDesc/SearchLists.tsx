@@ -1,37 +1,24 @@
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useContext, useEffect, useMemo, Dispatch, SetStateAction } from "react";
 import { ScheduleContext, GuestsContext, PriceContext } from "Context";
 import { MIN_PRICE, MAX_PRICE, getPriceType, getDateDiff } from "util/util";
-import hotelsApi from "Api/hotelsApi";
 import SearchList from "./SearchList";
 import { StyledSearchLists, StyledResultSummary, StyledListMention } from "./SearchDesc.styled";
+import type { Thotel } from "./SearchDesc";
 
-type Thotel = {
-	id: number;
-	name: string;
-	price: number;
-	img: string;
-	unavailableDate: [];
-	rooms: {
-		peopleMax: number;
-		bedroom: number;
-		bed: number;
-		bathroom: number;
+type TSearchListsProps = {
+	props: {
+		hotels: Thotel[];
+		filteredHotels: Thotel[];
+		setFilteredHotels: Dispatch<SetStateAction<Thotel[]>>;
 	};
-	options: {
-		kitchen: boolean;
-		wifi: boolean;
-		airConditioner: boolean;
-		hairDryer: boolean;
-	};
-	location: string;
 };
 
 const LIST_MENTION = "지도에서 선택한 지역의 숙소";
 const HOTELS_PER_PAGE = 10;
 
-const SearchLists = () => {
-	const [hotels, setHotels] = useState<Thotel[]>([]);
-	const [filteredHotels, setFilteredHotels] = useState<Thotel[]>([]);
+const SearchLists = ({
+	props: { hotels, filteredHotels, setFilteredHotels },
+}: TSearchListsProps) => {
 	const { checkin, checkout } = useContext(ScheduleContext);
 	const { adult, child, baby } = useContext(GuestsContext);
 	const { min, max } = useContext(PriceContext);
@@ -62,19 +49,13 @@ const SearchLists = () => {
 		}
 	};
 
-	const fetchHotels = async () => {
-		const hotelsData = await hotelsApi.getHotels();
-		setHotels(hotelsData);
-		resetFilteredHotels(hotelsData); // 서버에서 이루어져야하는 작업. 현재 임시적으로 적용
-	};
-
 	const filteredLists = filteredHotels.map((hotel) => {
 		return <SearchList hotel={hotel} dateDiff={dateDiff} />;
 	});
 
 	useEffect(() => {
-		fetchHotels();
-	}, []);
+		resetFilteredHotels(hotels);
+	}, [hotels]);
 
 	useEffect(() => {
 		resetFilteredHotels(hotels);
