@@ -4,7 +4,7 @@ import { StyledModal, StyledModalWrapper, Background } from "./Modal.styled";
 import GuestsDetail from "./GuestsDetail";
 import PriceDetail from "./PriceDetail/PriceDetail";
 import CalendarDetail from "./CalendarDetail/CalendarDetail";
-// import ModalPortal from "./Portal";
+import ModalPortal from "./Portal";
 
 const Modal = () => {
 	const modal = useContext(ModalContext);
@@ -22,17 +22,16 @@ const Modal = () => {
 		if (modal !== "empty") checkModal("empty");
 	};
 
-	// TODO: ModalPortal으로 감싸니까 모달 사이즈가 padding만큼 더 커짐
 	return (
-		// <ModalPortal>
-		<Background onClick={handleModalPopup}>
-			<StyledModalWrapper>
-				<StyledModal modal={modal} onClick={(event) => event.stopPropagation()}>
-					{ModalDetail}
-				</StyledModal>
-			</StyledModalWrapper>
-		</Background>
-		// </ModalPortal>
+		<ModalPortal>
+			<Background onClick={handleModalPopup}>
+				<StyledModalWrapper>
+					<StyledModal modal={modal} onClick={(event) => event.stopPropagation()}>
+						{ModalDetail}
+					</StyledModal>
+				</StyledModalWrapper>
+			</Background>
+		</ModalPortal>
 	);
 };
 
