@@ -16,6 +16,9 @@ const StyledGNB = styled.div`
 	justify-content: space-between;
 	display: flex;
 	padding: 10px;
+	position: relative;
+	z-index: 10;
+	border: 1px solid red;
 `;
 
 const StyledNavList = styled.ul`
