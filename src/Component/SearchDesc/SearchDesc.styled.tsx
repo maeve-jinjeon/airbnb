@@ -3,17 +3,17 @@ import styled, { css } from "styled-components";
 const SearchDescWrapper = styled.div`
 	margin: 0 auto;
 	margin-top: 120px;
+	margin-bottom: 20px;
 	display: flex;
+	justify-content: space-between;
 	${({ theme: { width } }) => css`
 		width: ${width.header};
-		height: 2000px;
 	`}
 `;
 
 const StyledSearchLists = styled.div`
 	${({ theme: { width } }) => css`
 		width: ${width.searchLists};
-		height: 1800px;
 		padding: 10px;
 	`}
 `;
@@ -38,4 +38,15 @@ const StyledListMention = styled.div`
 	`}
 `;
 
-export { SearchDescWrapper, StyledSearchLists, StyledResultSummary, StyledListMention };
+const StyledMap = styled.div`
+	${({ theme: { width } }) => css`
+		width: ${width.searchMap};
+		height: 100vh;
+		position: sticky;
+		top: 0;
+		border-radius: 20px;
+		overflow: hidden;
+	`}
+`;
+
+export { SearchDescWrapper, StyledSearchLists, StyledResultSummary, StyledListMention, StyledMap };
