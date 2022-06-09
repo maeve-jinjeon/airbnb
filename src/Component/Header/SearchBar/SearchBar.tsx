@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-
+import { useContext } from "react";
+import { ModalContext, CheckModalContext } from "Context";
 import { SearchButton } from "util/Icons";
 import Schedule from "./Schedule/Schedule";
 import { StyledSearchBar, SearchIcon } from "./SearchBar.styled";
@@ -12,13 +13,20 @@ interface ISearchBarProps {
 }
 
 const SearchBar = ({ searchBarIsHidden, miniBarIsClicked }: ISearchBarProps) => {
+	const modal = useContext(ModalContext);
+	const checkModal = useContext(CheckModalContext);
+
+	const handleModalPopup = () => {
+		if (modal !== "empty") checkModal("empty");
+	};
+
 	return (
 		<StyledSearchBar searchBarIsHidden={searchBarIsHidden} miniBarIsClicked={miniBarIsClicked}>
 			<Schedule />
 			<Price />
 			<Guest />
 			<Link to="search">
-				<SearchIcon>
+				<SearchIcon onClick={handleModalPopup}>
 					<SearchButton colorset="white" size={30} />
 					<div>검색</div>
 				</SearchIcon>
