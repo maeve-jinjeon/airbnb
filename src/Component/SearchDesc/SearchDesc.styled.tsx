@@ -4,6 +4,7 @@ const SearchDescWrapper = styled.div`
 	margin: 0 auto;
 	margin-top: 120px;
 	display: flex;
+	justify-content: space-between;
 	${({ theme: { width } }) => css`
 		width: ${width.header};
 		height: 2000px;
@@ -39,9 +40,12 @@ const StyledListMention = styled.div`
 `;
 
 const StyledMap = styled.div`
-	width: 600px;
-	height: 1000px;
-	border: solid 1px red;
+	${({ theme: { width } }) => css`
+		width: ${width.searchMap};
+		height: 100vh;
+		border-radius: 20px;
+		overflow: hidden;
+	`}
 `;
 
 export { SearchDescWrapper, StyledSearchLists, StyledResultSummary, StyledListMention, StyledMap };
