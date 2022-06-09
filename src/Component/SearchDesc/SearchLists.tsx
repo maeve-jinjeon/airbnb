@@ -2,7 +2,8 @@ import { useContext, useEffect, useMemo, useState } from "react";
 import { ScheduleContext, GuestsContext, PriceContext } from "Context";
 import { MIN_PRICE, MAX_PRICE, getPriceType } from "util/util";
 import hotelsApi from "Api/hotelsApi";
-import { StyledSearchLists, StyledResultSummary } from "./SearchDesc.styled";
+import SearchList from "./SearchList";
+import { StyledSearchLists, StyledResultSummary, StyledListMention } from "./SearchDesc.styled";
 
 type Thotel = {
 	id: number;
@@ -21,7 +22,10 @@ type Thotel = {
 		airConditioner: boolean;
 		hairDryer: boolean;
 	};
+	location: string;
 };
+
+const LIST_MENTION = "지도에서 선택한 지역의 숙소";
 
 const SearchLists = () => {
 	const [hotels, setHotels] = useState<Thotel[]>([]);
@@ -30,6 +34,7 @@ const SearchLists = () => {
 	const { adult, child, baby } = useContext(GuestsContext);
 	const { min, max } = useContext(PriceContext);
 	const isPriceDefault = min === MIN_PRICE && max === MAX_PRICE;
+
 	const showedSchedule =
 		checkin.year && checkout.year
 			? ` ∙ ${checkin.month}월 ${checkin.date}일 - ${checkout.month}월 ${checkout.date}일`
@@ -45,11 +50,10 @@ const SearchLists = () => {
 	const resetFilteredHotels = (hotelsData: Thotel[]) => {
 		if (isPriceDefault) {
 			setFilteredHotels(hotelsData);
-			return;
+		} else {
+			const filteredHotelsData = hotelsData.filter(({ price }) => price > min && price <= max);
+			setFilteredHotels(filteredHotelsData);
 		}
-
-		const filteredHotelsData = hotelsData.filter(({ price }) => price > min && price <= max);
-		setFilteredHotels(filteredHotelsData);
 	};
 
 	const fetchHotels = async () => {
@@ -57,6 +61,10 @@ const SearchLists = () => {
 		setHotels(hotelsData);
 		resetFilteredHotels(hotelsData);
 	};
+
+	const filteredLists = filteredHotels.map((hotel) => {
+		return <SearchList hotel={hotel} />;
+	});
 
 	useEffect(() => {
 		fetchHotels();
@@ -69,8 +77,11 @@ const SearchLists = () => {
 	return (
 		<StyledSearchLists>
 			<StyledResultSummary>{showedInfo}</StyledResultSummary>
+			<StyledListMention>{LIST_MENTION}</StyledListMention>
+			{filteredLists}
 		</StyledSearchLists>
 	);
 };
 
 export default SearchLists;
+export type { Thotel };

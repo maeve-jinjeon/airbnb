@@ -5,15 +5,17 @@ const hotels = [
 		price: 132000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: false, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 5153,
-		name: "코리가 호스팅하는 개인실",
+		name: "Adam님이 호스팅하는 전원주택 전체",
 		price: 132000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: false, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 423,
@@ -21,7 +23,8 @@ const hotels = [
 		price: 132000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 785,
@@ -29,7 +32,8 @@ const hotels = [
 		price: 201000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 698,
@@ -37,7 +41,8 @@ const hotels = [
 		price: 103000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 577,
@@ -45,7 +50,8 @@ const hotels = [
 		price: 232000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 867,
@@ -53,7 +59,8 @@ const hotels = [
 		price: 54200,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 6589,
@@ -61,7 +68,8 @@ const hotels = [
 		price: 750000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 1760,
@@ -69,7 +77,8 @@ const hotels = [
 		price: 750000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 1861,
@@ -77,7 +86,8 @@ const hotels = [
 		price: 750000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 612,
@@ -85,7 +95,8 @@ const hotels = [
 		price: 400000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 133,
@@ -93,7 +104,8 @@ const hotels = [
 		price: 50300,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 114,
@@ -101,7 +113,8 @@ const hotels = [
 		price: 82400,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 135,
@@ -109,7 +122,8 @@ const hotels = [
 		price: 82400,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 16,
@@ -117,7 +131,8 @@ const hotels = [
 		price: 82400,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 17,
@@ -125,7 +140,8 @@ const hotels = [
 		price: 283000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 18,
@@ -133,7 +149,8 @@ const hotels = [
 		price: 120000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 19,
@@ -141,7 +158,8 @@ const hotels = [
 		price: 42000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 20,
@@ -149,7 +167,8 @@ const hotels = [
 		price: 42000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 21,
@@ -157,7 +176,8 @@ const hotels = [
 		price: 42000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 22,
@@ -165,7 +185,8 @@ const hotels = [
 		price: 42000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 23,
@@ -173,7 +194,8 @@ const hotels = [
 		price: 178000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 2354,
@@ -181,7 +203,8 @@ const hotels = [
 		price: 178000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 2532,
@@ -189,7 +212,8 @@ const hotels = [
 		price: 178000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 2632,
@@ -197,7 +221,8 @@ const hotels = [
 		price: 98000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 1215,
@@ -205,7 +230,8 @@ const hotels = [
 		price: 630000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 1425,
@@ -213,7 +239,8 @@ const hotels = [
 		price: 630000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 1225,
@@ -221,7 +248,8 @@ const hotels = [
 		price: 630000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 1235,
@@ -229,7 +257,8 @@ const hotels = [
 		price: 570000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 1445,
@@ -237,7 +266,8 @@ const hotels = [
 		price: 570000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 1425,
@@ -245,7 +275,8 @@ const hotels = [
 		price: 570000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 115,
@@ -253,7 +284,8 @@ const hotels = [
 		price: 570000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 155,
@@ -261,7 +293,8 @@ const hotels = [
 		price: 600000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 156,
@@ -269,7 +302,8 @@ const hotels = [
 		price: 630000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 815,
@@ -277,7 +311,8 @@ const hotels = [
 		price: 330000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 615,
@@ -285,7 +320,8 @@ const hotels = [
 		price: 230000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 515,
@@ -293,7 +329,8 @@ const hotels = [
 		price: 230000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 175,
@@ -301,7 +338,8 @@ const hotels = [
 		price: 330000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 195,
@@ -309,7 +347,8 @@ const hotels = [
 		price: 230000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 915,
@@ -317,7 +356,8 @@ const hotels = [
 		price: 230000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 715,
@@ -325,7 +365,8 @@ const hotels = [
 		price: 230000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 176,
@@ -333,7 +374,8 @@ const hotels = [
 		price: 150000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 186,
@@ -341,7 +383,8 @@ const hotels = [
 		price: 150000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 1456,
@@ -349,7 +392,8 @@ const hotels = [
 		price: 150000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 1347,
@@ -357,7 +401,8 @@ const hotels = [
 		price: 420000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 1347,
@@ -365,7 +410,8 @@ const hotels = [
 		price: 420000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 1647,
@@ -373,7 +419,8 @@ const hotels = [
 		price: 420000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 1348,
@@ -381,7 +428,8 @@ const hotels = [
 		price: 530000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 1538,
@@ -389,7 +437,8 @@ const hotels = [
 		price: 530000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 1128,
@@ -397,7 +446,8 @@ const hotels = [
 		price: 530000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 12239,
@@ -405,7 +455,8 @@ const hotels = [
 		price: 234000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 2420,
@@ -413,7 +464,8 @@ const hotels = [
 		price: 523000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 2530,
@@ -421,7 +473,8 @@ const hotels = [
 		price: 523000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 2630,
@@ -429,7 +482,8 @@ const hotels = [
 		price: 723000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 2350,
@@ -437,7 +491,8 @@ const hotels = [
 		price: 773000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 2530,
@@ -445,7 +500,8 @@ const hotels = [
 		price: 923000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 2230,
@@ -453,7 +509,8 @@ const hotels = [
 		price: 823000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 2530,
@@ -461,7 +518,8 @@ const hotels = [
 		price: 923000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 	{
 		id: 2670,
@@ -469,7 +527,8 @@ const hotels = [
 		price: 723000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
-		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true, location: "" },
+		options: { kitchen: true, wifi: true, airConditioner: true, hairDryer: true },
+		location: "",
 	},
 ];
 

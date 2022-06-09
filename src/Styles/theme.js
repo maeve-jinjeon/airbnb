@@ -35,6 +35,8 @@ const width = {
 	miniPriceChild: "149px",
 	miniGuestChild: "86px",
 	searchLists: "600px",
+	searchListChild: "285px",
+	hotelInfo: "230px",
 };
 
 const height = {
@@ -50,6 +52,7 @@ const height = {
 	calendarTitle: "23px",
 	guestModal: "355px",
 	priceModal: "360px",
+	searchList: "230px",
 };
 
 const fontMain = {

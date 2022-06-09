@@ -24,6 +24,15 @@ const getLateDay = (originDay: dayType, comparedDay: dayType) => {
 
 const getShowedMonth = (month: number) => (month >= 12 ? 1 : month + 1);
 
+// const getDateDiff = (firstDay, secondDay) => {
+// 	const firstDate = new Date(firstDay);
+// 	const secondDate = new Date(secondDay);
+
+// 	const differentDate = firstDate.getTime() - secondDate.getTime();
+
+// 	return Math.abs(differentDate / (1000 * 3600 * 24));
+// };
+
 export {
 	PRICE_UNIT,
 	DISTANCE_MIN_MAX,

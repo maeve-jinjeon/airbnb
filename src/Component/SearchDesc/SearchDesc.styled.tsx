@@ -13,11 +13,13 @@ const StyledSearchLists = styled.div`
 	${({ theme: { width } }) => css`
 		width: ${width.searchLists};
 		height: 1800px;
+		padding: 10px;
 	`}
 `;
 
 const StyledResultSummary = styled.div`
-	margin-top: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	overflow: hidden;
 	${({ theme: { fontSize, fontWeight, colors } }) => css`
 		font-size: ${fontSize.xSmall};
@@ -26,4 +28,13 @@ const StyledResultSummary = styled.div`
 	`}
 `;
 
-export { SearchDescWrapper, StyledSearchLists, StyledResultSummary };
+const StyledListMention = styled.div`
+	margin-bottom: 20px;
+	${({ theme: { fontSize, fontWeight, colors } }) => css`
+		font-size: ${fontSize.xLarge};
+		font-weight: ${fontWeight.Large};
+		color: ${colors.black};
+	`}
+`;
+
+export { SearchDescWrapper, StyledSearchLists, StyledResultSummary, StyledListMention };
