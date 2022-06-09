@@ -40,6 +40,7 @@ const StyledModal = styled.div<IStyleModal>`
 		padding: 58px;
 		overflow: hidden;
 	`}
+	box-sizing: border-box;
 `;
 
 const StyledGuestList = styled.li`
