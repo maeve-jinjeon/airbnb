@@ -1,8 +1,13 @@
+import { useEffect, useState } from "react";
+
+import imgApi from "Api/imgApi";
 import { getPriceType } from "util/util";
 import type { Thotel } from "./SearchLists";
 import {
 	StyledSearchList,
 	StyledSearchListInfo,
+	StyleImageWrapper,
+	StyledImage,
 	StyledHotelInfo,
 	StyledHotelName,
 	StyledHotelDetails,
@@ -35,11 +40,13 @@ const SearchList = ({
 	hotel: {
 		name,
 		price,
+		img,
 		rooms: { peopleMax, bedroom, bed, bathroom },
 		options: { kitchen, wifi, airConditioner, hairDryer },
 	},
 	dateDiff,
 }: TSearchListProps) => {
+	const [image, setImage] = useState();
 	const roomsArray = [
 		{ value: peopleMax, mention: `최대 인원 ${peopleMax}명` },
 		{ value: bedroom, mention: `침실 ${bedroom}개` },
@@ -58,9 +65,20 @@ const SearchList = ({
 	const showedPrice = getPriceType(price, true);
 	const showedPriceSum = getPriceType(price * dateDiff, true);
 
+	const fetchImg = async () => {
+		const imageData = await imgApi.getImg(img);
+		setImage(imageData);
+	};
+
+	useEffect(() => {
+		fetchImg();
+	}, []);
+
 	return (
 		<StyledSearchList>
-			<StyledSearchListInfo />
+			<StyleImageWrapper>
+				<StyledImage src={image} />
+			</StyleImageWrapper>
 			<StyledSearchListInfo>
 				<StyledHotelInfo>
 					<StyledHotelName>{name}</StyledHotelName>

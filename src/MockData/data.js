@@ -2,6 +2,7 @@ const hotels = [
 	{
 		id: 22,
 		name: "코리가 호스팅하는 개인실",
+		img: "a",
 		price: 132000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -11,6 +12,7 @@ const hotels = [
 	{
 		id: 5153,
 		name: "Adam님이 호스팅하는 전원주택 전체",
+		img: "b",
 		price: 132000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -20,6 +22,7 @@ const hotels = [
 	{
 		id: 423,
 		name: "코리가 호스팅하는 개인실",
+		img: "c",
 		price: 132000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -29,6 +32,7 @@ const hotels = [
 	{
 		id: 785,
 		name: "Blanca님이 호스팅하는 집의 개인실",
+		img: "d",
 		price: 201000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -38,6 +42,7 @@ const hotels = [
 	{
 		id: 698,
 		name: "Adam님이 호스팅하는 전원주택 전체",
+		img: "e",
 		price: 103000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -47,6 +52,7 @@ const hotels = [
 	{
 		id: 577,
 		name: "Blanca님이 호스팅하는 집의 개인실",
+		img: "f",
 		price: 232000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -56,6 +62,7 @@ const hotels = [
 	{
 		id: 867,
 		name: "Beth님이 호스팅하는 초소형 주택",
+		img: "g",
 		price: 54200,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -65,6 +72,7 @@ const hotels = [
 	{
 		id: 6589,
 		name: "Beth님이 호스팅하는 초소형 주택",
+		img: "c",
 		price: 750000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -74,6 +82,7 @@ const hotels = [
 	{
 		id: 1760,
 		name: "Blanca님이 호스팅하는 집의 개인실",
+		img: "a",
 		price: 750000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -83,6 +92,7 @@ const hotels = [
 	{
 		id: 1861,
 		name: "Adam님이 호스팅하는 전원주택 전체",
+		img: "d",
 		price: 750000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -92,6 +102,7 @@ const hotels = [
 	{
 		id: 612,
 		name: "Blanca님이 호스팅하는 집의 개인실",
+		img: "f",
 		price: 400000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -101,6 +112,7 @@ const hotels = [
 	{
 		id: 133,
 		name: "Adam님이 호스팅하는 전원주택 전체",
+		img: "g",
 		price: 50300,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -110,6 +122,7 @@ const hotels = [
 	{
 		id: 114,
 		name: "Beth님이 호스팅하는 초소형 주택",
+		img: "b",
 		price: 82400,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -119,6 +132,7 @@ const hotels = [
 	{
 		id: 135,
 		name: "Blanca님이 호스팅하는 집의 개인실",
+		img: "a",
 		price: 82400,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -128,6 +142,7 @@ const hotels = [
 	{
 		id: 16,
 		name: "Beth님이 호스팅하는 초소형 주택",
+		img: "d",
 		price: 82400,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -137,6 +152,7 @@ const hotels = [
 	{
 		id: 17,
 		name: "Beth님이 호스팅하는 초소형 주택",
+		img: "e",
 		price: 283000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -146,6 +162,7 @@ const hotels = [
 	{
 		id: 18,
 		name: "Blanca님이 호스팅하는 집의 개인실",
+		img: "b",
 		price: 120000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -155,6 +172,7 @@ const hotels = [
 	{
 		id: 19,
 		name: "Duane & Angela님이 호스팅하는 집의 개인실",
+		img: "a",
 		price: 42000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -164,6 +182,7 @@ const hotels = [
 	{
 		id: 20,
 		name: "Duane & Angela님이 호스팅하는 집의 개인실",
+		img: "d",
 		price: 42000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -173,6 +192,7 @@ const hotels = [
 	{
 		id: 21,
 		name: "Duane & Angela님이 호스팅하는 집의 개인실",
+		img: "e",
 		price: 42000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -182,6 +202,7 @@ const hotels = [
 	{
 		id: 22,
 		name: "Duane & Angela님이 호스팅하는 집의 개인실",
+		img: "c",
 		price: 42000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -191,6 +212,7 @@ const hotels = [
 	{
 		id: 23,
 		name: "Duane & Angela님이 호스팅하는 집의 개인실",
+		img: "f",
 		price: 178000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -200,6 +222,7 @@ const hotels = [
 	{
 		id: 2354,
 		name: "Duane & Angela님이 호스팅하는 집의 개인실",
+		img: "a",
 		price: 178000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -209,6 +232,7 @@ const hotels = [
 	{
 		id: 2532,
 		name: "Duane & Angela님이 호스팅하는 집의 개인실",
+		img: "e",
 		price: 178000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -218,6 +242,7 @@ const hotels = [
 	{
 		id: 2632,
 		name: "Beth님이 호스팅하는 초소형 주택",
+		img: "a",
 		price: 98000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -227,6 +252,7 @@ const hotels = [
 	{
 		id: 1215,
 		name: "Michael님이 호스팅하는 공동 주택 전체",
+		img: "e",
 		price: 630000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -236,6 +262,7 @@ const hotels = [
 	{
 		id: 1425,
 		name: "Michael님이 호스팅하는 공동 주택 전체",
+		img: "a",
 		price: 630000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -245,6 +272,7 @@ const hotels = [
 	{
 		id: 1225,
 		name: "Michael님이 호스팅하는 공동 주택 전체",
+		img: "b",
 		price: 630000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -254,6 +282,7 @@ const hotels = [
 	{
 		id: 1235,
 		name: "Michael님이 호스팅하는 공동 주택 전체",
+		img: "c",
 		price: 570000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -263,6 +292,7 @@ const hotels = [
 	{
 		id: 1445,
 		name: "Michael님이 호스팅하는 공동 주택 전체",
+		img: "a",
 		price: 570000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -272,6 +302,7 @@ const hotels = [
 	{
 		id: 1425,
 		name: "Michael님이 호스팅하는 공동 주택 전체",
+		img: "d",
 		price: 570000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -281,6 +312,7 @@ const hotels = [
 	{
 		id: 115,
 		name: "Michael님이 호스팅하는 공동 주택 전체",
+		img: "a",
 		price: 570000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -290,6 +322,7 @@ const hotels = [
 	{
 		id: 155,
 		name: "Beth님이 호스팅하는 초소형 주택",
+		img: "e",
 		price: 600000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -299,6 +332,7 @@ const hotels = [
 	{
 		id: 156,
 		name: "Beth님이 호스팅하는 초소형 주택",
+		img: "f",
 		price: 630000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -308,6 +342,7 @@ const hotels = [
 	{
 		id: 815,
 		name: "Beth님이 호스팅하는 초소형 주택",
+		img: "e",
 		price: 330000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -317,6 +352,7 @@ const hotels = [
 	{
 		id: 615,
 		name: "Beth님이 호스팅하는 초소형 주택",
+		img: "c",
 		price: 230000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -326,6 +362,7 @@ const hotels = [
 	{
 		id: 515,
 		name: "Blanca님이 호스팅하는 집의 개인실",
+		img: "d",
 		price: 230000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -335,6 +372,7 @@ const hotels = [
 	{
 		id: 175,
 		name: "Blanca님이 호스팅하는 집의 개인실",
+		img: "b",
 		price: 330000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -344,6 +382,7 @@ const hotels = [
 	{
 		id: 195,
 		name: "Blanca님이 호스팅하는 집의 개인실",
+		img: "e",
 		price: 230000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -353,6 +392,7 @@ const hotels = [
 	{
 		id: 915,
 		name: "Michael님이 호스팅하는 공동 주택 전체",
+		img: "f",
 		price: 230000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -362,6 +402,7 @@ const hotels = [
 	{
 		id: 715,
 		name: "Michael님이 호스팅하는 공동 주택 전체",
+		img: "d",
 		price: 230000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -371,6 +412,7 @@ const hotels = [
 	{
 		id: 176,
 		name: "Tina님이 호스팅하는 집의 개인실",
+		img: "c",
 		price: 150000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -380,6 +422,7 @@ const hotels = [
 	{
 		id: 186,
 		name: "Tina님이 호스팅하는 집의 개인실",
+		img: "a",
 		price: 150000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -389,6 +432,7 @@ const hotels = [
 	{
 		id: 1456,
 		name: "Samantha님이 호스팅하는 통나무집 전체",
+		img: "b",
 		price: 150000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -398,6 +442,7 @@ const hotels = [
 	{
 		id: 1347,
 		name: "Samantha님이 호스팅하는 통나무집 전체",
+		img: "a",
 		price: 420000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -407,6 +452,7 @@ const hotels = [
 	{
 		id: 1347,
 		name: "Samantha님이 호스팅하는 통나무집 전체",
+		img: "e",
 		price: 420000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -416,6 +462,7 @@ const hotels = [
 	{
 		id: 1647,
 		name: "Tina님이 호스팅하는 집의 개인실",
+		img: "c",
 		price: 420000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -425,6 +472,7 @@ const hotels = [
 	{
 		id: 1348,
 		name: "Samantha님이 호스팅하는 통나무집 전체",
+		img: "b",
 		price: 530000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -434,6 +482,7 @@ const hotels = [
 	{
 		id: 1538,
 		name: "Tina님이 호스팅하는 집의 개인실",
+		img: "e",
 		price: 530000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -443,6 +492,7 @@ const hotels = [
 	{
 		id: 1128,
 		name: "Beth님이 호스팅하는 초소형 주택",
+		img: "d",
 		price: 530000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -452,6 +502,7 @@ const hotels = [
 	{
 		id: 12239,
 		name: "Beth님이 호스팅하는 초소형 주택",
+		img: "a",
 		price: 234000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -461,6 +512,7 @@ const hotels = [
 	{
 		id: 2420,
 		name: "Tina님이 호스팅하는 집의 개인실",
+		img: "f",
 		price: 523000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -470,6 +522,7 @@ const hotels = [
 	{
 		id: 2530,
 		name: "Samantha님이 호스팅하는 통나무집 전체",
+		img: "c",
 		price: 523000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -479,6 +532,7 @@ const hotels = [
 	{
 		id: 2630,
 		name: "Samantha님이 호스팅하는 통나무집 전체",
+		img: "a",
 		price: 723000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -488,6 +542,7 @@ const hotels = [
 	{
 		id: 2350,
 		name: "Adam님이 호스팅하는 전원주택 전체",
+		img: "b",
 		price: 773000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -497,6 +552,7 @@ const hotels = [
 	{
 		id: 2530,
 		name: "Adam님이 호스팅하는 전원주택 전체",
+		img: "a",
 		price: 923000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -506,6 +562,7 @@ const hotels = [
 	{
 		id: 2230,
 		name: "Adam님이 호스팅하는 전원주택 전체",
+		img: "g",
 		price: 823000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -515,6 +572,7 @@ const hotels = [
 	{
 		id: 2530,
 		name: "Adam님이 호스팅하는 전원주택 전체",
+		img: "g",
 		price: 923000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },
@@ -524,6 +582,7 @@ const hotels = [
 	{
 		id: 2670,
 		name: "Samantha님이 호스팅하는 통나무집 전체",
+		img: "g",
 		price: 723000,
 		unavailableDate: [],
 		rooms: { peopleMax: 4, bedroom: 1, bed: 1, bathroom: 1 },

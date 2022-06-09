@@ -9,6 +9,7 @@ type Thotel = {
 	id: number;
 	name: string;
 	price: number;
+	img: string;
 	unavailableDate: [];
 	rooms: {
 		peopleMax: number;
@@ -33,8 +34,9 @@ const SearchLists = () => {
 	const { checkin, checkout } = useContext(ScheduleContext);
 	const { adult, child, baby } = useContext(GuestsContext);
 	const { min, max } = useContext(PriceContext);
-	const isPriceDefault = min === MIN_PRICE && max === MAX_PRICE;
 
+	const isPriceDefault = min === MIN_PRICE && max === MAX_PRICE;
+	const dateDiff = getDateDiff(checkin, checkout);
 	const showedSchedule =
 		checkin.year && checkout.year
 			? ` ∙ ${checkin.month}월 ${checkin.date}일 - ${checkout.month}월 ${checkout.date}일`
@@ -46,7 +48,6 @@ const SearchLists = () => {
 	const showedBaby = baby ? ` ∙ 유아 ${baby}명 ` : "";
 	const showedHotelsNum = useMemo(() => `${filteredHotels.length}개의 숙소`, [filteredHotels]);
 	const showedInfo = showedHotelsNum + showedSchedule + showedPrice + showedGuests + showedBaby;
-	const dateDiff = getDateDiff(checkin, checkout);
 
 	const resetFilteredHotels = (hotelsData: Thotel[]) => {
 		if (isPriceDefault) {

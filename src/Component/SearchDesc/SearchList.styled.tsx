@@ -1,19 +1,34 @@
 import styled, { css } from "styled-components";
 
 const StyledSearchList = styled.div`
-	${({ theme: { height } }) => css`
+	${({ theme: { height, colors } }) => css`
 		height: ${height.searchList};
 		display: flex;
 		justify-content: space-between;
 		border-bottom: ;
 		padding: 20px 0;
+		border-bottom: solid 1px ${colors.grey4};
+	`}
+`;
+
+const StyleImageWrapper = styled.div`
+	${({ theme: { width } }) => css`
+		width: ${width.searchListChild};
+		border-radius: 10px;
+		overflow: hidden;
+	`}
+`;
+
+const StyledImage = styled.img`
+	${({ theme: { width } }) => css`
+		alt: "image";
+		width: ${width.searchListChild};
 	`}
 `;
 
 const StyledSearchListInfo = styled.div`
 	${({ theme: { width } }) => css`
 		width: ${width.searchListChild};
-		border: solid 1px red;
 		position: relative;
 	`}
 `;
@@ -78,6 +93,8 @@ const StyledHotelPriceSum = styled.div`
 export {
 	StyledSearchList,
 	StyledSearchListInfo,
+	StyleImageWrapper,
+	StyledImage,
 	StyledHotelInfo,
 	StyledHotelName,
 	StyledHotelDetails,
