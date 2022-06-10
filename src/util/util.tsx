@@ -45,3 +45,4 @@ export {
 	getShowedMonth,
 	getDateDiff,
 };
+export type { dayType };
