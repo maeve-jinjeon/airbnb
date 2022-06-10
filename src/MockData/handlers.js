@@ -1,4 +1,5 @@
 import { rest } from "msw";
+import airbnb from "img/airbnb.png";
 import a from "img/a.jpg";
 import b from "img/b.jpg";
 import c from "img/c.jpg";
@@ -9,7 +10,7 @@ import g from "img/g.jpg";
 import hotelsData from "./data";
 import getHotelsPrices from "./controllers";
 
-const images = { a, b, c, d, e, f, g };
+const images = { a, b, c, d, e, f, g, airbnb };
 
 const handlers = [
 	rest.get(`/api/prices`, (req, res, ctx) => {

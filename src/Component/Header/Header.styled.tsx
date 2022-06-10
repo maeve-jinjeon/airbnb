@@ -12,7 +12,7 @@ interface IStyledSearchBarWrapper {
 
 const HeaderBackgroundImg = styled.div<IHeaderBackgroundImgn>`
 	${({ theme: { height, width }, image, isLocationSearch }) =>
-		isLocationSearch === false
+		!isLocationSearch
 			? css`
 					background: url(${image}) no-repeat center;
 					background-size: cover;
