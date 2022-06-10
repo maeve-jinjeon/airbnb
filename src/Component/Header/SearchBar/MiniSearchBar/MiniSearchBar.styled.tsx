@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 interface IStyledMiniSearchBarChild {
-	name: string;
+	name: "miniPrice" | "miniSchedule" | "miniGuest";
 }
 
 interface IStyledMiniSearchBar {
